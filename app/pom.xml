@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<start-class>ProgettoOOP.app.AppApplication</start-class>
 	</properties>
 
 	<dependencies>
