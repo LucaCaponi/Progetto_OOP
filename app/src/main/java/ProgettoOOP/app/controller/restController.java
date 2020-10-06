@@ -12,7 +12,7 @@ import ProgettoOOP.app.model.getCovidCases;
 public class restController {
 	@GetMapping("/hello")
 	public getCovidCases exampleMethod(@RequestParam(name="param1", defaultValue="World") String param1) {
-		return new getCovidCases("Mario", "Rossi");
+		return new getCovidCases("Carlo", "Rossi");
 	}
 	@PostMapping("/hello")
 	public getCovidCases exampleMethod2(@RequestBody getCovidCases body) {
