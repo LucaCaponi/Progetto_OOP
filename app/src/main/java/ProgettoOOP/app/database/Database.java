@@ -8,36 +8,24 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class Database {
-	
-	
-	public static void DownloadData() throws IOException{
-		int b=0;
-		File albums = new File("Dati.json");
 
-		 FileOutputStream FSalbum=new FileOutputStream(albums);
+	public static void DownloadData() throws IOException {
+		int reader = 0;
+		File countries = new File("Countries.json");
 
+		FileOutputStream FScountries = new FileOutputStream(countries);
+		URL countriesURL = new URL("https://api.covid19api.com/countries");
 
-	
+		URLConnection URLConn = countriesURL.openConnection();
 
-		 URL albumsURL = new URL("https://api.covid19api.com/countries");
+		InputStream input = URLConn.getInputStream();
 
-		 URLConnection URLConn= albumsURL.openConnection();
+		while ((reader=input.read())!=-1){
+         FScountries.write(reader);
+		}
 
-		 InputStream input= URLConn.getInputStream();
-
-
-
-		 while((b=input.read())!=-1)
-
-		 {
-
-		 FSalbum.write(b);
-
-		 }
-
-		 input.close();
-
-		 FSalbum.close();
+		input.close();
+		FScountries.close();
 	}
 
 }
