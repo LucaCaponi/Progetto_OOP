@@ -3,6 +3,7 @@ package ProgettoOOP.app.model;
 public class getCovidCases {
 	private String name;
 	private String surname;
+	int ciao;
 	public getCovidCases(String name, String surname) {
 		this.name = name;
 		this.surname = surname;
