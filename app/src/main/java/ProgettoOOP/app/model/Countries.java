@@ -1,11 +1,11 @@
 package ProgettoOOP.app.model;
 
-public class getCountries {
+public class Countries {
 private String Country;
 private String Slug;
 private String ISO2;
 
-public getCountries(String country, String slug, String iSO2) {
+public Countries(String country, String slug, String iSO2) {
 	this.Country = country;
 	this.Slug = slug;
 	this.ISO2 = iSO2;

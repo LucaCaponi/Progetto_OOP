@@ -1,6 +1,6 @@
 package ProgettoOOP.app.model;
 
-public class getCountryAllStatus {
+public class CountryAllStatus {
 	
 	private String CountryISO;
 	private String Country;
