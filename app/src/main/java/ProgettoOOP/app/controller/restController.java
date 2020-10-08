@@ -1,21 +1,20 @@
 package ProgettoOOP.app.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ProgettoOOP.app.model.getCovidCases;
+import ProgettoOOP.app.model.getCountryContinent;
 
 @RestController
 public class restController {
-	@GetMapping("/hello")
-	public getCovidCases exampleMethod(@RequestParam(name="param1", defaultValue="World") String param1) {
-		return new getCovidCases("Mario", "Rossi");
-	}
-	@PostMapping("/hello")
-	public getCovidCases exampleMethod2(@RequestBody getCovidCases body) {
-		return body;
+	@RequestMapping(value = "/premium/country/{{country}}", method = RequestMethod.GET)
+	public ResponseEntity<Object> getCountryAllStatus(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
+			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) 
+	{	
+		return new ResponseEntity<>();
 	}
 }
