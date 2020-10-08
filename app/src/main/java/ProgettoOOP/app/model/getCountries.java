@@ -31,5 +31,4 @@ public String getISO2() {
 public void setISO2(String iSO2) {
 	this.ISO2 = iSO2;
 }
-
 }
