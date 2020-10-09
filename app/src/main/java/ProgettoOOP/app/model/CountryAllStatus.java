@@ -27,7 +27,7 @@ public class CountryAllStatus {
 	
 
 
-	public getCountryAllStatus(String countryISO, String country, String continent, String date, int totalCases,
+	public CountryAllStatus(String countryISO, String country, String continent, String date, int totalCases,
 			int newCases, int totalDeaths, int newDeaths, double totalCasesPerMillion, double newCasesPerMillion,
 			double totalDeathsPerMillion, double newDeathsPerMillion, double stringencyIndex,
 			double dailyIncidenceConfirmedCases, double dailyIncidenceConfirmedDeaths,
