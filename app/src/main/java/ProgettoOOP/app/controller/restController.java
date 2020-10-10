@@ -18,27 +18,27 @@ public class restController {
 	@Autowired
 	CountryService countryService;
 	
-	@RequestMapping(value = "/Countries", method = RequestMethod.GET)
+	@RequestMapping(value = "/countries", method = RequestMethod.GET)
 	public ResponseEntity<Object> getCountries()
 	{	
 		return new ResponseEntity<>(countryService.selectCountries(), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/Countries/{ISO2}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/countries/{ISO2}", method = RequestMethod.PUT)
 	public ResponseEntity<Object> UpdateCountry(@PathVariable("ISO2") String ISO2, @RequestBody Countries country)
 	{	
 		countryService.UpdateCountry(ISO2, country);
 		return new ResponseEntity<>("Country is updated successfully", HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/Countries/{ISO2}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/countries/{ISO2}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> delete(@PathVariable("ISO2") String ISO2)
 	{	
 		countryService.DeleteCountry(ISO2);
 		return new ResponseEntity<>("Country is deleted successfully", HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/Countries", method = RequestMethod.POST)
+	@RequestMapping(value = "/countries", method = RequestMethod.POST)
 	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country)
 	{	
 		countryService.InsertCountry(country);
