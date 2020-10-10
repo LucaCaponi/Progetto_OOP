@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import ProgettoOOP.app.model.Countries;
+
 @Service
 public class CountryServiceImpl implements CountryService {
 private static Map<String, Countries> countryRepo= new HashMap<>();
@@ -16,8 +17,8 @@ private static Map<String, Countries> countryRepo= new HashMap<>();
 public CountryServiceImpl() {
 
 Countries nation= new Countries(null, null, null);
-nation.setISO2("ISO2");
-nation.setCountry("Country");
+nation.setISO2("IT");
+nation.setCountry("Italy");
 countryRepo.put(nation.getISO2(), nation);
 }
 

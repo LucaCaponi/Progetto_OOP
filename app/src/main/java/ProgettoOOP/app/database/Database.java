@@ -6,14 +6,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.List;
 
 public class Database {
 
 	public static void DownloadData() throws IOException {
+		
 		int reader = 0;
-		File countries = new File("Countries.json");
+		File Countries = new File("Countries.json");
 
-		FileOutputStream FScountries = new FileOutputStream(countries);
+		FileOutputStream FScountries = new FileOutputStream(Countries);
 		URL countriesURL = new URL("https://api.covid19api.com/countries");
 
 		URLConnection URLConn = countriesURL.openConnection();
@@ -27,5 +30,8 @@ public class Database {
 		input.close();
 		FScountries.close();
 	}
+
+	
+	public List<HashMap<String,Object>> countries;
 	
 }
