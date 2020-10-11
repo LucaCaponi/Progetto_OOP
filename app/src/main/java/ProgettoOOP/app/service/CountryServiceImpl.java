@@ -51,7 +51,7 @@ public void DeleteCountry(String ISO2) {
 @Override
 public Collection<Countries> selectCountries() {
 	// TODO Auto-generated method stub
-	return countryRepo.toString();
+	return countryRepo.values();
 }
 
 
