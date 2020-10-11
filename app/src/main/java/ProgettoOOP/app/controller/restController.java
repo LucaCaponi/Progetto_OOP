@@ -13,13 +13,13 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.service.CountryService;
 
 @RestController
-public class restController {
+public class restController{
 	
 	@Autowired
 	CountryService countryService;
 	
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
-	public ResponseEntity<Object> selectCountries()
+	public ResponseEntity<Object> getCountries()
 	{	
 		return new ResponseEntity<>(countryService.selectCountries(), HttpStatus.OK);
 	}
@@ -45,8 +45,8 @@ public class restController {
 		return new ResponseEntity<>("Country is created successfully", HttpStatus.CREATED);
 	}
 	
+
 	/*
-	@RequestMapping(value = "/country/{{country}}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getCountryAllStatus(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
 			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) 
 	{	
