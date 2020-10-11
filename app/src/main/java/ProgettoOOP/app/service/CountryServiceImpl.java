@@ -19,6 +19,7 @@ public CountryServiceImpl() {
 Countries nation= new Countries(null, null, null);
 nation.setISO2("IT");
 nation.setCountry("Italy");
+nation.setSlug("italy");
 countryRepo.put(nation.getISO2(), nation);
 }
 
@@ -50,7 +51,7 @@ public void DeleteCountry(String ISO2) {
 @Override
 public Collection<Countries> selectCountries() {
 	// TODO Auto-generated method stub
-	return countryRepo.values();
+	return countryRepo.toString();
 }
 
 

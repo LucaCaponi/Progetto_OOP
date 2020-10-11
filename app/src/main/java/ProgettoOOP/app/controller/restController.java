@@ -19,7 +19,7 @@ public class restController {
 	CountryService countryService;
 	
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
-	public ResponseEntity<Object> getCountries()
+	public ResponseEntity<Object> selectCountries()
 	{	
 		return new ResponseEntity<>(countryService.selectCountries(), HttpStatus.OK);
 	}

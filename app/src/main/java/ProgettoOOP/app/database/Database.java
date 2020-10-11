@@ -14,7 +14,7 @@ public class Database {
 	public static void DownloadData() throws IOException {
 		
 		int reader = 0;
-		File Countries = new File("Countries.json");
+		File Countries =new File("Countries.json");
 
 		FileOutputStream FScountries = new FileOutputStream(Countries);
 		URL countriesURL = new URL("https://api.covid19api.com/countries");
@@ -26,12 +26,10 @@ public class Database {
 		while ((reader=input.read())!=-1){
          FScountries.write(reader);
 		}
+		
 
 		input.close();
 		FScountries.close();
+		
 	}
-
-	
-	public List<HashMap<String,Object>> countries;
-	
 }
