@@ -16,7 +16,7 @@ public static void DownloadDataCountryAllStatus() throws IOException {
 		File CountryAllStatus =new File("CountryAllStatus.json");
 
 		FileOutputStream FSCountryAllStatus = new FileOutputStream(CountryAllStatus);
-		URL countryallstatusURL = new URL("https://api.covid19api.com/live/country/germany");
+		URL countryallstatusURL = new URL("https://api.covid19api.com/live/country/france");
 
 		URLConnection URLConn = countryallstatusURL.openConnection();
 
