@@ -6,14 +6,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
-import java.util.List;
 
-public class Database {
 
-	public static void DownloadData() throws IOException {
+public class DatabaseCountries {
+
+	public static void DownloadDataCountries() throws IOException {
 		
-		int reader = 0;
+		int readerCountries = 0;
 		File Countries =new File("Countries.json");
 
 		FileOutputStream FScountries = new FileOutputStream(Countries);
@@ -21,14 +20,14 @@ public class Database {
 
 		URLConnection URLConn = countriesURL.openConnection();
 
-		InputStream input = URLConn.getInputStream();
+		InputStream inputCountries = URLConn.getInputStream();
 
-		while ((reader=input.read())!=-1){
-         FScountries.write(reader);
+		while ((readerCountries=inputCountries.read())!=-1){
+         FScountries.write(readerCountries);
 		}
 		
 
-		input.close();
+		inputCountries.close();
 		FScountries.close();
 		
 	}
