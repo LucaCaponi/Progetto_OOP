@@ -2,12 +2,12 @@ package ProgettoOOP.app.model;
 
 public class Countries {
 		private String Country;
-		private String Slug;
+		private static String Slug;
 		private String ISO2;
 
 		public Countries(String country, String slug, String iSO2) {
 			this.Country = country;
-			this.Slug = slug;
+			Countries.Slug = slug;
 			this.ISO2 = iSO2;
 		}
 
@@ -18,11 +18,11 @@ public class Countries {
 			this.Country = country;
 		}
 
-		public String getSlug() {
+		public static String getSlug() {
 			return Slug;
 		}
 		public void setSlug(String slug) {
-			this.Slug = slug;
+			Countries.Slug = slug;
 		}
 
 		public String getISO2() {

@@ -7,14 +7,17 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+
 public class DatabaseCountryAllStatus {
+	private static String nomeurl= "https://api.covid19api.com/live/country/";
 public static void DownloadDataCountryAllStatus() throws IOException {
 		
 		int readerCountryAllStatus = 0;
 		File CountryAllStatus =new File("CountryAllStatus.json");
 
 		FileOutputStream FSCountryAllStatus = new FileOutputStream(CountryAllStatus);
-		URL countryallstatusURL = new URL("https://api.covid19api.com/live/country/france");
+		
+		URL countryallstatusURL = new URL(nomeurl+"germany");
 
 		URLConnection URLConn = countryallstatusURL.openConnection();
 
