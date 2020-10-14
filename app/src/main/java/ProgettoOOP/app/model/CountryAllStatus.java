@@ -86,6 +86,5 @@ public String getDate() {
 public void setDate(String date) {
 	this.Date = date;
 }
-
 	
 }
