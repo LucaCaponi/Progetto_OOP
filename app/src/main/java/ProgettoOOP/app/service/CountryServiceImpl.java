@@ -14,11 +14,10 @@ public class CountryServiceImpl implements CountryService {
 private static Set<Countries> world= new HashSet<>();
 
 public CountryServiceImpl() {
-
-Countries nation = new Countries("Italy", "italy", "IT");
-//nation.setCountry("Italy");
-//nation.setSlug("italy");
-//nation.setISO2("IT");
+Countries nation = new Countries(null, null, null);
+nation.setCountry("Italy");
+nation.setSlug("italy");
+nation.setISO2("IT");
 world.add(nation);
 }
 
