@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ProgettoOOP.app.model.Countries;
@@ -18,10 +19,17 @@ public class restController{
 	@Autowired
 	CountryService countryService;
 	
-	@RequestMapping(value = "/countries", method = RequestMethod.GET)
-	public ResponseEntity<Object> getCountries()
+	@RequestMapping(value = "/totalcountries", method = RequestMethod.GET)
+	public ResponseEntity<Object> getCountries() throws Exception
 	{	
-		return new ResponseEntity<>(countryService.selectCountries(), HttpStatus.OK);
+		return new ResponseEntity<>(countryService.totalCountries(), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/totalcountryallstatus", method = RequestMethod.GET)
+	public ResponseEntity<Object> getCountryAllStatus(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
+			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) throws Exception 
+	{	
+		return new ResponseEntity<>(countryService.totalStatusCountries(from, to), HttpStatus.OK);
 	}
 	
 	
@@ -39,13 +47,5 @@ public class restController{
 		return new ResponseEntity<>("Country is created successfully", HttpStatus.CREATED);
 	}
 	
-
-	/*
-	public ResponseEntity<Object> getCountryAllStatus(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
-			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) 
-	{	
-		return new ResponseEntity<>();
-	}
-	*/
 	
 }

@@ -1,13 +1,12 @@
 package ProgettoOOP.app.service;
 
-import java.util.Collection;
-
 import ProgettoOOP.app.model.Countries;
 
 public interface CountryService {
 	
 	public abstract void InsertCountry(Countries country);
 	public abstract void DeleteCountry(String ISO2);
-	public abstract Collection<Countries> selectCountries();
+	public abstract String totalCountries() throws Exception;
+	public abstract String totalStatusCountries(String from, String to) throws Exception;
 
 }

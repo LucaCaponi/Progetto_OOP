@@ -1,5 +1,7 @@
 package ProgettoOOP.app.service;
 
+//import java.io.IOException;
+//import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import ProgettoOOP.app.database.DatabaseCountries;
+import ProgettoOOP.app.database.DatabaseCountryAllStatus;
+//import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.model.Countries;
 
 @Service
@@ -40,9 +45,13 @@ public void DeleteCountry(String ISO2) {
 }
 
 @Override
-public Set<Countries> selectCountries() {
-	// TODO Auto-generated method stub
-	return world;
+public String totalCountries() throws Exception {
+	return DatabaseCountries.DownloadDataCountries();
+}
+
+@Override
+public String totalStatusCountries(String from, String to) throws Exception {
+	return DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
 }
 
 }

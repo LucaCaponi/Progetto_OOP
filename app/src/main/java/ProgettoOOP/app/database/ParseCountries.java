@@ -3,9 +3,10 @@ package ProgettoOOP.app.database;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashSet;
+//import java.util.Collection;
+//import java.util.HashSet;
 //import java.util.Iterator;
-import java.util.Set;
+//import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -45,45 +46,21 @@ public class ParseCountries extends Countries{
 		}
 	}
 
-	public static Countries parseCountryObject(JSONObject Country) {
+	public static void parseCountryObject(JSONObject Country) {
 		// Get country object within list
 		// JSONObject countryObject = (JSONObject) Country.get("");
 
 		// Get country Country
 		String country = (String) Country.get("Country");
-		System.out.println(country);
 		
 		// Get country Slug
 		String slug = (String) Country.get("Slug");
-		System.out.println(slug);
 		
 		// Get country ISO2
 		String iSO2 = (String) Country.get("ISO2");
-		System.out.println(iSO2);
-		return (Countries) Country.get(Country);
-
-	}
-	
-	public static int sizeCountry(JSONObject sz) {
-		return sz.size();
-	}
-	
-	
-	public static Set<Countries> addCountries(HashSet<Countries> w, JSONObject object){
-		for (int i=0;  i<sizeCountry(object); i++) {
-			w.add(parseCountryObject(object));
-		}
-		return w;
-	}
-		//Iterator<Countries> it=world.iterator();
-		//while(it.hasNext()) {
-		//world.add(new Countries((String) object.get("Country"), (String) object.get("Slug"), (String) object.get("ISO2")));
-		//e=it.next();
-		//}
-		//return world;
-		//return world;;
 		
-	//}
 
-			}
+	}
+
+			} 
 

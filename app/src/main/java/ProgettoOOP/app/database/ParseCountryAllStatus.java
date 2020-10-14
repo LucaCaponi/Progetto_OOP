@@ -44,52 +44,39 @@ public class ParseCountryAllStatus {
 	         
 	        //Get countryallstatus Country
 	        String Country = (String) countryallstatus.get("Country");    
-	       System.out.println(Country);
 	         
 	        //Get countryallstatus CountryCode
 	        String CountryCode = (String) countryallstatus.get("CountryCode");  
-	        System.out.println(CountryCode);
 	         
 	        //Get countryallstatus Province
 	        String Province = (String) countryallstatus.get("Province");    
-	        System.out.println(Province);
 	        
 	        //Get countryallstatus City
 	        String City = (String) countryallstatus.get("City");    
-	       System.out.println(City);
 	         
 	        //Get countryallstatus CityCode
 	        String CityCode = (String) countryallstatus.get("CityCode");  
-	       System.out.println(CityCode);
 	         
 	        //Get countryallstatus Lat
 	        double Lat = Double.parseDouble((String) countryallstatus.get("Lat"));    
-	        System.out.println(Lat);
+	        
 	        //Get countryallstatus Lon
 	        double Lon = Double.parseDouble((String) countryallstatus.get("Lon"));    
-	       System.out.println(Lon);
 	         
-	        
 	        //Get countryallstatus Confirmed
 	        long Confirmed = (long) countryallstatus.get("Confirmed");  
-	        System.out.println(Confirmed);
 	         
 	        //Get countryallstatus Deaths
 	        long Deaths = (long) countryallstatus.get("Deaths");  
-	        System.out.println(Deaths);
 	        
 	        //Get countryallstatus Recovered
 	        long Recovered = (long) countryallstatus.get("Recovered");  
-	       System.out.println(Recovered);
 	         
 	        //Get countryallstatus Active
 	        long Active = (long) countryallstatus.get("Active");  
-	        System.out.println(Active);
-	         
 	     
 	        //Get countryallstatus Date
 	        String Date = (String) countryallstatus.get("Date");    
-	        System.out.println(Date);
 	        
 	    }
 
