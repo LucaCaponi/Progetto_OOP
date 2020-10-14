@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
+//import ProgettoOOP.app.model.Countries;
+
 
 public class DatabaseCountryAllStatus {
 	private static String nomeurl= "https://api.covid19api.com/live/country/";

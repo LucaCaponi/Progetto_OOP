@@ -1,8 +1,7 @@
 package ProgettoOOP.app.service;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -12,46 +11,39 @@ import ProgettoOOP.app.model.Countries;
 
 @Service
 public class CountryServiceImpl implements CountryService {
-private static Map<String, Countries> countryRepo= new HashMap<>();
+private static Set<Countries> world= new HashSet<>();
 
 public CountryServiceImpl() {
 
-Countries nation= new Countries(null, null, null);
-nation.setISO2("IT");
-nation.setCountry("Italy");
-nation.setSlug("italy");
-countryRepo.put(nation.getISO2(), nation);
+Countries nation = new Countries("Italy", "italy", "IT");
+//nation.setCountry("Italy");
+//nation.setSlug("italy");
+//nation.setISO2("IT");
+world.add(nation);
 }
 
+@SuppressWarnings("unlikely-arg-type")
 @Override
 public void InsertCountry(Countries country) {
 	// TODO Auto-generated method stub
-	if (countryRepo.containsKey(country.getISO2())) {
+	if (world.contains(country.getISO2())) {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Existing ISO2...");
 	}
-countryRepo.put(country.getISO2(), country);
-}
-
-@Override
-public void UpdateCountry(String ISO2, Countries country) {
-	// TODO Auto-generated method stub
-	countryRepo.remove(ISO2);
-	country.setISO2(ISO2);
-	countryRepo.put(ISO2, country);
-	
+world.add(country);
 }
 
 
+@SuppressWarnings("unlikely-arg-type")
 @Override
 public void DeleteCountry(String ISO2) {
 	// TODO Auto-generated method stub
-	countryRepo.remove(ISO2);
+	world.remove(ISO2);
 }
 
 @Override
-public Collection<Countries> selectCountries() {
+public Set<Countries> selectCountries() {
 	// TODO Auto-generated method stub
-	return countryRepo.values();
+	return world;
 }
 
 }
