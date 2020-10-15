@@ -14,6 +14,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.CountryAllStatus;
+import ProgettoOOP.app.model.Linking;
 
 public class ParseCountries extends Countries{	
 
@@ -52,6 +54,8 @@ public class ParseCountries extends Countries{
 
 		// Get country Country
 		String country = (String) Country.get("Country");
+		System.out.println(country);
+	
 		
 		// Get country Slug
 		String slug = (String) Country.get("Slug");
@@ -61,6 +65,14 @@ public class ParseCountries extends Countries{
 		
 
 	}
+	
+	public void controlVerify(Countries verifycountry, JSONObject verifyobject) {
+		CountryAllStatus verifyall=new CountryAllStatus();
+		parseCountryObject(verifyobject);
+		if(verifycountry.equals(verifyobject)==true) {
+		Linking.controlClassify(verifycountry, verifyall);
+		}
+		}
 
 			} 
 
