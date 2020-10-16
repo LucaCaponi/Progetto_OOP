@@ -1,9 +1,18 @@
 package ProgettoOOP.app.exception;
 
-public class Nofile extends ExceptionPrincipal {
+/**
+ * Eccezione lanciata se il file JSON da richiamare non esiste
+ */
+
+public class Nofile extends ExceptionAbstract {
 	
-	@SuppressWarnings("unused")
-	private static final long serialversionUID = 1L;
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Ottiene il messaggio da stampare
+	 *
+	 * @return String
+	 */
 	
 	@Override
 	public String getMessage() {

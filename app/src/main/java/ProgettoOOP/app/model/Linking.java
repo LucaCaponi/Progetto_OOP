@@ -46,7 +46,6 @@ createObject(controlcountry, controlall);
 }
 
 public static void createObject(Countries createcountry,CountryAllStatus createall) {	
-	Linking link=new Linking(NameCountry, ISOcode, SumConfirmed);
 NameCountry=createcountry.getCountry();
 ISOcode=createcountry.getISO2();
 SumConfirmed=sum(createall.getConfirmed());

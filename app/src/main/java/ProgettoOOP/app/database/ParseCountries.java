@@ -54,9 +54,8 @@ public class ParseCountries extends Countries{
 
 		// Get country Country
 		String country = (String) Country.get("Country");
-		System.out.println(country);
+		//System.out.println(country);
 	
-		
 		// Get country Slug
 		String slug = (String) Country.get("Slug");
 		

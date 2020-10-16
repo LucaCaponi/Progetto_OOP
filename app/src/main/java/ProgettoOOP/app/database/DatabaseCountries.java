@@ -9,7 +9,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-
 public class DatabaseCountries {
 
 	public static String DownloadDataCountries() throws IOException {
@@ -45,5 +44,10 @@ public class DatabaseCountries {
 			outputLine = outputLine + inputLine;
 		in.close();
 		return outputLine;
+		
 	}
+
+	
+	
 }
+
