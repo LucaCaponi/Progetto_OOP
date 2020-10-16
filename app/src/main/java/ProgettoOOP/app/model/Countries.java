@@ -8,8 +8,10 @@ public class Countries {
 		public Countries(String country, String slug, String iSO2) {
 			this.Country = country;
 			this.Slug = slug;
-			this.ISO2 = iSO2;
+		    this.ISO2 = iSO2;
 		}
+
+
 
 		public String getCountry() {
 			return Country;

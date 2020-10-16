@@ -44,6 +44,7 @@ public class ParseCountryAllStatus {
 	         
 	        //Get countryallstatus Country
 	        String Country = (String) countryallstatus.get("Country");    
+
 	         
 	        //Get countryallstatus CountryCode
 	        String CountryCode = (String) countryallstatus.get("CountryCode");  

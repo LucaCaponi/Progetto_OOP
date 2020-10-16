@@ -14,6 +14,23 @@ private int Recovered;
 private int Active;
 private String Date;
 
+
+public CountryAllStatus(String country, String countryCode, String province, String city, String cityCode, double lat,
+		double lon, int confirmed, int deaths, int recovered, int active, String date) {
+	this.Country = country;
+	this.CountryCode = countryCode;
+	this.Province = province;
+	this.City = city;
+	this.CityCode = cityCode;
+	this.Lat = lat;
+	this.Lon = lon;
+	this.Confirmed = confirmed;
+	this.Deaths = deaths;
+	this.Recovered = recovered;
+	this.Active = active;
+	this.Date = date;
+}
+
 public String getCountry() {
 	return Country;
 }

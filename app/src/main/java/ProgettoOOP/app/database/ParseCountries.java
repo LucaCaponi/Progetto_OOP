@@ -13,16 +13,17 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import ProgettoOOP.app.exception.NotValidCountry;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 import ProgettoOOP.app.model.Linking;
 
-public class ParseCountries extends Countries{	
+public class ParseCountries{ //extends Countries{	
 
-	public ParseCountries(String country, String slug, String iSO2) {
-		super(country, slug, iSO2);
+	//public ParseCountries(String country, String slug, String iSO2) {
+		//super(country, slug, iSO2);
 		// TODO Auto-generated constructor stub
-	}
+	//}
 
 	@SuppressWarnings("unchecked")
 	public static void ParseDataCountries() throws IOException {
@@ -38,6 +39,7 @@ public class ParseCountries extends Countries{
 
 			// Iterate over Country array
 			CountryList.forEach(cntry -> parseCountryObject((JSONObject) cntry));
+			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -48,7 +50,7 @@ public class ParseCountries extends Countries{
 		}
 	}
 
-	public static void parseCountryObject(JSONObject Country) {
+	public static JSONObject parseCountryObject(JSONObject Country) {
 		// Get country object within list
 		// JSONObject countryObject = (JSONObject) Country.get("");
 
@@ -62,16 +64,11 @@ public class ParseCountries extends Countries{
 		// Get country ISO2
 		String iSO2 = (String) Country.get("ISO2");
 		
-
+return Country;
 	}
 	
-	public void controlVerify(Countries verifycountry, JSONObject verifyobject) {
-		CountryAllStatus verifyall=new CountryAllStatus();
-		parseCountryObject(verifyobject);
-		if(verifycountry.equals(verifyobject)==true) {
-		Linking.controlClassify(verifycountry, verifyall);
-		}
-		}
+	
 
+	
 			} 
 
