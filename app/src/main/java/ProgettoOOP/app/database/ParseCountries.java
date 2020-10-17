@@ -36,6 +36,10 @@ public final class ParseCountries{ //extends Countries{
 
 			// Iterate over Country array
 			CountryList.forEach(cntry -> parseCountryObject((JSONObject) cntry));
+			/*JSONObject cntry=new JSONObject();
+			for(int i=0; i<CountryList.size(); i++) {
+			cntry = (JSONObject) parseCountryObject((JSONObject) cntry.get(i));
+			}*/
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -55,7 +59,7 @@ public final class ParseCountries{ //extends Countries{
 		String slug;
 		String iSO2;
  
-		 country= (String) Country.get("Country");
+		country= (String) Country.get("Country");
 		//System.out.println(country);
 	
 		// Get country Slug

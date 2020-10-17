@@ -2,6 +2,7 @@ package ProgettoOOP.app.model;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,17 +91,20 @@ public final class World {
 	
 	//Verifica se i dati inseriti sono uguali a quelli del JSONObject
 	public static void Verify() {
-JSONObject count=new JSONObject();
 		CountryAllStatus a=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
-		if(world.equals(ParseCountries.parseCountryObject(count))==false) {
-			throw new Nofile();
+		JSONObject cntryfull = (JSONObject) ParseCountries.parseCountryObject(null);
+		JSONObject cntryempty = new JSONObject();
+		int i=0;
+		while(i<((JSONObject) ParseCountries.parseCountryObject(cntryfull)).size()||world.equals(ParseCountries.parseCountryObject(cntryempty))==false) 
+		{
+		cntryempty = (JSONObject) ParseCountries.parseCountryObject((JSONObject) cntryfull.get(i));
+		i++;
 			//if(((Countries) world).getCountry()==((CountryAllStatus) all).getCountry()==true && 
 				//	((Countries) world).getISO2()==((CountryAllStatus) all).getCountryCode()==true) {
-					//createObject(w, a);	
+					//createObject(w, a);
 		//			}
 		}
-		else throw new NotValidCountry();
-		
+		throw new NotValidCountry();
 	}
 	
 	public static void createObject(Countries createcountry,CountryAllStatus createall) {	
