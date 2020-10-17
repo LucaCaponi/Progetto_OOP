@@ -3,11 +3,8 @@ package ProgettoOOP.app.service;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
-//import java.util.HashSet;
 import java.util.Map;
-//import java.util.Set;
 
-import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,12 +15,12 @@ import ProgettoOOP.app.database.ParseCountries;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 import ProgettoOOP.app.model.Linking;
+import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
 
 @Service
 public class CountryServiceImpl implements CountryService {
-private static Map<String, Countries> world= new HashMap<>();
 private static Map<String, CountryAllStatus> all= new HashMap<>();
 
 
@@ -33,8 +30,8 @@ Countries nation = new Countries(null, null, null);
 nation.setCountry("Italy");
 nation.setSlug("italy");
 nation.setISO2("IT");
-world.put(nation.getISO2(), nation);
-
+World.setworld(nation);
+all.put(All.getCityCode(), All);
 }
 
 @Override
@@ -50,25 +47,25 @@ public String totalStatusCountries(String from, String to) throws IOException {
 }
 
 @Override
-public void InsertCountry(Countries country, CountryAllStatus status) throws Exception {
-	// TODO Auto-generated method stub
-	
-		if(country.equals(ParseCountries.parseCountryObject(null))==true) {
-		Linking.controlClassify(country, status);
-		}
-		else throw new NotValidCountry();
-	if (world.containsKey(country.getISO2())) {
+public void InsertCountry(Countries country) throws Exception {
+	    Map<String, Countries> world= World.getworld();
+		//if(world.equals(ParseCountries.parseCountryObject(null))==true) {
+		//Linking.controlClassify(null, null);
+		//}
+		//else throw new NotValidCountry();
+		if (world.containsKey(country.getISO2())) {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Existing ISO2...");
 	}
-world.put(country.getISO2(), country);
+World.setworld(country);
 }
 
 @Override
 public void DeleteCountry(String ISO2) {
-	world.remove(ISO2);
+	World.deleteworld(ISO2);
 }
 
 public Collection<Countries> gettingCountries() {
+	Map<String, Countries> world= World.getworld();
 	return world.values();
 }
 

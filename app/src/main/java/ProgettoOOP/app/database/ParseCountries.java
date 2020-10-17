@@ -13,11 +13,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import ProgettoOOP.app.exception.NotValidCountry;
-import ProgettoOOP.app.model.Countries;
-import ProgettoOOP.app.model.CountryAllStatus;
-import ProgettoOOP.app.model.Linking;
-
 public class ParseCountries{ //extends Countries{	
 
 	//public ParseCountries(String country, String slug, String iSO2) {
@@ -39,7 +34,6 @@ public class ParseCountries{ //extends Countries{
 
 			// Iterate over Country array
 			CountryList.forEach(cntry -> parseCountryObject((JSONObject) cntry));
-			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -48,6 +42,7 @@ public class ParseCountries{ //extends Countries{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public static JSONObject parseCountryObject(JSONObject Country) {
@@ -67,8 +62,5 @@ public class ParseCountries{ //extends Countries{
 return Country;
 	}
 	
-	
-
-	
-			} 
+} 
 

@@ -38,7 +38,7 @@ public class restController{
 	}
 	
 	@RequestMapping(value = "/countries", method = RequestMethod.POST) 
-	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country)
+	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception
 	{	
 		countryService.InsertCountry(country);
 		return new ResponseEntity<>("Country is created successfully", HttpStatus.CREATED);

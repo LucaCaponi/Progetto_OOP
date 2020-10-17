@@ -8,7 +8,7 @@ import ProgettoOOP.app.model.CountryAllStatus;
 
 public interface CountryService {
 	
-	public abstract void InsertCountry(Countries country, CountryAllStatus status) throws Exception;
+	public abstract void InsertCountry(Countries country) throws Exception;
 	public abstract void DeleteCountry(String ISO2);
 	public abstract String totalCountries() throws IOException;
 	public abstract String totalStatusCountries(String from, String to) throws IOException;

@@ -9,13 +9,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.World;
 
 
 public class DatabaseCountryAllStatus {
 	private static String nomeurl= "https://api.covid19api.com/country/";
 public static String DownloadDataCountryAllStatus(String from, String to) throws IOException {
-	    Countries database = new Countries("Italy", "italy", "IT");
 	
 	/*
 		int readerCountryAllStatus = 0;
@@ -23,7 +22,7 @@ public static String DownloadDataCountryAllStatus(String from, String to) throws
 
 		FileOutputStream FSCountryAllStatus = new FileOutputStream(CountryAllStatus);
 		
-		URL countryallstatusURL = new URL(nomeurl+"germany");
+		URL countryallstatusURL = new URL(nomeurl+World.getlastslug()+"?from="+from+"&to="+to);
 
 		URLConnection URLConn = countryallstatusURL.openConnection();
 
@@ -38,7 +37,9 @@ public static String DownloadDataCountryAllStatus(String from, String to) throws
 		FSCountryAllStatus.close();
 		*/
 	
-		URL oracle = new URL(nomeurl+database.getSlug()+"?from="+from+"&to="+to);
+ 	    String out = null;
+		try { 
+		URL oracle = new URL(nomeurl+World.getlastslug()+"?from="+from+"&to="+to);
 		URLConnection URLConn = oracle.openConnection();
 		
 		BufferedReader in = new BufferedReader(new InputStreamReader(URLConn.getInputStream()));
@@ -49,7 +50,11 @@ public static String DownloadDataCountryAllStatus(String from, String to) throws
 		while ((inputLine = in.readLine()) != null)
 			outputLine = outputLine + inputLine;
 		in.close();
-		return outputLine;
-		
+		out=outputLine;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return out;
 	}
 }
