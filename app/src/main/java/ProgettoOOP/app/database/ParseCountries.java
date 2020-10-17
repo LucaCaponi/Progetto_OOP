@@ -13,7 +13,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class ParseCountries{ //extends Countries{	
+import ProgettoOOP.app.model.Countries;
+
+public final class ParseCountries{ //extends Countries{	
 
 	//public ParseCountries(String country, String slug, String iSO2) {
 		//super(country, slug, iSO2);
@@ -45,21 +47,24 @@ public class ParseCountries{ //extends Countries{
 
 	}
 
-	public static JSONObject parseCountryObject(JSONObject Country) {
-		// Get country object within list
-		// JSONObject countryObject = (JSONObject) Country.get("");
-
+	public static Object parseCountryObject(JSONObject Country) {
+		//Get country object within list
+		//JSONObject countryObject = (JSONObject) Country.get("");
 		// Get country Country
-		String country = (String) Country.get("Country");
+		String country;
+		String slug;
+		String iSO2;
+ 
+		 country= (String) Country.get("Country");
 		//System.out.println(country);
 	
 		// Get country Slug
-		String slug = (String) Country.get("Slug");
+		slug = (String) Country.get("Slug");
 		
 		// Get country ISO2
-		String iSO2 = (String) Country.get("ISO2");
-		
-return Country;
+		iSO2 = (String) Country.get("ISO2");	
+		Countries state=new Countries(country, slug, iSO2);
+		return state;
 	}
 	
 } 

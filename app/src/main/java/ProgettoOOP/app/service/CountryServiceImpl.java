@@ -14,14 +14,12 @@ import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.database.ParseCountries;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
-import ProgettoOOP.app.model.Linking;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
 
 @Service
 public class CountryServiceImpl implements CountryService {
-private static Map<String, CountryAllStatus> all= new HashMap<>();
 
 
 public CountryServiceImpl() {
@@ -31,7 +29,7 @@ nation.setCountry("Italy");
 nation.setSlug("italy");
 nation.setISO2("IT");
 World.setworld(nation);
-all.put(All.getCityCode(), All);
+World.setall(All);
 }
 
 @Override
@@ -49,10 +47,7 @@ public String totalStatusCountries(String from, String to) throws IOException {
 @Override
 public void InsertCountry(Countries country) throws Exception {
 	    Map<String, Countries> world= World.getworld();
-		//if(world.equals(ParseCountries.parseCountryObject(null))==true) {
-		//Linking.controlClassify(null, null);
-		//}
-		//else throw new NotValidCountry();
+	    World.Verify();
 		if (world.containsKey(country.getISO2())) {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Existing ISO2...");
 	}
@@ -70,6 +65,7 @@ public Collection<Countries> gettingCountries() {
 }
 
 public Collection<CountryAllStatus> gettingAll() {
+	Map<String, CountryAllStatus> all= World.getall();
 	return all.values();
 }
 
