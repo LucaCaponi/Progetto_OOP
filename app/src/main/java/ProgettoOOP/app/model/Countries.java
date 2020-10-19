@@ -1,6 +1,6 @@
 package ProgettoOOP.app.model;
 
-public class Countries {
+public final class Countries {
 		private String Country;
 		private String Slug;
 		private String ISO2;

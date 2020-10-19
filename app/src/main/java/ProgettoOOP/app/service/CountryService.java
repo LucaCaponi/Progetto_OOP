@@ -3,6 +3,7 @@ package ProgettoOOP.app.service;
 import java.io.IOException;
 import java.util.Collection;
 
+import ProgettoOOP.app.model.Confirmed;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 
@@ -14,5 +15,6 @@ public interface CountryService {
 	public abstract String totalStatusCountries(String from, String to) throws IOException;
 	public abstract Collection<Countries> gettingCountries();
 	public abstract Collection<CountryAllStatus> gettingAll();
+	public abstract Collection<Confirmed> gettingConfirmed();
 
 }

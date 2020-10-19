@@ -19,32 +19,7 @@ import ProgettoOOP.app.exception.NotValidCountry;
 public final class World {
 	private static Map<String, Countries> world= new LinkedHashMap<>();
 	private static Map<String, CountryAllStatus> all= new LinkedHashMap<>();
-	private static String NameCountry;
-	private static String ISOcode;
-	private static int SumConfirmed=0;
-	public String getNameCountry() {
-		return NameCountry;
-	}
-
-	public void setNameCountry(String nameCountry) {
-	NameCountry = nameCountry;
-	}
-
-	public String getISOcode() {
-		return ISOcode;
-	}
-
-	public void setISOcode(String iSOcode) {
-		ISOcode = iSOcode;
-	}
-
-	public int getSumConfirmed() {
-		return SumConfirmed;
-	}
-
-	public void setSumConfirmed(int sumConfirmed) {
-		SumConfirmed = sumConfirmed;
-	}
+	private static Map<String, Confirmed> conf= new LinkedHashMap<>();
 
 	public static Map<String, CountryAllStatus> getall() {
 		return all;
@@ -65,6 +40,14 @@ public final class World {
 	
 	public static void deleteworld(String ISO2) {
 		world.remove(ISO2);
+	}
+	
+	public static Map<String, Confirmed> getconf() {
+		return conf;
+	}
+	
+	public static void setconf(Confirmed cases) {
+		conf.put(cases.getISOcode(), cases);
 	}
 	
 	public static String getlastslug() {
@@ -90,7 +73,7 @@ public final class World {
 	}
 	
 	//Verifica se i dati inseriti sono uguali a quelli del JSONObject
-	public static void Verify() {
+	/*public static void Verify() {
 		CountryAllStatus a=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
 		JSONObject cntryfull = (JSONObject) ParseCountries.parseCountryObject(null);
 		JSONObject cntryempty = new JSONObject();
@@ -105,18 +88,18 @@ public final class World {
 		//			}
 		}
 		throw new NotValidCountry();
-	}
+	}*/
 	
-	public static void createObject(Countries createcountry,CountryAllStatus createall) {	
-		NameCountry=createcountry.getCountry();
-		ISOcode=createcountry.getISO2();
-		SumConfirmed=sum(createall.getConfirmed());
-
-}
-	public static int sum(int a) {
-		int s=0;	
-		s+=a;
-		return s;
-		}
+	public static Confirmed Association() {
+		Countries countr = new Countries(null, null, null);
+		CountryAllStatus countrall = new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
+		String name=countr.getCountry();
+		String code=countr.getISO2();
+		int number=countrall.getConfirmed();
+		Confirmed CountriesConfirmed = new Confirmed(name, code, number);
+		//ISOcode=createcountry.getISO2();
+		//SumConfirmed=sum(createall.getConfirmed());
+		return CountriesConfirmed;
+	}
 
 }

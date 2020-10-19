@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.database.ParseCountries;
+import ProgettoOOP.app.model.Confirmed;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 import ProgettoOOP.app.model.World;
@@ -25,11 +26,13 @@ public class CountryServiceImpl implements CountryService {
 public CountryServiceImpl() {
 CountryAllStatus All=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
 Countries nation = new Countries(null, null, null);
+Confirmed cases = new Confirmed(null, null, 0);
 nation.setCountry("Italy");
 nation.setSlug("italy");
 nation.setISO2("IT");
 World.setworld(nation);
 World.setall(All);
+World.setconf(cases);
 }
 
 @Override
@@ -47,7 +50,7 @@ public String totalStatusCountries(String from, String to) throws IOException {
 @Override
 public void InsertCountry(Countries country) throws Exception {
 	    Map<String, Countries> world= World.getworld();
-	    World.Verify();
+	    //World.Verify();
 		if (world.containsKey(country.getISO2())) {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Existing ISO2...");
 	}
@@ -69,5 +72,10 @@ public Collection<CountryAllStatus> gettingAll() {
 	return all.values();
 }
 
+public Collection<Confirmed> gettingConfirmed() {
+	World.Association();
+	Map<String, Confirmed> conf= World.getconf();
+	return conf.values();
+}
 
 }
