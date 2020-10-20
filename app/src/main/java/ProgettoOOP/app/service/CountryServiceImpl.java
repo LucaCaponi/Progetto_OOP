@@ -2,22 +2,19 @@ package ProgettoOOP.app.service;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
-import ProgettoOOP.app.database.ParseCountries;
 import ProgettoOOP.app.model.Confirmed;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 import ProgettoOOP.app.model.World;
+import ProgettoOOP.app.model.Continents;
 import ProgettoOOP.app.exception.Nofile;
-import ProgettoOOP.app.exception.NotValidCountry;
+
 
 @Service
 public class CountryServiceImpl implements CountryService {
@@ -25,13 +22,13 @@ public class CountryServiceImpl implements CountryService {
 
 public CountryServiceImpl() {
 CountryAllStatus All=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
-Countries nation = new Countries(null, null, null);
-Confirmed cases = new Confirmed(null, null, 0);
+Countries nation = new Countries(null , null, null);
 nation.setCountry("Italy");
 nation.setSlug("italy");
 nation.setISO2("IT");
 World.setworld(nation);
 World.setall(All);
+Confirmed cases = new Confirmed(nation.getCountry(), nation.getSlug(), nation.getISO2(), 0);
 World.setconf(cases);
 }
 
@@ -73,9 +70,12 @@ public Collection<CountryAllStatus> gettingAll() {
 }
 
 public Collection<Confirmed> gettingConfirmed() {
-	World.Association();
+	//World.Association();
 	Map<String, Confirmed> conf= World.getconf();
 	return conf.values();
 }
 
+public String yourcontinent() {
+return Continents.returnContinent();	
+}
 }

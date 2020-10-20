@@ -1,7 +1,12 @@
 package ProgettoOOP.app.model;
 
 public class Continents {
-	String[] Europe= {
+	
+
+
+
+
+	private static String[] Europe= {
 			"ALA Aland Islands",
 			"Albania",
 			"Andorra",
@@ -58,7 +63,7 @@ public class Continents {
 
 	};
 	
-	String[] Asia= {
+	private static String[] Asia= {
 			"Afghanistan",
 			"Armenia",
 			"Azerbaijan",
@@ -113,7 +118,7 @@ public class Continents {
 			"Yemen"
 	};
 
-	String[] NorthAmerica= {
+	private static String[] NorthAmerica= {
 			"British Virgin Islands",
 			"Anguilla",
 			"Antigua and Barbuda",
@@ -157,7 +162,7 @@ public class Continents {
 			
 	};
 	
-	String[] SouthAmerica= {
+	private static String[] SouthAmerica= {
 			"Guyana",
 			"Argentina",
 			"Bolivia",
@@ -177,7 +182,7 @@ public class Continents {
 			
 	};
 	
-	String[] Oceania= {
+	private static String[] Oceania= {
 			"American Samoa",
 			"Australia",
 			"Cook Islands",
@@ -208,7 +213,7 @@ public class Continents {
 
 	};
 	
-	String[] Africa= {
+	private static String[] Africa= {
 			"Algeria",
 			"Angola",
 			"Benin",
@@ -269,7 +274,7 @@ public class Continents {
 			"Zimbabwe"		
 	};
 	
-	String[] Antarctica={
+	private static String[] Antarctica={
 			"Antarctica",
 			"Bouvet Island",
 			"French Southern Territories",
@@ -280,4 +285,35 @@ public class Continents {
 	
 
 	
+public static String returnContinent() {
+	String continent = null;
+	World.getlastname();
+
+	for (String c : Europe) 
+	if (c.contains(World.getlastname())) continent="EUROPE";
+	
+	for (String c : Asia) 
+		if (c.contains(World.getlastname())) continent="ASIA";
+	
+	for (String c : Africa) 
+		if (c.contains(World.getlastname())) continent="AFRICA";
+	
+	for (String c : Oceania) 
+		if (c.contains(World.getlastname())) continent="OCEANIA";
+	
+	for (String c : NorthAmerica) 
+		if (c==World.getlastname()) continent="NORTH AMERICA";
+	
+	for (String c : SouthAmerica) 
+		if (c.contains(World.getlastname())) continent="SOUTH AMERICA";
+	
+	for (String c : Antarctica) 
+		if (c.contains(World.getlastname())) continent="ANTARCTICA";
+	
+	return continent;}
+
+	
 }
+
+
+

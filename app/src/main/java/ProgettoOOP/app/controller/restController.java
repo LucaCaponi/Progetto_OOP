@@ -41,7 +41,7 @@ public class restController{
 	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception
 	{	
 		countryService.InsertCountry(country);
-		return new ResponseEntity<>("Country is created successfully!", HttpStatus.CREATED);
+		return new ResponseEntity<>("Country is created successfully! The continent of the Country is "+countryService.yourcontinent(), HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
@@ -57,16 +57,10 @@ public class restController{
 		return new ResponseEntity<>("Country is deleted successfully!", HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/countriesforconfirmed", method = RequestMethod.POST) 
-	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country, @RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
-			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) throws Exception
-	{	
-		countryService.InsertCountry(country);
-		return new ResponseEntity<>("Now you can see the sum of confirmed!", HttpStatus.CREATED);
-	}
 	
-	@RequestMapping(value = "/getconfirmed", method = RequestMethod.GET) 
-	public ResponseEntity<Object> getconfirmed() throws Exception
+	@RequestMapping(value = "/confirmed", method = RequestMethod.GET) 
+	public ResponseEntity<Object> getconfirmed(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
+			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) throws Exception
 	{	
 		return new ResponseEntity<>(countryService.gettingConfirmed(), HttpStatus.OK);
 	}
