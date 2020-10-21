@@ -1,9 +1,8 @@
 package ProgettoOOP.app.model;
 
+
 public class Continents {
 	
-
-
 
 
 	private static String[] Europe= {
@@ -285,10 +284,9 @@ public class Continents {
 	
 
 	
-public static String returnContinent() {
-	String continent = null;
+public static String returnContinent() throws Exception {
+	String continent = "Not a Country";
 	World.getlastname();
-
 	for (String c : Europe) 
 	if (c.contains(World.getlastname())) continent="EUROPE";
 	
@@ -302,7 +300,7 @@ public static String returnContinent() {
 		if (c.contains(World.getlastname())) continent="OCEANIA";
 	
 	for (String c : NorthAmerica) 
-		if (c==World.getlastname()) continent="NORTH AMERICA";
+		if (c.contains(World.getlastname())) continent="NORTH AMERICA";
 	
 	for (String c : SouthAmerica) 
 		if (c.contains(World.getlastname())) continent="SOUTH AMERICA";

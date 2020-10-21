@@ -3,9 +3,7 @@ package ProgettoOOP.app.service;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.model.Confirmed;
@@ -13,7 +11,9 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.CountryAllStatus;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.model.Continents;
+import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.Nofile;
+import ProgettoOOP.app.exception.NotValidCountry;
 
 
 @Service
@@ -47,11 +47,11 @@ public String totalStatusCountries(String from, String to) throws IOException {
 @Override
 public void InsertCountry(Countries country) throws Exception {
 	    Map<String, Countries> world= World.getworld();
-	    //World.Verify();
-		if (world.containsKey(country.getISO2())) {
-		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Existing ISO2...");
-	}
-World.setworld(country);
+	    if (World.Verify(country)==false) {
+	    	 throw new NotValidCountry();}
+	    if (world.containsKey(country.getISO2())) {
+	    throw new ExistingISO2(); }
+	    World.setworld(country);
 }
 
 @Override
@@ -75,7 +75,7 @@ public Collection<Confirmed> gettingConfirmed() {
 	return conf.values();
 }
 
-public String yourcontinent() {
+public String yourcontinent() throws Exception {
 return Continents.returnContinent();	
 }
 }

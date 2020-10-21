@@ -16,6 +16,6 @@ public interface CountryService {
 	public abstract Collection<Countries> gettingCountries();
 	public abstract Collection<CountryAllStatus> gettingAll();
 	public abstract Collection<Confirmed> gettingConfirmed();
-	public abstract String yourcontinent(); 
+	public abstract String yourcontinent() throws Exception; 
 
 }
