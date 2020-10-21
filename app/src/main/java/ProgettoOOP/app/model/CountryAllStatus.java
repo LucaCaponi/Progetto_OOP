@@ -1,24 +1,24 @@
 package ProgettoOOP.app.model;
 
-public class CountryAllStatus {
+public class CountryAllStatus extends Countries {
 private String Country;
 private String CountryCode;
+private String slug;
 private String Province;
 private String City;
 private String CityCode;
 private double Lat;
 private double Lon;
-private int Confirmed;
-private int Deaths;
-private int Recovered;
-private int Active;
+private long Confirmed;
+private long Deaths;
+private long Recovered;
+private long Active;
 private String Date;
 
 
-public CountryAllStatus(String country, String countryCode, String province, String city, String cityCode, double lat,
-		double lon, int confirmed, int deaths, int recovered, int active, String date) {
-	this.Country = country;
-	this.CountryCode = countryCode;
+public CountryAllStatus(String country, String countryCode, String slug, String province, String city, String cityCode, double lat,
+		double lon, long confirmed, long deaths, long recovered, long active, String date) {
+	super(country, countryCode, slug);
 	this.Province = province;
 	this.City = city;
 	this.CityCode = cityCode;
@@ -31,6 +31,12 @@ public CountryAllStatus(String country, String countryCode, String province, Str
 	this.Date = date;
 }
 
+public String getSlug() {
+	return slug;
+}
+public void setSlug(String slug) {
+	this.slug = slug;
+}
 public String getCountry() {
 	return Country;
 }
@@ -73,28 +79,28 @@ public double getLon() {
 public void setLon(double lon) {
 	this.Lon = lon;
 }
-public int getConfirmed() {
+public long getConfirmed() {
 	return Confirmed;
 }
-public void setConfirmed(int confirmed) {
+public void setConfirmed(long confirmed) {
 	this.Confirmed = confirmed;
 }
-public int getDeaths() {
+public long getDeaths() {
 	return Deaths;
 }
-public void setDeaths(int deaths) {
+public void setDeaths(long deaths) {
 	this.Deaths = deaths;
 }
-public int getRecovered() {
+public long getRecovered() {
 	return Recovered;
 }
-public void setRecovered(int recovered) {
+public void setRecovered(long recovered) {
 	this.Recovered = recovered;
 }
-public int getActive() {
+public long getActive() {
 	return Active;
 }
-public void setActive(int active) {
+public void setActive(long active) {
 	this.Active = active;
 }
 public String getDate() {

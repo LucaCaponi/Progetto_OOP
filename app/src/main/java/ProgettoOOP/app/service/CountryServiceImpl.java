@@ -21,14 +21,14 @@ public class CountryServiceImpl implements CountryService {
 
 
 public CountryServiceImpl() {
-CountryAllStatus All=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
+CountryAllStatus All=new CountryAllStatus(null, null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
 Countries nation = new Countries(null , null, null);
 nation.setCountry("Italy");
 nation.setSlug("italy");
 nation.setISO2("IT");
 World.setworld(nation);
 World.setall(All);
-Confirmed cases = new Confirmed(nation.getCountry(), nation.getSlug(), nation.getISO2(), 0);
+Confirmed cases = new Confirmed(nation.getCountry(), nation.getISO2(), nation.getSlug(), 0);
 World.setconf(cases);
 }
 
@@ -52,6 +52,8 @@ public void InsertCountry(Countries country) throws Exception {
 	    if (world.containsKey(country.getISO2())) {
 	    throw new ExistingISO2(); }
 	    World.setworld(country);
+	    Confirmed cases = new Confirmed(country.getCountry(), country.getISO2(), country.getSlug(), World.getlastconfirmed());
+	    World.setconf(cases);
 }
 
 @Override

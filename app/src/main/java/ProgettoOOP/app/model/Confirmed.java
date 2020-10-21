@@ -1,28 +1,28 @@
 package ProgettoOOP.app.model;
 
-public class Confirmed extends Countries{
-	private int SumConfirmed=0;
+public class Confirmed extends Countries {
+	private long SumConfirmed=0;
 	
 	//Countries c;
 	//CountryAllStatus a=new CountryAllStatus(null, null, null, null, null, 0, 0, 0, 0, 0, 0, null);
 	
-	public Confirmed(String name,String slug, String code, int SumConfirmed) {
+	public Confirmed(String name,String slug, String code, long sumConfirmed) {
 		super(name,slug,code);
-		this.SumConfirmed=SumConfirmed;
+		this.SumConfirmed=sumConfirmed;
 	}
 
 	
-	public int getSumConfirmed() {
+	public long getSumConfirmed() {
 		return SumConfirmed;
 	}
 
-	public void setSumConfirmed(int number) {
-		SumConfirmed = number;
+	public void setSumConfirmed(long sumConfirmed) {
+		SumConfirmed = sumConfirmed;
 	}
 
 	
-	public static int sum(int a) {
-		int s=0;	
+	public static long sum(long a) {
+		long s=0;	
 		s+=a;
 		return s;
 	}

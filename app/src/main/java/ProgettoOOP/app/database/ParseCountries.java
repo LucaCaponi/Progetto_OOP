@@ -27,7 +27,7 @@ public final class ParseCountries{
 			Object obj = jsonParser.parse(reader);
 
 			JSONArray CountryList = (JSONArray) obj;
-			System.out.println(CountryList);
+			//System.out.println(CountryList);
 		
 	 for (int i=0; i<CountryList.size(); i++) {
 		 JSONObject countryObject = (JSONObject) CountryList.get(i);
