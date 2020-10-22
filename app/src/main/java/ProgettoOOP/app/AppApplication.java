@@ -19,7 +19,6 @@ public class AppApplication {
 	DatabaseCountries.DownloadDataCountries();
 	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(null, null);
 	ParseCountries.ParseDataCountries();
-	ParseCountryAllStatus.ParseDataCountryAllStatus();
 		SpringApplication.run(AppApplication.class, args);
 	}
 
