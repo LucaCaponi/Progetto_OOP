@@ -18,57 +18,95 @@ import ProgettoOOP.app.exception.ExceptionPrincipal;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.service.CountryService;
 
+/**
+ * 
+ * Il restController serve per gestire le chiamate GET e POST in Postman
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ */
+
 @RestController
-public class restController{
-	
+public class restController {
+
+	/** 
+	 * 
+	 * @Autowired lancia automaticamente il costruttore all'avvio di Spring 
+	 */
 	@Autowired
 	CountryService countryService;
 	
+	/**
+	 * 
+	 * @return Ritorna tutto il contenuto presente nell'API "Get Countries"
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/totalcountries", method = RequestMethod.GET)
-	public ResponseEntity<Object> gettotalCountries() throws Exception
-	{	
+	public ResponseEntity<Object> gettotalCountries() throws Exception {
 		return new ResponseEntity<>(countryService.totalCountries(), HttpStatus.OK);
 	}
-	
+
+	/**
+	 * 
+	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una finale in base a ciò che vuole ottenere
+	 * @return Ritorna la differenza tra i confermati, i decessi, i ricoverati e gli attuali positivi 
+	 *         tra la data finale inserita e quella iniziale
+	 * @throws Exception      
+	 */
 	@RequestMapping(value = "/totalcountryallstatus", method = RequestMethod.GET)
-	public ResponseEntity<Object> gettotalCountryAllStatus(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
-			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) throws Exception 
-	{	
+	public ResponseEntity<Object> gettotalCountryAllStatus(
+			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
+			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
 		return new ResponseEntity<>(countryService.totalStatusCountries(from, to), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/countries", method = RequestMethod.POST) 
-	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception
-	{	
+	/**
+	 * 
+	 * @body L'utente inserisce una nazione alla volta in formato JSON specificando il "country", lo "slug" e l"iSO2"
+	 * @return Se la nazione esiste ritorna un messaggio di caricamento avvenuto contenente anche il continente
+	 *         a cui appartiene, altrimenti lancia l'eccezione "NotValidCountry". Viene, invece, lanciata l'eccezione
+	 *         "Existing ISO2" se il paese che si desidera inserire è stato già inserito dall'utente
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/countries", method = RequestMethod.POST)
+	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception {
 		countryService.InsertCountry(country);
-		return new ResponseEntity<>("Country is created successfully! The continent of the Country is "+countryService.yourcontinent(), HttpStatus.CREATED);
+		return new ResponseEntity<>(
+				"Country is created successfully! The continent of the Country is " + countryService.yourcontinent(),
+				HttpStatus.CREATED);
 	}
 	
+	/**
+	 * 
+	 * @return Ritorna tutte le nazioni inserite precedentemente dall'utente nel body con la POST
+	 */
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
-	public ResponseEntity<Object> getCountries() throws Exception
-	{	
+	public ResponseEntity<Object> getCountries() throws Exception {
 		return new ResponseEntity<>(countryService.gettingCountries(), HttpStatus.OK);
 	}
 	
+	/**
+	 * 
+	 * @PathVariable L'utente inserisce nella rotta in Postman l'ISO2 del paese che vuole 
+	 *               eliminare dalla sua lista
+	 * @return Ritorna un messaggio di avvenuta cancellazione
+	 */
 	@RequestMapping(value = "/countries/{ISO2}", method = RequestMethod.DELETE)
-	public ResponseEntity<Object> delete(@PathVariable("ISO2") String ISO2)
-	{	
+	public ResponseEntity<Object> delete(@PathVariable("ISO2") String ISO2) {
 		countryService.DeleteCountry(ISO2);
 		return new ResponseEntity<>("Country is deleted successfully!", HttpStatus.OK);
 	}
 	
-	
-	@RequestMapping(value = "/confirmed", method = RequestMethod.GET) 
-	public ResponseEntity<Object> getconfirmed(@RequestParam(name="from", defaultValue="2020-03-01T00:00:00Z") String from,
-			@RequestParam(name="to", defaultValue="2020-04-01T00:00:00Z") String to) throws Exception
-	{	
-		return new ResponseEntity<>(countryService.gettingConfirmed(), HttpStatus.OK);
-	}
-	
+	/**
+	 * Metodo per gestire eccezioni lanciate dai metodi dei filtri
+	 *
+	 * @return Ritorna un oggetto di tipo ExceptionError
+	 */
 	@ExceptionHandler(ExceptionAbstract.class)
 	public ResponseEntity<Object> handleExceptionAbstract(ExceptionAbstract e) {
-		ExceptionPrincipal error = new ExceptionPrincipal(Calendar.getInstance() , HttpStatus.BAD_REQUEST , e.getClass().getCanonicalName() , e.getMessage());
-		return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
+		ExceptionPrincipal error = new ExceptionPrincipal(Calendar.getInstance(), HttpStatus.BAD_REQUEST,
+				e.getClass().getCanonicalName(), e.getMessage());
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
-	
+
 }

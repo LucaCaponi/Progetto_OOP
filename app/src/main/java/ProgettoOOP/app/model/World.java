@@ -8,7 +8,10 @@ package ProgettoOOP.app.model;
  * che permette il caricamento dei paesi inseriti tramite Postman 
  * all'interno di una memoria dinamica
  */
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import ProgettoOOP.app.database.ParseCountries;
@@ -27,6 +30,23 @@ public final class World {
 	public static void deleteworld(String ISO2) {
 		world.remove(ISO2);
 	}
+	
+	public static String getlastname() {
+ 		String lastcountry = null;
+ 		try {
+ 			List<Countries> CountriesArray = new ArrayList<Countries>();
+ 			System.out.println(CountriesArray.size());
+ 			for (String key : world.keySet()) {
+ 				System.out.println("key : " + key);
+ 				System.out.println("value : " + world.get(key));
+ 				CountriesArray.add(world.get(key));
+ 			}
+ 			lastcountry = CountriesArray.get(CountriesArray.size() - 1).getCountry();
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 		return lastcountry;
+ 	}
 
 /**
  * 

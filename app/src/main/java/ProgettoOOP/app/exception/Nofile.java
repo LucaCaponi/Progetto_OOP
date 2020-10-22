@@ -1,7 +1,11 @@
 package ProgettoOOP.app.exception;
 
 /**
+ * 
  * Eccezione lanciata se il file JSON da richiamare non esiste
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
  */
 
 public class Nofile extends ExceptionAbstract {

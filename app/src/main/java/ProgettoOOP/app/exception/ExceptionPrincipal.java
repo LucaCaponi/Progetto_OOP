@@ -5,7 +5,10 @@ import java.util.Calendar;
 import org.springframework.http.HttpStatus;
 
 /**
- * Modello degli errori dovuti ad eccezioni 
+ *  Classe che funziona da modello per gli errori dovuti ad eccezioni 
+ *  
+ *  @author Federico Catalini
+ *  @author Luca Caponi
  */
 public class ExceptionPrincipal {
 	
@@ -17,10 +20,10 @@ public class ExceptionPrincipal {
 	/**
 	 * Costruttore di ExceptionError con parametri
 	 *
-	 * @param date orario della richiesta
-	 * @param httpStatus 
-	 * @param exception l'eccezione generata
-	 * @param message messaggio dell'eccezione
+	 * @param date: restituisce all'utente la data e l'orario della richiesta
+	 * @param HttpStatus: status code che informa l'utente se una specifica richiesta HTTP è stata completata correttamente
+	 * @param exception: informa l'utente su quale eccezione è stata generata
+	 * @param message: messaggio dell'eccezione
 	 */
 	
 	public ExceptionPrincipal(Calendar date, HttpStatus httpStatus, String exception, String message) {
