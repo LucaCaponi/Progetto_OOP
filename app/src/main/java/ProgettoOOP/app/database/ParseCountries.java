@@ -1,5 +1,10 @@
 package ProgettoOOP.app.database;
-
+/**
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ * Classe per il parsing dell'API "GET COUNTRY".
+ */
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,15 +24,11 @@ public final class ParseCountries{
 	public static List<Countries> datacountry=new LinkedList<>();
 
 	public static List<Countries> ParseDataCountries() throws IOException {
-		// JSON parser object to parse read file
 		JSONParser jsonParser = new JSONParser();
 
 		try (FileReader reader = new FileReader("Countries.json")) {
-			// Read JSON file
 			Object obj = jsonParser.parse(reader);
-
 			JSONArray CountryList = (JSONArray) obj;
-			//System.out.println(CountryList);
 		
 	 for (int i=0; i<CountryList.size(); i++) {
 		 JSONObject countryObject = (JSONObject) CountryList.get(i);
@@ -39,17 +40,6 @@ public final class ParseCountries{
 
 	 }
 
-			
-			
-			
-			
-			// Iterate over Country array
-			//CountryList.forEach(cntry -> parseCountryObject((JSONObject) cntry));
-			/*JSONObject cntry=new JSONObject();
-			for(int i=0; i<CountryList.size(); i++) {
-			cntry = (JSONObject) parseCountryObject((JSONObject) cntry.get(i));
-			}*/
-			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
