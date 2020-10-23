@@ -52,6 +52,8 @@ Package che implementa i servizi resi disponibili attraverso l'applicazione, e c
 ### ProgettoOOP.app.filters
 Package che permette di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continente}
 
+![Filters](https://user-images.githubusercontent.com/64077382/97056547-8de17d00-1589-11eb-953f-b8b40f5e4b82.png)
+
 ### Progetto.app.exception
 Package per gestire le eccezioni che possono essere lanciate dal programma
 
