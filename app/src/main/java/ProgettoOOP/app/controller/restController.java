@@ -77,7 +77,7 @@ public class restController {
 	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception {
 		countryService.InsertCountry(country);
 		return new ResponseEntity<>(
-				"Country is created successfully! /n The country is located in " + countryService.yourcontinent(),
+				"Country is created successfully! The country is located in " + countryService.yourcontinent(),
 				HttpStatus.CREATED);
 	}
 
@@ -102,6 +102,21 @@ public class restController {
 		Filterscountry.gettingfilterCountries(cont);
 		return new ResponseEntity<>(countryService.gettingfilterCountries(cont), HttpStatus.OK);
 
+	}
+	
+	/**
+	 * 
+	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
+	 *                 finale in base a ciò che vuole ottenere
+	 * @return Ritorna le classifiche dei casi confermati dal paese con più contagi 
+	 *         a quello con meno tra i paesi scelti dall'utente
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/confirmed", method = RequestMethod.GET)
+	public ResponseEntity<Object> getstatsconfirmed(
+			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
+			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
+		return new ResponseEntity<>(countryService.ClassifyConfirmed(from, to), HttpStatus.OK);
 	}
 
 	/**

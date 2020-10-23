@@ -1,7 +1,10 @@
-package ProgettoOOP.app.model;
+package ProgettoOOP.app.filters;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.World;
 
 /**
  * 

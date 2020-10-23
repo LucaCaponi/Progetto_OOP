@@ -11,10 +11,10 @@ import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
-import ProgettoOOP.app.model.Continents;
 import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
+import ProgettoOOP.app.filters.Continents;
 import ProgettoOOP.app.filters.Filterscountry;
 
 
@@ -41,6 +41,12 @@ public String totalCountries() throws IOException {
 public String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException {
 	if(DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to).isEmpty()) throw new Nofile();
 	return DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+}
+
+@Override
+public String ClassifyConfirmed(String from, String to) throws IOException, ParseException, JSONException {
+	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+	return DatabaseCountryAllStatus.Ordering();
 }
 
 @Override

@@ -7,7 +7,8 @@ package ProgettoOOP.app.database;
  * 
  * La classe DatabaseCountryAllStatus apre la connessione all'API "GET BY COUNTRY ALL STATUS" 
  * da cui prendiamo i dati per ogni nazione caricata su Postman e per un determinato lasso di tempo.
- * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi.
+ * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi e
+ * le classifiche dei paesi per i casi confermati in un periodo temporale scelto dall'utente.
  * 
  */
 
@@ -19,7 +20,6 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +36,7 @@ import ProgettoOOP.app.model.World;
 public class DatabaseCountryAllStatus {
 
 	private static Map<String, Countries> world = World.getworld();
+	private static Map<String, Long> classify = new LinkedHashMap<String, Long>();
 
 	public static String DownloadDataCountryAllStatus(String from, String to) throws IOException {
 		Map<String, Object> out = new LinkedHashMap<>();
@@ -103,51 +104,61 @@ public class DatabaseCountryAllStatus {
 			
 			
 			Map<String, Long> stats = new LinkedHashMap<String, Long>();
-			
-			stats.put("Confirmed", confirmedlast - confirmedstart);
+						
+			stats.put("Confirmed", confirmedlast - confirmedstart);	
 			stats.put("Deaths", deathslast - deathsstart);
 			stats.put("Recovered", recoveredlast - recoveredstart);
 			stats.put("Active", activelast - activestart);
 			result.put(key, stats);
-			
+			Classify(key, (confirmedlast-confirmedstart));
 		}
 		
-		sortHashMapByValues(result);
 		return new JSONObject(result).toString();
 	
 	}
 	
+	public static void Classify(String s, long l) throws IOException {
+		
+		classify.put(s+"'s confirmed cases: ", l); 
+	}
 	
-	public static void sortHashMapByValues(Map<String, Object> codenames) {
+	public static String Ordering() throws IOException {
+		
+		sortHashMapByValues(classify); 
+		return new JSONObject(classify).toString();
+	}
+	
+
+	public static void sortHashMapByValues(Map<String, Long> codenames) {
 		
 		System.out.println("HashMap before sorting, random order ");
-		Set<Entry<String, Object>> entries = codenames.entrySet();
-		for (Entry<String, Object> entry : entries) {
+		Set<Entry<String, Long>> entries = codenames.entrySet();
+		for (Entry<String, Long> entry : entries) {
 			System.out.println(entry.getKey() + " ==> " + entry.getValue());
 		}
-		TreeMap<String,Object> sorted = new TreeMap<>(codenames);
-		Set<Entry<String, Object>> mappings = sorted.entrySet();
+		TreeMap<String,Long> sorted = new TreeMap<>(codenames);
+		Set<Entry<String, Long>> mappings = sorted.entrySet();
 		System.out.println("HashMap after sorting by keys in ascending order ");
-		for (Entry<String, Object> mapping : mappings) {
+		for (Entry<String, Long> mapping : mappings) {
 			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 		}
-		Comparator<Entry<String, Object>> valueComparator = new Comparator<Entry<String, Object>>() {
+		Comparator<Entry<String, Long>> valueComparator = new Comparator<Entry<String, Long>>() {
 			@Override
-			public int compare(Entry<String, Object> e1, Entry<String, Object> e2) {
-				String v1 =   (String) e1.getValue();
-				String v2 =    (String) e2.getValue();
+			public int compare(Entry<String, Long> e1, Entry<String, Long> e2) {
+				Long v1 =  e1.getValue();
+				Long v2 =  e2.getValue();
 				return (v1).compareTo(v2);
 			}
 		};
-		List<Entry<String, Object>> listOfEntries = new ArrayList<Entry<String, Object>>(entries);
+		List<Entry<String, Long>> listOfEntries = new ArrayList<Entry<String, Long>>(entries);
 		Collections.sort(listOfEntries, valueComparator);
-		LinkedHashMap<String, Object> sortedByValue = new LinkedHashMap<String, Object>(listOfEntries.size());
-		for (Entry<String, Object> entry : listOfEntries) {
+		LinkedHashMap<String, Long> sortedByValue = new LinkedHashMap<String, Long>(listOfEntries.size());
+		for (Entry<String, Long> entry : listOfEntries) {
 			sortedByValue.put(entry.getKey(), entry.getValue());
 		}
 		System.out.println("HashMap after sorting entries by values ");
-		Set<Entry<String, Object>> entrySetSortedByValue = sortedByValue.entrySet();
-		for (Entry<String, Object> mapping : entrySetSortedByValue) {
+		Set<Entry<String, Long>> entrySetSortedByValue = sortedByValue.entrySet();
+		for (Entry<String, Long> mapping : entrySetSortedByValue) {
 			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 		}
 		
@@ -182,6 +193,18 @@ public class DatabaseCountryAllStatus {
 	       }
 	       return sortedMap;
 	       */
+		
+		
+		   /* public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
+		        List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
+		        list.sort(Entry.comparingByValue());
+		        Map<K, V> result = new LinkedHashMap<>();
+		        for (Entry<K, V> entry : list) {
+		            result.put(entry.getKey(), entry.getValue());
+		        }
+		        return result;
+		    }*/
+		
 	}
 	
 }

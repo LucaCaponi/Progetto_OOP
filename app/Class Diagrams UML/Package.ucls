@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="ProgettoOOP.app" project="app" file="/app/src/main/java/ProgettoOOP/app" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="390" width="599" x="91" y="77"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="ProgettoOOP.app.model" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="209" x="127" y="267"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="ProgettoOOP.app.exception" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="231" y="394"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="4" language="java" name="ProgettoOOP.app.database" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/database" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="60" width="205" x="435" y="169"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="ProgettoOOP.app.filters" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="52" width="203" x="438" y="369"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="6" language="java" name="ProgettoOOP.app.controller" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="63" width="209" x="126" y="167"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="7" language="java" name="ProgettoOOP.app.service" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="52" width="203" x="437" y="270"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
