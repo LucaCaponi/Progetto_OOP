@@ -94,32 +94,37 @@ In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un
 
 ### /countries (GET)
 
+![getCountries](https://user-images.githubusercontent.com/64077382/97057109-d8172e00-158a-11eb-96c7-dc6b8a3ae9b3.png)
 
 
 ### /countries (POST)
 
+![InsertCountry](https://user-images.githubusercontent.com/64077382/97057116-d9e0f180-158a-11eb-979a-d7c0a7522215.png)
 
 
 ### /countries/{ISO2} (DELETE)
 
+![delete](https://user-images.githubusercontent.com/64077382/97057107-d6e60100-158a-11eb-8728-cef1ab2a38af.png)
 
 
 ### /countries/{continent} (GET)
 
+![getFilteredCountries](https://user-images.githubusercontent.com/64077382/97057110-d8afc480-158a-11eb-8fe7-a39f7d01196a.png)
 
 
 ### /totalcountryallstatus (GET)
 
+![gettotalCountryAllStatus](https://user-images.githubusercontent.com/64077382/97057114-d9485b00-158a-11eb-8d90-907ac0ff34fd.png)
 
 
 ### /totalcountries (GET)
 
+![gettotalCountries](https://user-images.githubusercontent.com/64077382/97057113-d9485b00-158a-11eb-9eee-09d41061b381.png)
 
 
 ### /confirmed (POST)
 
-
-
+![getstatsconfirmed](https://user-images.githubusercontent.com/64077382/97057112-d8afc480-158a-11eb-9c41-5131febc219f.png)
 
 
 
