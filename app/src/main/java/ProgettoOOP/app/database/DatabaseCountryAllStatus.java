@@ -10,6 +10,7 @@ package ProgettoOOP.app.database;
  * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi.
  * 
  */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
