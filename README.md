@@ -50,16 +50,45 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 ## Chiamate
 | Rotta| Metodo | Descrizione |
-| :---: | :---: | :---: |
+| ------------- | ------------- |
 | /countries | GET  | Restituisce i paesi inseriti |
-| :---: | :---: | :---: |
+| ------------- | ------------- |
 | /countries | POST  | Inserisce i paesi |
-| :---: | :---: | :---: |
+| ------------- | ------------- |
+| /countries/{ISO2} | DELETE  | Cancella il paese precedentemente inserito con il suo corrispondente ISO2 passato dall'utente|
+| ------------- | ------------- |
+| /countries/{continent}| GET | Dato il continente, riporta solo i paesi inseriti appartenenti a quel continente|
+| ------------- | ------------- |
 | /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
-| :---: | :---: | :---: |
-| /totalcountries | GET  | Inserisce i paesi |
-| :---: | :---: | :---: |
+| ------------- | ------------- |
+| /totalcountries | GET  | Inserisce tutti i paesi del mondo |
+| ------------- | ------------- |
 | /confirmed | POST  | Inserisce in classifica i paesi inseriti per numero di confermati|
+| ------------- | ------------- |
+
+
+In seguito, mostriamo il diagramma delle sequenze. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, 
+ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
+
+
+ # Filtri
+ Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
+Inserendo un paese con la chiamata POST viene riportato dunque il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente.
+
+
+# Componenti
+
+### Caponi Luca: Ha scritto il ReadMe
+### Catalini Federico: Ha generato i diagrammi UML
+
+Gli autori hanno ragionato l'idea del progetto e sviluppato il codice 
+collaborando in totale sincronia.  
+
+
+
+
+
+
 
 
 
