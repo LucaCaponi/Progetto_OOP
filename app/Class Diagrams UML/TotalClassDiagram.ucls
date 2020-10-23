@@ -3,12 +3,12 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="ProgettoOOP.app" project="app" file="/app/src/main/java/ProgettoOOP/app" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="230" width="305" x="193" y="-249"/>    
+    <position height="230" width="305" x="187" y="-249"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="ProgettoOOP.app.AppApplication" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/AppApplication.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="145" width="210" x="240" y="-183"/>    
+    <position height="145" width="210" x="234" y="-183"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
