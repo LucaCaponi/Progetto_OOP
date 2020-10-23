@@ -69,6 +69,9 @@ Package per gestire le eccezioni che possono essere lanciate dal programma
 ### ProgettoOOP.app
 Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
 
+![App](https://user-images.githubusercontent.com/64077382/97056790-1829e100-158a-11eb-8e97-65bc165f93a5.png)
+
+
 
 # Funzionamento
 Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano.
