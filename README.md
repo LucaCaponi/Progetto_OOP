@@ -29,17 +29,47 @@ Package che gestisce il download dei dati direttamente dalle chiamate alle API.
 
 
 ### ProgettoOOP.app.model
-Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus, oltre ad una classe Continent per catalogare i paesi
+Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus
 
 
 ### ProgettoOOP.app.service
 Package che implementa i servizi resi disponibili attraverso l'applicazione, e che poi verranno richiamati nel controller (e quindi in risposta all'utente).
 
+### ProgettoOOP.app.filters
+Package che permette di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continente}
 
-### ProgettoOOP.app.AppApplication
+### Progetto.app.exception
+Package per gestire le eccezioni che possono essere lanciate dal programma
+
+### ProgettoOOP.app
 Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
 
 
 # Funzionamento
 Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano.
+
+## Chiamate
+| Rotta| Metodo | Descrizione |
+| :---: | :---: | :---: |
+| /countries | GET  | Restituisce i paesi inseriti |
+| :---: | :---: | :---: |
+| /countries | POST  | Inserisce i paesi |
+| :---: | :---: | :---: |
+| /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
+| :---: | :---: | :---: |
+| /totalcountries | GET  | Inserisce i paesi |
+| :---: | :---: | :---: |
+| /confirmed | POST  | Inserisce in classifica i paesi inseriti per numero di confermati|
+
+
+
+
+
+
+
+
+
+
+
+
 
