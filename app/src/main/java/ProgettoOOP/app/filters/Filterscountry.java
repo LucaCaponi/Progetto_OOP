@@ -14,13 +14,8 @@ import ProgettoOOP.app.exception.NotValidContinent;
 import ProgettoOOP.app.model.Continents;
 import ProgettoOOP.app.model.Countries;
 
-/**
- * 
- * @author Federico Catalini
- * @author Luca Caponi
- * 
- *
- */
+
+
 public class Filterscountry {
 	
 	  public static Map<String,Countries> gettingfilterCountries(String cont) {
