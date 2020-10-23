@@ -55,6 +55,8 @@ Package che permette di filtrare i paesi caricati in base al continente richiest
 ### Progetto.app.exception
 Package per gestire le eccezioni che possono essere lanciate dal programma
 
+![Exception](https://user-images.githubusercontent.com/64077382/97056348-0d228100-1589-11eb-8cd5-a9d39453182f.png)
+
 ### ProgettoOOP.app
 Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
 
