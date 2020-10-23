@@ -50,21 +50,21 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 ## Chiamate
 | Rotta| Metodo | Descrizione |
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /countries | GET  | Restituisce i paesi inseriti |
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /countries | POST  | Inserisce i paesi |
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /countries/{ISO2} | DELETE  | Cancella il paese precedentemente inserito con il suo corrispondente ISO2 passato dall'utente|
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /countries/{continent}| GET | Dato il continente, riporta solo i paesi inseriti appartenenti a quel continente|
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /totalcountries | GET  | Inserisce tutti i paesi del mondo |
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 | /confirmed | POST  | Inserisce in classifica i paesi inseriti per numero di confermati|
-| ------------- | ------------- |
+| :-------------: |:----:| :-------------: |
 
 
 In seguito, mostriamo il diagramma delle sequenze. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, 
