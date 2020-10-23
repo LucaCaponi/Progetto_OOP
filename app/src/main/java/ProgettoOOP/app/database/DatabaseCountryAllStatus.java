@@ -15,7 +15,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONObject;
@@ -87,14 +91,46 @@ public class DatabaseCountryAllStatus {
 
 			}
 			Map<String, Long> stats = new LinkedHashMap<String, Long>();
+			
 			stats.put("Confirmed", confirmedlast - confirmedstart);
 			stats.put("Deaths", deathslast - deathsstart);
 			stats.put("Recovered", recoveredlast - recoveredstart);
 			stats.put("Active", activelast - activestart);
-			result.put(key, stats);
+			result.put(key, sortHashMapByValues(stats));
 
 		}
 
 		return new JSONObject(result).toString();
+	
 	}
+	
+	public static Map<String, Long> sortHashMapByValues(Map<String, Long> passedMap) {
+	       List<String> mapKeys = new ArrayList<>(passedMap.keySet());
+	       List<Long> mapValues = new ArrayList<>(passedMap.values());
+	       Collections.sort(mapValues);
+	       Collections.sort(mapKeys);
+
+	       LinkedHashMap<String, Long> sortedMap = new LinkedHashMap<>();
+
+	       Iterator<Long> valueIt = mapValues.iterator();
+	       while (valueIt.hasNext()) {
+	           Long val = valueIt.next();
+	           Iterator<String> keyIt = mapKeys.iterator();
+
+	           while (keyIt.hasNext()) {
+	               String key = keyIt.next();
+	               Long comp1 = passedMap.get(key);
+	               Long comp2 = val;
+
+	               if (comp1.equals(comp2)) {
+	                   keyIt.remove();
+	                   sortedMap.put(key, val);
+	                   break;
+	               }
+	               
+	           }
+	       }
+	       return sortedMap;
+	}
+	
 }
