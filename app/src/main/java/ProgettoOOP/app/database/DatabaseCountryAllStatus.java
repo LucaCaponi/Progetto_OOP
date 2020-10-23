@@ -33,6 +33,7 @@ public class DatabaseCountryAllStatus {
 		JSONParser jsonParser = new JSONParser();
 
 		for (String key : world.keySet()) {
+			
 
 			String slug = world.get(key).getSlug();
 			if(slug!="") {
