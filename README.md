@@ -85,7 +85,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /countries/{continent}| GET | Dato il continente, riporta solo i paesi inseriti appartenenti a quel continente|
 | /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
 | /totalcountries | GET  | Inserisce tutti i paesi del mondo |
-| /confirmed | GET  | Inserisce in classifica i paesi inseriti per numero di confermati|
+| /confirmed | GET  | Stila una classifica dei paesi inseriti per numero di confermati|
 
 
 
