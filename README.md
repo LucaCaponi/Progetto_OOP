@@ -1,6 +1,6 @@
 # Progetto_OOP
 Questo è il repository che contiene il progetto svolto da Caponi Luca e Catalini Federico 
-per l'esame di Programmazione A Oggetti per il secondo anno di Ingegneria Informatica e dell'Automazione
+per l'esame di Programmazione A Oggetti per il secondo anno di Ingegneria Informatica e dell'Automazione.
 
 ## Introduzione
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
@@ -43,22 +43,28 @@ Package che gestisce il download dei dati direttamente dalle chiamate alle API.
 
 
 ### ProgettoOOP.app.model
-Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus
+Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus.
 
 ![Model](https://user-images.githubusercontent.com/64077382/97056663-cda86480-1589-11eb-8659-5b8798b8acbe.png)
 
+
 ### ProgettoOOP.app.service
 Package che implementa i servizi resi disponibili attraverso l'applicazione, e che poi verranno richiamati nel controller (e quindi in risposta all'utente).
+
+![Service](https://user-images.githubusercontent.com/64077382/97056707-e6b11580-1589-11eb-84f9-c1145a084f48.png)
+
 
 ### ProgettoOOP.app.filters
 Package che permette di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continente}
 
 ![Filters](https://user-images.githubusercontent.com/64077382/97056547-8de17d00-1589-11eb-953f-b8b40f5e4b82.png)
 
+
 ### Progetto.app.exception
 Package per gestire le eccezioni che possono essere lanciate dal programma
 
 ![Exception](https://user-images.githubusercontent.com/64077382/97056348-0d228100-1589-11eb-8cd5-a9d39453182f.png)
+
 
 ### ProgettoOOP.app
 Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
