@@ -45,6 +45,7 @@ Package che gestisce il download dei dati direttamente dalle chiamate alle API.
 ### ProgettoOOP.app.model
 Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus
 
+![Model](https://user-images.githubusercontent.com/64077382/97056663-cda86480-1589-11eb-8659-5b8798b8acbe.png)
 
 ### ProgettoOOP.app.service
 Package che implementa i servizi resi disponibili attraverso l'applicazione, e che poi verranno richiamati nel controller (e quindi in risposta all'utente).
