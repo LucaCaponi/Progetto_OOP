@@ -39,6 +39,8 @@ Package che contiene il controller dell'applicazione, ovvero la classe che gesti
 ### ProgettoOOP.app.database
 Package che gestisce il download dei dati direttamente dalle chiamate alle API.
 
+![Database](https://user-images.githubusercontent.com/64077382/97056231-c2a10480-1588-11eb-8122-3fd7a32dbd8e.png)
+
 
 ### ProgettoOOP.app.model
 Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus
