@@ -33,6 +33,8 @@ e il diagramma UML dei packages:
 ### ProgettoOOP.app.controller
 Package che contiene il controller dell'applicazione, ovvero la classe che gestisce tutte le chiamate GET o POST dell'utente.
 
+![Controller](https://user-images.githubusercontent.com/64077382/97056185-a7ce9000-1588-11eb-821c-5c3a307461f9.png)
+
 
 ### ProgettoOOP.app.database
 Package che gestisce il download dei dati direttamente dalle chiamate alle API.
