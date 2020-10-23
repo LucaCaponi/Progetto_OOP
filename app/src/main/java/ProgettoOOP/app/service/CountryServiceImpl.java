@@ -15,17 +15,19 @@ import ProgettoOOP.app.model.Continents;
 import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
+import ProgettoOOP.app.filters.Filterscountry;
 
 
 @Service
 public class CountryServiceImpl implements CountryService {
 
-
+	String cont=null;
+	
 public CountryServiceImpl() {
 Countries nation = new Countries(null , null, null);
-nation.setCountry("Italy");
-nation.setSlug("italy");
-nation.setISO2("IT");
+nation.setCountry("");
+nation.setSlug("");
+nation.setISO2("");
 World.setworld(nation);
 }
 
@@ -59,6 +61,12 @@ public void DeleteCountry(String ISO2) {
 public Collection<Countries> gettingCountries() {
 	Map<String, Countries> world= World.getworld();
 	return world.values();
+}
+
+public Collection<Countries> gettingfilterCountries(String cont){
+	Map<String, Countries> filter= Filterscountry.gettingfilterCountries(cont);
+	return filter.values();
+
 }
 
 public String yourcontinent() throws Exception {

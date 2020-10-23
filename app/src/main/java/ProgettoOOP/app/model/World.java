@@ -48,6 +48,46 @@ public final class World {
  		return lastcountry;
  	}
 
+	
+	public static String getlastISO2() {
+ 		String lastiso2 = null;
+ 		try {
+ 			List<Countries> CountriesArray = new ArrayList<Countries>();
+ 			System.out.println(CountriesArray.size());
+ 			for (String key : world.keySet()) {
+ 				System.out.println("key : " + key);
+ 				System.out.println("value : " + world.get(key));
+ 				CountriesArray.add(world.get(key));
+ 			}
+ 			lastiso2 = CountriesArray.get(CountriesArray.size() - 1).getISO2();
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 		return lastiso2;
+ 	}
+	
+	
+	public static Countries getlastcountries() {
+ 		Countries state = new Countries(null, null, null);
+ 		try {
+ 			List<Countries> CountriesArray = new ArrayList<Countries>();
+ 			System.out.println(CountriesArray.size());
+ 			for (String key : world.keySet()) {
+ 				System.out.println("key : " + key);
+ 				System.out.println("value : " + world.get(key));
+ 				CountriesArray.add(world.get(key));
+ 			}
+ 			String lc=   CountriesArray.get(CountriesArray.size() - 1).getCountry();
+ 			String ls=  CountriesArray.get(CountriesArray.size() - 1).getSlug();
+ 			String li = CountriesArray.get(CountriesArray.size() - 1).getISO2();
+ 		
+ 		state=new Countries(lc, ls, li);
+ 			
+ 		} catch (Exception e) {
+ 			e.printStackTrace();
+ 		}
+ 		return state;
+ 	}
 /**
  * 
  * Il metodo boolean Verify permette di controllare se il paese inserito esiste.
