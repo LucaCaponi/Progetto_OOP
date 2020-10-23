@@ -6,6 +6,8 @@ per l'esame di Programmazione A Oggetti per il secondo anno di Ingegneria Inform
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
 Per mostrare tutti questi passi al meglio, mostriamo il diagramma UML dei casi d'suo così da introdurre nella maniera più semplice possibile al funzionamento del progetto:
 
+![Diagramma_Uso](https://user-images.githubusercontent.com/64077382/97055743-bb2d2b80-1587-11eb-8262-c1001011535e.png)
+
 
 
 La prima parte del lavoro è stata quella di pensare a come strutturare il progetto e per fare ciò ci è stato molto utile il linguaggio UML (Unified Modeling Language). In questa prima parte abbiamo iniziato a pensare al funzionamento della nostra applicazione:
@@ -17,7 +19,9 @@ La prima parte del lavoro è stata quella di pensare a come strutturare il proge
 Per far questo abbiamo iniziato a pensare ai vari pacchetti che ci sarebbero serviti per suddividere il nostro lavoro al meglio rendendolo il più semplice e chiaro possibile anche per lo sviluppo del codice poi.
 
 
-Ovviamente in seguito per ogni pacchetto abbiamo sviluppato tutte le varie classi che andavano ad implementare il progetto, così facendo abbiamo creato l'UML Class Diagram.
+Ovviamente in seguito per ogni pacchetto abbiamo sviluppato tutte le varie classi che andavano ad implementare il progetto, così facendo abbiamo creato l'UML Class Diagram:
+
+
 
 
 ### ProgettoOOP.app.controller
