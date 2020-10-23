@@ -15,6 +15,7 @@ public interface CountryService {
 	public abstract String totalCountries() throws IOException;
 	public abstract String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException;
 	public abstract Collection<Countries> gettingCountries();
+	public abstract Collection<Countries> gettingfilterCountries(String cont);
 	public abstract String yourcontinent() throws Exception; 
 
 }

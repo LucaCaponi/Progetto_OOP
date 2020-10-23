@@ -10,6 +10,7 @@ package ProgettoOOP.app.database;
  * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi.
  * 
  */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,10 +38,12 @@ public class DatabaseCountryAllStatus {
 		JSONParser jsonParser = new JSONParser();
 
 		for (String key : world.keySet()) {
+			
 
 			String slug = world.get(key).getSlug();
+			if(slug!="") {
 			String nomeurl = "https://api.covid19api.com/country/" + slug + "?from=" + from + "&to=" + to;
-
+			
 			try {
 				URL info = new URL(nomeurl);
 				URLConnection URLConn = info.openConnection();
@@ -58,6 +61,7 @@ public class DatabaseCountryAllStatus {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			}
 
 		}
 		Map<String, Object> result = new LinkedHashMap<>();
@@ -72,6 +76,7 @@ public class DatabaseCountryAllStatus {
 			long deathslast = 0;
 			long recoveredlast = 0;
 			long activelast = 0;
+			
 			for (int i = 0; i < countryObject.size(); i++) {
 
 				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
@@ -87,19 +92,23 @@ public class DatabaseCountryAllStatus {
 					deathslast = (Long) countryObjectall.get("Deaths");
 					recoveredlast = (Long) countryObjectall.get("Recovered");
 					activelast = (Long) countryObjectall.get("Active");
+					
 				}
 
 			}
+			
+			
 			Map<String, Long> stats = new LinkedHashMap<String, Long>();
 			
 			stats.put("Confirmed", confirmedlast - confirmedstart);
 			stats.put("Deaths", deathslast - deathsstart);
 			stats.put("Recovered", recoveredlast - recoveredstart);
 			stats.put("Active", activelast - activestart);
-			result.put(key, sortHashMapByValues(stats));
-
+			result.put(key, stats);
+			
 		}
-
+		
+		
 		return new JSONObject(result).toString();
 	
 	}

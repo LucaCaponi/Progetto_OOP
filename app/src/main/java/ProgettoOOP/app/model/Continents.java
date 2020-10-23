@@ -1,5 +1,8 @@
 package ProgettoOOP.app.model;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  * 
  * @author Federico Catalini
@@ -11,6 +14,70 @@ package ProgettoOOP.app.model;
  */
 
 public class Continents {
+	
+	private static Map<String, Countries> europe=new LinkedHashMap<>(); 
+	private static Map<String, Countries> asia=new LinkedHashMap<>(); 
+	private static Map<String, Countries> africa=new LinkedHashMap<>(); 
+	private static Map<String, Countries> north=new LinkedHashMap<>(); 
+	private static Map<String, Countries> south=new LinkedHashMap<>(); 
+	private static Map<String, Countries> oceania=new LinkedHashMap<>(); 
+	private static Map<String, Countries> antar=new LinkedHashMap<>(); 
+
+	public static Map<String, Countries> getEurope() {
+		return europe;
+	}
+
+	public static void setEurope(Map<String, Countries> europe) {
+		Continents.europe = europe;
+	}
+
+	public static Map<String, Countries> getAsia() {
+		return asia;
+	}
+
+	public static void setAsia(Map<String, Countries> asia) {
+		Continents.asia = asia;
+	}
+
+	public static Map<String, Countries> getAfrica() {
+		return africa;
+	}
+
+	public static void setAfrica(Map<String, Countries> africa) {
+		Continents.africa = africa;
+	}
+
+	public static Map<String, Countries> getNorth() {
+		return north;
+	}
+
+	public static void setNorth(Map<String, Countries> north) {
+		Continents.north = north;
+	}
+
+	public static Map<String, Countries> getSouth() {
+		return south;
+	}
+
+	public static void setSouth(Map<String, Countries> south) {
+		Continents.south = south;
+	}
+
+	public static Map<String, Countries> getOceania() {
+		return oceania;
+	}
+
+	public static void setOceania(Map<String, Countries> oceania) {
+		Continents.oceania = oceania;
+	}
+
+	public static Map<String, Countries> getAntar() {
+		return antar;
+	}
+
+	public static void setAntar(Map<String, Countries> antar) {
+		Continents.antar = antar;
+	}
 
 	private static String[] Europe = { "ALA Aland Islands", "Albania", "Andorra", "Austria", "Belarus", "Belgium",
 			"Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia",
@@ -75,34 +142,51 @@ public class Continents {
 		String continent = "Not a Country";
 		World.getlastname();
 		for (String c : Europe)
-			if (c.contains(World.getlastname()))
+			if (c.contains(World.getlastname())) {
 				continent = "EUROPE";
+		getEurope().put(World.getlastISO2(), World.getlastcountries()); 
+		setEurope(europe);}
 
 		for (String c : Asia)
-			if (c.contains(World.getlastname()))
+			if (c.contains(World.getlastname())) {
 				continent = "ASIA";
-
-		for (String c : Africa)
-			if (c.contains(World.getlastname()))
+		getAsia().put(World.getlastISO2(), World.getlastcountries()); 
+		setAsia(asia);
+			}
+		
+		for (String c : Africa) 
+			if (c.contains(World.getlastname())) {
 				continent = "AFRICA";
+		getAfrica().put(World.getlastISO2(), World.getlastcountries()); 
+		setAfrica(africa);}
 
-		for (String c : Oceania)
-			if (c.contains(World.getlastname()))
+		for (String c : Oceania) 
+			if (c.contains(World.getlastname())) {
 				continent = "OCEANIA";
+		getOceania().put(World.getlastISO2(), World.getlastcountries()); 
+		setOceania(oceania);}
 
-		for (String c : NorthAmerica)
-			if (c.contains(World.getlastname()))
+		for (String c : NorthAmerica) 
+			if (c.contains(World.getlastname())) {
 				continent = "NORTH AMERICA";
+		getNorth().put(World.getlastISO2(), World.getlastcountries()); 
+		setNorth(north);}
 
 		for (String c : SouthAmerica)
-			if (c.contains(World.getlastname()))
+			if (c.contains(World.getlastname())) {
 				continent = "SOUTH AMERICA";
-
+		getSouth().put(World.getlastISO2(), World.getlastcountries()); 
+		setSouth(south);}
+				
 		for (String c : Antarctica)
-			if (c.contains(World.getlastname()))
+			if (c.contains(World.getlastname())) {
 				continent = "ANTARCTICA";
+		getAntar().put(World.getlastISO2(), World.getlastcountries()); 
+		setAntar(antar);}
 
 		return continent;
 	}
+	
+
 
 }

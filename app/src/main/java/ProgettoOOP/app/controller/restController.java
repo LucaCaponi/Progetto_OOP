@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ProgettoOOP.app.exception.ExceptionAbstract;
 import ProgettoOOP.app.exception.ExceptionPrincipal;
+import ProgettoOOP.app.filters.Filterscountry;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.service.CountryService;
 
@@ -29,13 +30,13 @@ import ProgettoOOP.app.service.CountryService;
 @RestController
 public class restController {
 
-	/** 
+	/**
 	 * 
-	 * @Autowired lancia automaticamente il costruttore all'avvio di Spring 
+	 * @Autowired lancia automaticamente il costruttore all'avvio di Spring
 	 */
 	@Autowired
 	CountryService countryService;
-	
+
 	/**
 	 * 
 	 * @return Ritorna tutto il contenuto presente nell'API "Get Countries"
@@ -48,10 +49,11 @@ public class restController {
 
 	/**
 	 * 
-	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una finale in base a ciò che vuole ottenere
-	 * @return Ritorna la differenza tra i confermati, i decessi, i ricoverati e gli attuali positivi 
-	 *         tra la data finale inserita e quella iniziale
-	 * @throws Exception      
+	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
+	 *                 finale in base a ciò che vuole ottenere
+	 * @return Ritorna la differenza tra i confermati, i decessi, i ricoverati e gli
+	 *         attuali positivi tra la data finale inserita e quella iniziale
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/totalcountryallstatus", method = RequestMethod.GET)
 	public ResponseEntity<Object> gettotalCountryAllStatus(
@@ -59,36 +61,53 @@ public class restController {
 			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
 		return new ResponseEntity<>(countryService.totalStatusCountries(from, to), HttpStatus.OK);
 	}
-	
+
 	/**
 	 * 
-	 * @body L'utente inserisce una nazione alla volta in formato JSON specificando il "country", lo "slug" e l"iSO2"
-	 * @return Se la nazione esiste ritorna un messaggio di caricamento avvenuto contenente anche il continente
-	 *         a cui appartiene, altrimenti lancia l'eccezione "NotValidCountry". Viene, invece, lanciata l'eccezione
-	 *         "Existing ISO2" se il paese che si desidera inserire è stato già inserito dall'utente
+	 * @body L'utente inserisce una nazione alla volta in formato JSON specificando
+	 *       il "country", lo "slug" e l"iSO2"
+	 * @return Se la nazione esiste ritorna un messaggio di caricamento avvenuto
+	 *         contenente anche il continente a cui appartiene, altrimenti lancia
+	 *         l'eccezione "NotValidCountry". Viene, invece, lanciata l'eccezione
+	 *         "Existing ISO2" se il paese che si desidera inserire è stato già
+	 *         inserito dall'utente
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/countries", method = RequestMethod.POST)
 	public ResponseEntity<Object> InsertCountry(@RequestBody Countries country) throws Exception {
 		countryService.InsertCountry(country);
 		return new ResponseEntity<>(
-				"Country is created successfully! The continent of the Country is " + countryService.yourcontinent(),
+				"Country is created successfully! /n The country is located in " + countryService.yourcontinent(),
 				HttpStatus.CREATED);
 	}
-	
+
 	/**
 	 * 
-	 * @return Ritorna tutte le nazioni inserite precedentemente dall'utente nel body con la POST
+	 * @return Ritorna tutte le nazioni inserite precedentemente dall'utente nel
+	 *         body con la POST
 	 */
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
 	public ResponseEntity<Object> getCountries() throws Exception {
 		return new ResponseEntity<>(countryService.gettingCountries(), HttpStatus.OK);
 	}
-	
+
 	/**
 	 * 
-	 * @PathVariable L'utente inserisce nella rotta in Postman l'ISO2 del paese che vuole 
-	 *               eliminare dalla sua lista
+	 * @PathVariable L'utente inserisce nella rotta in Postman il continente per cui
+	 *               vuole filtrare la lista dei paesi precedentemente inseriti
+	 * @return Ritorna la lista dei paesi filtrata per il continente desiderato
+	 */
+	@RequestMapping(value = "/countries/{continent}", method = RequestMethod.GET)
+	public ResponseEntity<Object> getFilteredCountries(@PathVariable("continent") String cont) {
+		Filterscountry.gettingfilterCountries(cont);
+		return new ResponseEntity<>(countryService.gettingfilterCountries(cont), HttpStatus.OK);
+
+	}
+
+	/**
+	 * 
+	 * @PathVariable L'utente inserisce nella rotta in Postman l'ISO2 del paese che
+	 *               vuole eliminare dalla sua lista
 	 * @return Ritorna un messaggio di avvenuta cancellazione
 	 */
 	@RequestMapping(value = "/countries/{ISO2}", method = RequestMethod.DELETE)
@@ -96,7 +115,7 @@ public class restController {
 		countryService.DeleteCountry(ISO2);
 		return new ResponseEntity<>("Country is deleted successfully!", HttpStatus.OK);
 	}
-	
+
 	/**
 	 * Metodo per gestire eccezioni lanciate dai metodi dei filtri
 	 *
