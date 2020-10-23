@@ -1,6 +1,6 @@
 # Progetto_OOP
 Questo è il repository che contiene il progetto svolto da Caponi Luca e Catalini Federico 
-per l'esame di Programmazione A Oggetti per il secondo anno di Ingegneria Informatica e dell'Automazione.
+per l'esame di Programmazione a Oggetti per il secondo anno di Ingegneria Informatica e dell'Automazione nell'A.A. 2019-2020.
 
 ## Introduzione
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
@@ -85,7 +85,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /countries/{continent}| GET | Dato il continente, riporta solo i paesi inseriti appartenenti a quel continente|
 | /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
 | /totalcountries | GET  | Inserisce tutti i paesi del mondo |
-| /confirmed | POST  | Inserisce in classifica i paesi inseriti per numero di confermati|
+| /confirmed | GET  | Inserisce in classifica i paesi inseriti per numero di confermati|
 
 
 
@@ -122,7 +122,7 @@ In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un
 ![gettotalCountries](https://user-images.githubusercontent.com/64077382/97057113-d9485b00-158a-11eb-9eee-09d41061b381.png)
 
 
-### /confirmed (POST)
+### /confirmed (GET)
 
 ![getstatsconfirmed](https://user-images.githubusercontent.com/64077382/97057112-d8afc480-158a-11eb-9c41-5131febc219f.png)
 
