@@ -89,8 +89,39 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 
 
-In seguito, mostriamo il diagramma delle sequenze. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, 
-ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
+In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
+
+
+### /countries (GET)
+
+
+
+### /countries (POST)
+
+
+
+### /countries/{ISO2} (DELETE)
+
+
+
+### /countries/{continent} (GET)
+
+
+
+### /totalcountryallstatus (GET)
+
+
+
+### /totalcountries (GET)
+
+
+
+### /confirmed (POST)
+
+
+
+
+
 
 
  # Filtri
