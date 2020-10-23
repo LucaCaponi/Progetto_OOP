@@ -21,6 +21,8 @@ Per far questo abbiamo iniziato a pensare ai vari pacchetti che ci sarebbero ser
 
 Ovviamente in seguito per ogni pacchetto abbiamo sviluppato tutte le varie classi che andavano ad implementare il progetto, così facendo abbiamo creato l'UML Class Diagram:
 
+![TotalClassDiagram](https://user-images.githubusercontent.com/64077382/97055924-10693d00-1588-11eb-887e-5955cdeeb761.png)
+
 
 
 
