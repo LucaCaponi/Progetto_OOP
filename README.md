@@ -23,6 +23,10 @@ Ovviamente in seguito per ogni pacchetto abbiamo sviluppato tutte le varie class
 
 ![TotalClassDiagram](https://user-images.githubusercontent.com/64077382/97055924-10693d00-1588-11eb-887e-5955cdeeb761.png)
 
+e il diagramma UML dei packages:
+
+![Package](https://user-images.githubusercontent.com/64077382/97056034-4c9c9d80-1588-11eb-9e38-cc1a7ccc3187.png)
+
 
 
 
