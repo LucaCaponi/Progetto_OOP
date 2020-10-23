@@ -140,7 +140,7 @@ Inserendo un paese con la chiamata POST viene riportato dunque il suo continente
 ### Catalini Federico: Ha generato i diagrammi UML
 
 Gli autori hanno ragionato l'idea del progetto e sviluppato il codice 
-collaborando in totale sincronia.  
+collaborando in totale sincronia, sia da remoto che in presenza.  
 
 
 
