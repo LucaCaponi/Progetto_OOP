@@ -46,7 +46,25 @@ public String totalStatusCountries(String from, String to) throws IOException, P
 @Override
 public String ClassifyConfirmed(String from, String to) throws IOException, ParseException, JSONException {
 	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-	return DatabaseCountryAllStatus.Ordering();
+	return DatabaseCountryAllStatus.OrderingConfirmed();
+}
+
+@Override
+public String ClassifyDeaths(String from, String to) throws IOException, ParseException, JSONException {
+	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+	return DatabaseCountryAllStatus.OrderingDeaths();
+}
+
+@Override
+public String ClassifyRecovered(String from, String to) throws IOException, ParseException, JSONException {
+	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+	return DatabaseCountryAllStatus.OrderingRecovered();
+}
+
+@Override
+public String ClassifyActive(String from, String to) throws IOException, ParseException, JSONException {
+	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+	return DatabaseCountryAllStatus.OrderingActive();
 }
 
 @Override

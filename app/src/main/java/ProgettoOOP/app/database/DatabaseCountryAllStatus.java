@@ -30,13 +30,19 @@ import java.util.Map.Entry;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
+
+import com.google.gson.Gson;
+
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 
 public class DatabaseCountryAllStatus {
 
 	private static Map<String, Countries> world = World.getworld();
-	private static Map<String, Long> classify = new LinkedHashMap<String, Long>();
+	private static Map<String, Long> confirmed = new LinkedHashMap<String, Long>();
+	private static Map<String, Long> deaths = new LinkedHashMap<String, Long>();
+	private static Map<String, Long> recovered = new LinkedHashMap<String, Long>();
+	private static Map<String, Long> active = new LinkedHashMap<String, Long>();
 
 	public static String DownloadDataCountryAllStatus(String from, String to) throws IOException {
 		Map<String, Object> out = new LinkedHashMap<>();
@@ -110,26 +116,64 @@ public class DatabaseCountryAllStatus {
 			stats.put("Recovered", recoveredlast - recoveredstart);
 			stats.put("Active", activelast - activestart);
 			result.put(key, stats);
-			Classify(key, (confirmedlast-confirmedstart));
+			confirmed.put(key+"'s confirmed cases: ", confirmedlast-confirmedstart); 
+			deaths.put(key+"'s deaths cases: ", deathslast-deathsstart);
+			recovered.put(key+"'s recovered cases: ", recoveredlast-recoveredstart);
+			active.put(key+"'s active cases: ", activelast-activestart);
+		
+			
 		}
 		
 		return new JSONObject(result).toString();
 	
 	}
 	
-	public static void Classify(String s, long l) throws IOException {
+	
+	
+	
+	public static String OrderingConfirmed() throws IOException {
+		// Instantiate a new Gson instance.
+        Gson gson = new Gson();
+
+        // Convert the ordered map into an ordered string.
+        String json = gson.toJson(sortHashMapByValues(confirmed), LinkedHashMap.class);	
 		
-		classify.put(s+"'s confirmed cases: ", l); 
+		return json;
 	}
 	
-	public static String Ordering() throws IOException {
+	public static String OrderingDeaths() throws IOException {
+		// Instantiate a new Gson instance.
+        Gson gson = new Gson();
+
+        // Convert the ordered map into an ordered string.
+        String json = gson.toJson(sortHashMapByValues(deaths), LinkedHashMap.class);	
 		
-		sortHashMapByValues(classify); 
-		return new JSONObject(classify).toString();
+		return json;
+	}
+	
+	public static String OrderingRecovered() throws IOException {
+		// Instantiate a new Gson instance.
+        Gson gson = new Gson();
+
+        // Convert the ordered map into an ordered string.
+        String json = gson.toJson(sortHashMapByValues(recovered), LinkedHashMap.class);	
+		
+		return json;
+	}
+	
+	public static String OrderingActive() throws IOException {
+		// Instantiate a new Gson instance.
+        Gson gson = new Gson();
+
+        // Convert the ordered map into an ordered string.
+        String json = gson.toJson(sortHashMapByValues(active), LinkedHashMap.class);	
+		
+		return json;
 	}
 	
 
-	public static void sortHashMapByValues(Map<String, Long> codenames) {
+	
+	public static LinkedHashMap<String,Long> sortHashMapByValues(Map<String, Long> codenames) {
 		
 		System.out.println("HashMap before sorting, random order ");
 		Set<Entry<String, Long>> entries = codenames.entrySet();
@@ -151,59 +195,20 @@ public class DatabaseCountryAllStatus {
 			}
 		};
 		List<Entry<String, Long>> listOfEntries = new ArrayList<Entry<String, Long>>(entries);
-		Collections.sort(listOfEntries, valueComparator);
+		Collections.sort(listOfEntries, Collections.reverseOrder(valueComparator));
 		LinkedHashMap<String, Long> sortedByValue = new LinkedHashMap<String, Long>(listOfEntries.size());
 		for (Entry<String, Long> entry : listOfEntries) {
 			sortedByValue.put(entry.getKey(), entry.getValue());
 		}
 		System.out.println("HashMap after sorting entries by values ");
 		Set<Entry<String, Long>> entrySetSortedByValue = sortedByValue.entrySet();
+		LinkedHashMap <String, Long> result=new LinkedHashMap<String, Long>(); 
 		for (Entry<String, Long> mapping : entrySetSortedByValue) {
+			result.put(mapping.getKey(), mapping.getValue());
 			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 		}
 		
-		
-		
-		
-		/*
-	       List<String> mapKeys = new ArrayList<>(passedMap.keySet());
-	       List<Long> mapValues = new ArrayList<>(passedMap.values());
-	       Collections.sort(mapValues);
-	       Collections.sort(mapKeys);
-
-	       LinkedHashMap<String, Long> sortedMap = new LinkedHashMap<>();
-
-	       Iterator<Long> valueIt = mapValues.iterator();
-	       while (valueIt.hasNext()) {
-	           Long val = valueIt.next();
-	           Iterator<String> keyIt = mapKeys.iterator();
-
-	           while (keyIt.hasNext()) {
-	               String key = keyIt.next();
-	               Long comp1 = passedMap.get(key);
-	               Long comp2 = val;
-
-	               if (comp1.equals(comp2)) {
-	                   keyIt.remove();
-	                   sortedMap.put(key, val);
-	                   break;
-	               }
-	               
-	           }
-	       }
-	       return sortedMap;
-	       */
-		
-		
-		   /* public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
-		        List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
-		        list.sort(Entry.comparingByValue());
-		        Map<K, V> result = new LinkedHashMap<>();
-		        for (Entry<K, V> entry : list) {
-		            result.put(entry.getKey(), entry.getValue());
-		        }
-		        return result;
-		    }*/
+return result;
 		
 	}
 	

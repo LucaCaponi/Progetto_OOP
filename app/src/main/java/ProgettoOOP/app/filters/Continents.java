@@ -95,7 +95,7 @@ public class Continents {
 
 	private static String[] Asia = { "Afghanistan", "Armenia", "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan",
 			"British Indian Ocean Territory", "Brunei Darussalam", "Cambodia", "China", "Christmas Island",
-			"Cocos (Keeling) Islands", "Georgia", "Hong Kong, SAR China", "India", "Indonesia	",
+			"Cocos (Keeling) Islands", "Georgia", "Hong Kong, SAR China", "India", "Indonesia",
 			"Iran, Islamic Republic of", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", "Korea (North)",
 			"Korea (South)", "Kuwait", "Kyrgyzstan", "Lao PDR", "Lebanon", "Macao, SAR China", "Malaysia", "Maldives",
 			"Mongolia", "Myanmar", "Nepal", "Oman", "Pakistan", "Palestinian Territory", "Philippines", "Qatar",
@@ -106,7 +106,7 @@ public class Continents {
 	private static String[] NorthAmerica = { "British Virgin Islands", "Anguilla", "Antigua and Barbuda", "Aruba",
 			"Bahamas", "Barbados", "Belize", "Bermuda", "Canada", "Cayman Islands", "Costa Rica", "Cuba", "Dominica",
 			"Dominican Republic", "El Salvador", "Greenland", "Grenada", "Guadeloupe", "Guatemala", "Haiti", "Honduras",
-			"Jamaica", "Martinique", "Mexico	", "Montserrat", "Netherlands Antilles", "Nicaragua", "Panama",
+			"Jamaica", "Martinique", "Mexico", "Montserrat", "Netherlands Antilles", "Nicaragua", "Panama",
 			"Puerto Rico", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon",
 			"Saint Vincent and Grenadines", "Saint-Barthélemy", "Saint-Martin (French part)", "Trinidad and Tobago",
 			"Turks and Caicos Islands", "United States of America", "Virgin Islands, US",
