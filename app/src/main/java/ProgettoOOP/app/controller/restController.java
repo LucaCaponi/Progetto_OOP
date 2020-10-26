@@ -42,7 +42,7 @@ public class restController {
 	 * @return Ritorna tutto il contenuto presente nell'API "Get Countries"
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/totalcountries", method = RequestMethod.GET)
+	@RequestMapping(value = "/totalcountries", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> gettotalCountries() throws Exception {
 		return new ResponseEntity<>(countryService.totalCountries(), HttpStatus.OK);
 	}

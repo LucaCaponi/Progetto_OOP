@@ -9,10 +9,8 @@ package ProgettoOOP.app.model;
  *         ALL STATUS"
  */
 
-public class CountryAllStatus extends Countries {
-	private String Country;
-	private String CountryCode;
-	private String slug;
+public class CountryAllStatus extends Countries{
+	
 	private String Province;
 	private String City;
 	private String CityCode;
@@ -24,10 +22,10 @@ public class CountryAllStatus extends Countries {
 	private long Active;
 	private String Date;
 
-	public CountryAllStatus(String country, String countryCode, String slug, String province, String city,
+	public CountryAllStatus(String country, String slug, String countryCode, String province, String city,
 			String cityCode, double lat, double lon, long confirmed, long deaths, long recovered, long active,
 			String date) {
-		super(country, countryCode, slug);
+		super (country, slug, countryCode);
 		this.Province = province;
 		this.City = city;
 		this.CityCode = cityCode;
@@ -40,30 +38,7 @@ public class CountryAllStatus extends Countries {
 		this.Date = date;
 	}
 
-	public String getSlug() {
-		return slug;
-	}
-
-	public void setSlug(String slug) {
-		this.slug = slug;
-	}
-
-	public String getCountry() {
-		return Country;
-	}
-
-	public void setCountry(String country) {
-		this.Country = country;
-	}
-
-	public String getCountryCode() {
-		return CountryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.CountryCode = countryCode;
-	}
-
+	
 	public String getProvince() {
 		return Province;
 	}

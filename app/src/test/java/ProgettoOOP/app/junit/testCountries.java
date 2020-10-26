@@ -10,7 +10,7 @@ import ProgettoOOP.app.model.Countries;
 
 class testCountries {
 	
-	private Countries countries;
+	private Countries countries = null;
 
 	@BeforeEach
 	void setUp() throws Exception {
