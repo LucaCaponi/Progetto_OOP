@@ -101,8 +101,18 @@ public class restController {
 	public ResponseEntity<Object> getFilteredCountries(@PathVariable("continent") String cont) {
 		Filterscountry.gettingfilterCountries(cont);
 		return new ResponseEntity<>(countryService.gettingfilterCountries(cont), HttpStatus.OK);
-
 	}
+	
+	/**
+	 * 
+	 * @return Ritorna tutti i metadati
+	 * 
+	 */
+	@RequestMapping(value = "/countries/metadata",  method = RequestMethod.GET)
+	public ResponseEntity<Object> getMetadata()
+	{
+		return new ResponseEntity<>(countryService.gettingMetadata(),HttpStatus.OK);
+	}	
 	
 	/**
 	 * 

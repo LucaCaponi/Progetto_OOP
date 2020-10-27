@@ -2,6 +2,7 @@ package ProgettoOOP.app.service;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
@@ -20,6 +21,7 @@ public interface CountryService {
 	public abstract String ClassifyRecovered(String from, String to) throws IOException, ParseException, JSONException;
 	public abstract String ClassifyActive(String from, String to) throws IOException, ParseException, JSONException;
 	public abstract Collection<Countries> gettingCountries();
+	public abstract Map<String, String> gettingMetadata();
 	public abstract Collection<Countries> gettingfilterCountries(String cont);
 	public abstract String yourcontinent() throws Exception;
 	

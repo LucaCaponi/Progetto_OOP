@@ -5,7 +5,7 @@ package ProgettoOOP.app.model;
  * @author Federico Catalini
  * @author Caponi Luca
  * 
- *         La classe Countries serve per gestire l'API "GET COUNTRIES"
+ * La classe Countries serve per gestire l'API "GET COUNTRIES"
  *
  */
 public class Countries {

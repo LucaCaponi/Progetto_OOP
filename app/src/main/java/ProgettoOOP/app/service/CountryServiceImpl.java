@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.Metadati;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.stats.StatsCovid;
 import ProgettoOOP.app.exception.ExistingISO2;
@@ -93,6 +94,10 @@ public Collection<Countries> gettingCountries() {
 	Map<String, Countries> world= World.getworld();
 	return world.values();
 }
+
+public Map<String, String> gettingMetadata() {
+	return Metadati.getMetadata();
+}	
 
 public Collection<Countries> gettingfilterCountries(String cont){
 	Map<String, Countries> filter= Filterscountry.gettingfilterCountries(cont);
