@@ -21,17 +21,17 @@ public class Filterscountry {
 		  
 		  if(cont.toLowerCase().contentEquals("europe"))
 			  return Continents.getEurope();
-		  else if(cont.contentEquals("asia")||cont.contentEquals("ASIA")||cont.contentEquals("Asia"))
+		  else if(cont.toLowerCase().contentEquals("asia"))
 			  return Continents.getAsia();
-		  else if(cont.contentEquals("africa")||cont.contentEquals("AFRICA")||cont.contentEquals("Africa"))
+		  else if(cont.toLowerCase().contentEquals("africa"))
 			  return Continents.getAfrica();
-		  else if(cont.contentEquals("northamerica")||cont.contentEquals("NORTHAMERICA")||cont.contentEquals("NorthAmerica"))
+		  else if(cont.toLowerCase().contentEquals("northamerica"))
 			  return Continents.getNorth();
-		  else if(cont.contentEquals("southamerica")||cont.contentEquals("SOUTHAMERICA")||cont.contentEquals("SouthAmerica"))
+		  else if(cont.toLowerCase().contentEquals("southamerica"))
 			  return Continents.getSouth();
-		  else if(cont.contentEquals("oceania")||cont.contentEquals("OCEANIA")||cont.contentEquals("Oceania"))
+		  else if(cont.toLowerCase().contentEquals("oceania"))
 			  return Continents.getOceania();
-		  else if(cont.contentEquals("antarctica")||cont.contentEquals("ANTARCTICA")||cont.contentEquals("Antarctica"))
+		  else if(cont.toLowerCase().contentEquals("antarctica"))
 			  return Continents.getAntar();
 		  else throw new NotValidContinent();
 

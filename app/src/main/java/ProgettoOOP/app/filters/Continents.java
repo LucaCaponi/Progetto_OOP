@@ -1,6 +1,8 @@
 package ProgettoOOP.app.filters;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import ProgettoOOP.app.model.Countries;
@@ -17,7 +19,16 @@ import ProgettoOOP.app.model.World;
  */
 
 public class Continents {
-	
+	/*
+	private static List<Map<String, Countries>> continent= new LinkedList<>();
+	String europe;
+	String asia;
+	String africa;
+	String north;
+	String south;
+	String oceania;
+	String antarctica;
+	*/
 	private static Map<String, Countries> europe=new LinkedHashMap<>(); 
 	private static Map<String, Countries> asia=new LinkedHashMap<>(); 
 	private static Map<String, Countries> africa=new LinkedHashMap<>(); 
