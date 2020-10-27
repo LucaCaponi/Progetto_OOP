@@ -27,6 +27,7 @@ public final class World {
 		world.put(nation.getISO2(), nation);
 	}
 
+	
 	public static void deleteworld(String ISO2) {
 		world.remove(ISO2);
 	}
