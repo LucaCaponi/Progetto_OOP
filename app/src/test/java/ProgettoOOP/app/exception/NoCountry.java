@@ -28,12 +28,13 @@ class NoCountry {
 	void tesNotValidCountry() {
 		
 		NotValidCountry exception= assertThrows(NotValidCountry.class, () -> {Verify(testcountries1);});
+	
 	assertTrue(exception.getMessage().contains("Nessun paese trovato!"));	
 		
 	}
 
 boolean Verify(Countries test1) throws NotValidCountry{
-	
+
 	throw new NotValidCountry();
 }
 
