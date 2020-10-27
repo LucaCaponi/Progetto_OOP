@@ -19,10 +19,20 @@ public class StatsCovid {
 
 	
 	private static Map<String, Countries> world = World.getworld();	
+	private static Map<String, Long> daily = new LinkedHashMap<String, Long>();
 	
 
+	public static Map<String, Long> getDaily() {
+		return daily;
+	}
+
+
+	public static void setDaily(Map<String, Long> daily) {
+		StatsCovid.daily = daily;
+	}
+
+
 	public static String statistics(String from, String to) throws IOException {
-		Map<String, Long> daily = new LinkedHashMap<String, Long>();
 		Map<String, Object> out = new LinkedHashMap<>();
 		JSONParser jsonParser = new JSONParser();
 
@@ -57,37 +67,56 @@ public class StatsCovid {
 		for (String key : out.keySet()) {
 			JSONArray countryObject = (JSONArray) out.get(key);
 
-			long confirmeddaily = 0;
-			long deathsdaily = 0;
-			long recovereddaily = 0;
-			long activedaily = 0;
+			long confirmedbefore = 0;
+			long confirmedafter = 0;
+			long deathsbefore = 0;
+			long deathsafter= 0;
+			long recoveredbefore = 0;
+			long recoveredafter = 0;
+			long activebefore = 0;
+			long activeafter = 0;
 			
-			for (int i = 0; i < countryObject.size(); i++) {	
-			JSONObject countryObjectall = (JSONObject) countryObject.get(i);
-				for (int j = 1; j < countryObject.size(); j++) {	
-					if (i==j-1) {
-				JSONObject countryObjectall2 = (JSONObject) countryObject.get(j);
-					confirmeddaily = (Long) countryObjectall2.get("Confirmed") - (Long) countryObjectall.get("Confirmed");
-					deathsdaily = (Long) countryObjectall2.get("Deaths") - (Long) countryObjectall.get("Deaths"); 
-					recovereddaily = (Long) countryObjectall2.get("Recovered")- (Long) countryObjectall.get("Recovered");
-					activedaily = (Long) countryObjectall2.get("Active")- (Long) countryObjectall.get("Active");
-					daily.put("Confirmed daily", confirmeddaily);
-					resultstats.put(key, daily);
-					}
-				}
+			for (int i = 0; i < countryObject.size(); i++) {
+				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+								
+				daily.put("Confirmed daily", confirmedafter-confirmedbefore);
+				resultstats.put(key, getDaily());
+				setDaily(daily);
+				for (int j = 0; j < countryObject.size(); j++) {
+					
+					
+					JSONObject countryObjectall2 = (JSONObject) countryObject.get(j);
+							if (j==i) {
+							confirmedbefore = (Long) countryObjectall.get("Confirmed");
+							deathsbefore = (Long) countryObjectall.get("Deaths");
+							recoveredbefore = (Long) countryObjectall.get("Recovered");
+							activebefore = (Long) countryObjectall.get("Active");
+						
+							}
+						    if(j==i+1) {
+							confirmedafter = (Long) countryObjectall2.get("Confirmed");
+							deathsafter = (Long) countryObjectall2.get("Deaths");
+							recoveredafter = (Long) countryObjectall2.get("Recovered");
+							activeafter = (Long) countryObjectall2.get("Active");
+							
+						}
+						
+						    
+							}
 				
-				
-			}
+						}
 			
 			
+		}	
 			
 		
 			
-		}
+		
 		
 		return new JSONObject(resultstats).toString();
 	
 	}
 	
+	
 
-}
+	}

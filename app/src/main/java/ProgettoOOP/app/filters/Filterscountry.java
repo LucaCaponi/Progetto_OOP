@@ -19,7 +19,7 @@ public class Filterscountry {
 	
 	  public static Map<String,Countries> gettingfilterCountries(String cont) {
 		  
-		  if(cont.contentEquals("europe")||cont.contentEquals("EUROPE")||cont.contentEquals("Europe"))
+		  if(cont.toLowerCase().contentEquals("europe"))
 			  return Continents.getEurope();
 		  else if(cont.contentEquals("asia")||cont.contentEquals("ASIA")||cont.contentEquals("Asia"))
 			  return Continents.getAsia();
