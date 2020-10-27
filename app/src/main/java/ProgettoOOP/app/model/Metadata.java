@@ -11,7 +11,7 @@ import java.util.Map;
  * La classe Metadati serve per creare i metadati
  *
  */
-public class Metadati {
+public class Metadata {
 	
 	public static Map<String,String> getMetadata() 
 	{
