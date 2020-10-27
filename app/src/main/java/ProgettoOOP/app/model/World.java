@@ -35,10 +35,7 @@ public final class World {
  		String lastcountry = null;
  		try {
  			List<Countries> CountriesArray = new ArrayList<Countries>();
- 			System.out.println(CountriesArray.size());
  			for (String key : world.keySet()) {
- 				System.out.println("key : " + key);
- 				System.out.println("value : " + world.get(key));
  				CountriesArray.add(world.get(key));
  			}
  			lastcountry = CountriesArray.get(CountriesArray.size() - 1).getCountry();
@@ -53,10 +50,7 @@ public final class World {
  		String lastiso2 = null;
  		try {
  			List<Countries> CountriesArray = new ArrayList<Countries>();
- 			System.out.println(CountriesArray.size());
  			for (String key : world.keySet()) {
- 				System.out.println("key : " + key);
- 				System.out.println("value : " + world.get(key));
  				CountriesArray.add(world.get(key));
  			}
  			lastiso2 = CountriesArray.get(CountriesArray.size() - 1).getISO2();
@@ -71,10 +65,7 @@ public final class World {
  		Countries state = new Countries(null, null, null);
  		try {
  			List<Countries> CountriesArray = new ArrayList<Countries>();
- 			System.out.println(CountriesArray.size());
  			for (String key : world.keySet()) {
- 				System.out.println("key : " + key);
- 				System.out.println("value : " + world.get(key));
  				CountriesArray.add(world.get(key));
  			}
  			String lc=   CountriesArray.get(CountriesArray.size() - 1).getCountry();

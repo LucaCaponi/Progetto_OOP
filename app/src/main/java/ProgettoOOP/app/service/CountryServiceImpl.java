@@ -11,6 +11,7 @@ import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
+import ProgettoOOP.app.stats.StatsCovid;
 import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
@@ -66,6 +67,12 @@ public String ClassifyActive(String from, String to) throws IOException, ParseEx
 	DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
 	return DatabaseCountryAllStatus.OrderingActive();
 }
+
+@Override
+public String totalStats(String from, String to) throws IOException, ParseException, JSONException {
+	return StatsCovid.statistics(from, to);
+}
+
 
 @Override
 public void InsertCountry(Countries country) throws Exception {

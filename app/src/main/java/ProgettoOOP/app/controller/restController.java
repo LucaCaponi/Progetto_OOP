@@ -164,6 +164,21 @@ public class restController {
 		return new ResponseEntity<>(countryService.ClassifyActive(from, to), HttpStatus.OK);
 	}
 	
+	/**
+	 * 
+	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
+	 *                 finale in base a ciò che vuole ottenere
+	 * @return Ritorna la differenza tra i confermati, i decessi, i ricoverati e gli
+	 *         attuali positivi tra la data finale inserita e quella iniziale
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/stats", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+	public ResponseEntity<Object> getStats(
+			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
+			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
+		return new ResponseEntity<>(countryService.totalStats(from, to), HttpStatus.OK);
+	}
+	
 
 	/**
 	 * 

@@ -30,15 +30,13 @@ import java.util.Map.Entry;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
-
 import com.google.gson.Gson;
-
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 
 public class DatabaseCountryAllStatus {
 
-	private static Map<String, Countries> world = World.getworld();
+	private static Map<String, Countries> world = World.getworld();	
 	private static Map<String, Long> confirmed = new LinkedHashMap<String, Long>();
 	private static Map<String, Long> deaths = new LinkedHashMap<String, Long>();
 	private static Map<String, Long> recovered = new LinkedHashMap<String, Long>();
@@ -88,25 +86,32 @@ public class DatabaseCountryAllStatus {
 			long recoveredlast = 0;
 			long activelast = 0;
 			
+			
 			for (int i = 0; i < countryObject.size(); i++) {
-
 				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+
+			
 				if (i == 0) {
 					confirmedstart = (Long) countryObjectall.get("Confirmed");
 					deathsstart = (Long) countryObjectall.get("Deaths");
 					recoveredstart = (Long) countryObjectall.get("Recovered");
 					activestart = (Long) countryObjectall.get("Active");
 				}
+				
 
-				if (i == countryObject.size() - 1) {
+				
+				if (i == countryObject.size()-1) {
 					confirmedlast = (Long) countryObjectall.get("Confirmed");
 					deathslast = (Long) countryObjectall.get("Deaths");
 					recoveredlast = (Long) countryObjectall.get("Recovered");
 					activelast = (Long) countryObjectall.get("Active");
 					
 				}
+				
 
 			}
+			
+			
 			
 			
 			Map<String, Long> stats = new LinkedHashMap<String, Long>();
@@ -212,5 +217,6 @@ return result;
 		
 	}
 	
+			
 }
 
