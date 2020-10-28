@@ -1,5 +1,7 @@
 package ProgettoOOP.app.filters;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -92,6 +94,7 @@ public class Continents {
 	public static void setAntar(Map<String, Countries> antar) {
 		Continents.antar = antar;
 	}
+
 
 	private static String[] Europe = { "ALA Aland Islands", "Albania", "Andorra", "Austria", "Belarus", "Belgium",
 			"Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia",

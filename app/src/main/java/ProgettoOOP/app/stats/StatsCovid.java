@@ -19,17 +19,6 @@ public class StatsCovid {
 
 	
 	private static Map<String, Countries> world = World.getworld();	
-	private static Map<String, Long> daily = new LinkedHashMap<String, Long>();
-	
-
-	public static Map<String, Long> getDaily() {
-		return daily;
-	}
-
-
-	public static void setDaily(Map<String, Long> daily) {
-		StatsCovid.daily = daily;
-	}
 
 
 	public static String statistics(String from, String to) throws IOException {
@@ -66,6 +55,8 @@ public class StatsCovid {
 		Map<String, Object> resultstats = new LinkedHashMap<>();
 		for (String key : out.keySet()) {
 			JSONArray countryObject = (JSONArray) out.get(key);
+			
+			Map<String, Long> daily = new LinkedHashMap<String, Long>();
 
 			long confirmedbefore = 0;
 			long confirmedafter = 0;
@@ -78,10 +69,9 @@ public class StatsCovid {
 			
 			for (int i = 0; i < countryObject.size(); i++) {
 				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
-								
-				daily.put("Confirmed daily", confirmedafter-confirmedbefore);
-				resultstats.put(key, getDaily());
-				setDaily(daily);
+				daily.put("Confirmed at "+countryObjectall.get("Date"), confirmedafter-confirmedbefore);	
+			    resultstats.put(key, daily);
+			    
 				for (int j = 0; j < countryObject.size(); j++) {
 					
 					
@@ -100,9 +90,9 @@ public class StatsCovid {
 							activeafter = (Long) countryObjectall2.get("Active");
 							
 						}
-						
-						    
+						   
 							}
+			   
 				
 						}
 			
