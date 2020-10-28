@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 
 import ProgettoOOP.app.model.Countries;
 
-class testCountries {
-	
+class TestCountries {
+
 	private Countries countries = null;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		countries=new Countries("Italy","italy", "IT");
+		countries = new Countries("Italy", "italy", "IT");
 	}
 
 	@AfterEach
@@ -28,5 +28,4 @@ class testCountries {
 		assertEquals("IT", countries.getISO2());
 	}
 
-	
 }

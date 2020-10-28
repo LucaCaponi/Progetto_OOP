@@ -9,7 +9,6 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -71,9 +70,6 @@ public class StatsCovid {
 
 				List<Stats> daily = new LinkedList<Stats>();
 
-				long confirmedstart = 0;
-				long confirmedlast = 0;
-
 				for (int i = 2; i < countryObject.size(); i++) {
 					long confirmedbefore = 0;
 					long confirmedafter = 0;
@@ -87,31 +83,21 @@ public class StatsCovid {
 
 					long varyesterday = (Long) countryObjectallbefore.get("Confirmed")
 							- (Long) countryObjectallvar.get("Confirmed");
-					
+
 					double varperc;
 					if (varyesterday == 0) {
-						varperc = ((double)vartoday) * 100;
-						
+						varperc = ((double) vartoday) * 100;
+
 					} else {
 
-						varperc = (((double)vartoday - (double)varyesterday) / (double)varyesterday) * 100;
-						
+						varperc = (((double) vartoday - (double) varyesterday) / (double) varyesterday) * 100;
+
 					}
 					DecimalFormat df = new DecimalFormat("#.##");
-			       String varpercstr=df.format(varperc)+"%";
+					String varpercstr = df.format(varperc) + "%";
 					Stats covid = new Stats(countryObjectallafter.get("Date").toString(), vartoday, varpercstr);
 					daily.add(covid);
 					resultstats.put(key, daily);
-					/*
-					 * if (i == 1) { confirmedstart = (Long) countryObjectallafter.get("Confirmed");
-					 * }
-					 * 
-					 * 
-					 * if (i == countryObject.size()-1) { confirmedlast = (Long)
-					 * countryObjectallafter.get("Confirmed"); }
-					 */
-					// double
-					// varperc=(((confirmedafter-confirmedbefore)*countryObject.size()-(confirmedlast-confirmedstart))/(confirmedlast-confirmedstart))*100;
 
 				}
 
@@ -120,7 +106,6 @@ public class StatsCovid {
 			return new Gson().toJson(resultstats);
 
 		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 

@@ -9,15 +9,14 @@ import org.junit.jupiter.api.Test;
 
 import ProgettoOOP.app.model.Countries;
 
+class TestNotValidCountry {
 
-class NoCountry {
-	
 	private Countries testcountries1 = null;
 
 	@BeforeEach
 	void setUp() throws Exception {
-	testcountries1= new Countries ("Ital", "italy", "IT");
-		
+		testcountries1 = new Countries("Ital", "italy", "IT");
+
 	}
 
 	@AfterEach
@@ -26,18 +25,18 @@ class NoCountry {
 
 	@Test
 	void tesNotValidCountry() {
-		
-		NotValidCountry exception= assertThrows(NotValidCountry.class, () -> {Verify(testcountries1);});
-	
-	assertTrue(exception.getMessage().contains("Nessun paese trovato!"));	
-		
+
+		NotValidCountry exception = assertThrows(NotValidCountry.class, () -> {
+			Verify(testcountries1);
+		});
+
+		assertTrue(exception.getMessage().contains("Nessun paese trovato!"));
+
 	}
 
-boolean Verify(Countries test1) throws NotValidCountry{
+	boolean Verify(Countries test1) throws NotValidCountry {
 
-	throw new NotValidCountry();
+		throw new NotValidCountry();
+	}
+
 }
-
-		
-	}
-
