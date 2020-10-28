@@ -1,4 +1,5 @@
 package ProgettoOOP.app.database;
+
 /**
  * @author Federico Catalini
  * @author Luca Caponi
@@ -18,10 +19,9 @@ import org.json.simple.parser.ParseException;
 
 import ProgettoOOP.app.model.Countries;
 
+public final class ParseCountries {
 
-public final class ParseCountries{ 
-
-	public static List<Countries> datacountry=new LinkedList<>();
+	public static List<Countries> datacountry = new LinkedList<>();
 
 	public static List<Countries> ParseDataCountries() throws IOException {
 		JSONParser jsonParser = new JSONParser();
@@ -29,17 +29,13 @@ public final class ParseCountries{
 		try (FileReader reader = new FileReader("Countries.json")) {
 			Object obj = jsonParser.parse(reader);
 			JSONArray CountryList = (JSONArray) obj;
-		
-	 for (int i=0; i<CountryList.size(); i++) {
-		 JSONObject countryObject = (JSONObject) CountryList.get(i);
-		 datacountry.add(
-			new Countries(
-			(String) countryObject.get("Country"),
-			(String) countryObject.get("Slug"),	
-			(String) countryObject.get("ISO2")));	
 
-	 }
+			for (int i = 0; i < CountryList.size(); i++) {
+				JSONObject countryObject = (JSONObject) CountryList.get(i);
+				datacountry.add(new Countries((String) countryObject.get("Country"), (String) countryObject.get("Slug"),
+						(String) countryObject.get("ISO2")));
 
+			}
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -52,9 +48,4 @@ public final class ParseCountries{
 
 	}
 
-
-
-
-	
-} 
-
+}

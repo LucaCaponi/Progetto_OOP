@@ -1,10 +1,6 @@
 package ProgettoOOP.app.filters;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import ProgettoOOP.app.model.Countries;
@@ -21,23 +17,14 @@ import ProgettoOOP.app.model.World;
  */
 
 public class Continents {
-	/*
-	private static List<Map<String, Countries>> continent= new LinkedList<>();
-	String europe;
-	String asia;
-	String africa;
-	String north;
-	String south;
-	String oceania;
-	String antarctica;
-	*/
-	private static Map<String, Countries> europe=new LinkedHashMap<>(); 
-	private static Map<String, Countries> asia=new LinkedHashMap<>(); 
-	private static Map<String, Countries> africa=new LinkedHashMap<>(); 
-	private static Map<String, Countries> north=new LinkedHashMap<>(); 
-	private static Map<String, Countries> south=new LinkedHashMap<>(); 
-	private static Map<String, Countries> oceania=new LinkedHashMap<>(); 
-	private static Map<String, Countries> antar=new LinkedHashMap<>(); 
+
+	private static Map<String, Countries> europe = new LinkedHashMap<>();
+	private static Map<String, Countries> asia = new LinkedHashMap<>();
+	private static Map<String, Countries> africa = new LinkedHashMap<>();
+	private static Map<String, Countries> north = new LinkedHashMap<>();
+	private static Map<String, Countries> south = new LinkedHashMap<>();
+	private static Map<String, Countries> oceania = new LinkedHashMap<>();
+	private static Map<String, Countries> antar = new LinkedHashMap<>();
 
 	public static Map<String, Countries> getEurope() {
 		return europe;
@@ -94,7 +81,6 @@ public class Continents {
 	public static void setAntar(Map<String, Countries> antar) {
 		Continents.antar = antar;
 	}
-
 
 	private static String[] Europe = { "ALA Aland Islands", "Albania", "Andorra", "Austria", "Belarus", "Belgium",
 			"Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia",
@@ -161,49 +147,53 @@ public class Continents {
 		for (String c : Europe)
 			if (c.contains(World.getlastname())) {
 				continent = "EUROPE";
-		getEurope().put(World.getlastISO2(), World.getlastcountries()); 
-		setEurope(europe);}
+				getEurope().put(World.getlastISO2(), World.getlastcountries());
+				setEurope(europe);
+			}
 
 		for (String c : Asia)
 			if (c.contains(World.getlastname())) {
 				continent = "ASIA";
-		getAsia().put(World.getlastISO2(), World.getlastcountries()); 
-		setAsia(asia);
+				getAsia().put(World.getlastISO2(), World.getlastcountries());
+				setAsia(asia);
 			}
-		
-		for (String c : Africa) 
+
+		for (String c : Africa)
 			if (c.contains(World.getlastname())) {
 				continent = "AFRICA";
-		getAfrica().put(World.getlastISO2(), World.getlastcountries()); 
-		setAfrica(africa);}
+				getAfrica().put(World.getlastISO2(), World.getlastcountries());
+				setAfrica(africa);
+			}
 
-		for (String c : Oceania) 
+		for (String c : Oceania)
 			if (c.contains(World.getlastname())) {
 				continent = "OCEANIA";
-		getOceania().put(World.getlastISO2(), World.getlastcountries()); 
-		setOceania(oceania);}
+				getOceania().put(World.getlastISO2(), World.getlastcountries());
+				setOceania(oceania);
+			}
 
-		for (String c : NorthAmerica) 
+		for (String c : NorthAmerica)
 			if (c.contains(World.getlastname())) {
 				continent = "NORTH AMERICA";
-		getNorth().put(World.getlastISO2(), World.getlastcountries()); 
-		setNorth(north);}
+				getNorth().put(World.getlastISO2(), World.getlastcountries());
+				setNorth(north);
+			}
 
 		for (String c : SouthAmerica)
 			if (c.contains(World.getlastname())) {
 				continent = "SOUTH AMERICA";
-		getSouth().put(World.getlastISO2(), World.getlastcountries()); 
-		setSouth(south);}
-				
+				getSouth().put(World.getlastISO2(), World.getlastcountries());
+				setSouth(south);
+			}
+
 		for (String c : Antarctica)
 			if (c.contains(World.getlastname())) {
 				continent = "ANTARCTICA";
-		getAntar().put(World.getlastISO2(), World.getlastcountries()); 
-		setAntar(antar);}
+				getAntar().put(World.getlastISO2(), World.getlastcountries());
+				setAntar(antar);
+			}
 
 		return continent;
 	}
-	
-
 
 }

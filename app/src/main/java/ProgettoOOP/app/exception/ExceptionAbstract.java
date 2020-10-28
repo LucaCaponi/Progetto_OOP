@@ -8,16 +8,15 @@ package ProgettoOOP.app.exception;
  * @author Luca Caponi
  */
 
-	public abstract class ExceptionAbstract extends RuntimeException {
+public abstract class ExceptionAbstract extends RuntimeException {
 
-		private static final long serialVersionUID = 1L;
-		
-		/**
-		 * Ottiene il messaggio da stampare
-		 *
-		 * @return String
-		 */
-		
-		public abstract String getMessage();
-	}
+	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Ottiene il messaggio da stampare
+	 *
+	 * @return String
+	 */
+
+	public abstract String getMessage();
+}
