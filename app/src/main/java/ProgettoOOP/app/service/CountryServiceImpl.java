@@ -18,11 +18,13 @@ import ProgettoOOP.app.exception.Nofile;
 import ProgettoOOP.app.exception.NotValidCountry;
 import ProgettoOOP.app.filters.Continents;
 import ProgettoOOP.app.filters.Filterscountry;
+import ProgettoOOP.app.filters.Filtersstatus;
 
 @Service
 public class CountryServiceImpl implements CountryService {
 
 	String cont = null;
+	String status = null;
 
 	public CountryServiceImpl() {
 		Countries nation = new Countries(null, null, null);
@@ -47,27 +49,9 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	@Override
-	public String ClassifyConfirmed(String from, String to) throws IOException, ParseException, JSONException {
+	public String Classify(String from, String to, String status) throws IOException, ParseException, JSONException {
 		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-		return DatabaseCountryAllStatus.OrderingConfirmed();
-	}
-
-	@Override
-	public String ClassifyDeaths(String from, String to) throws IOException, ParseException, JSONException {
-		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-		return DatabaseCountryAllStatus.OrderingDeaths();
-	}
-
-	@Override
-	public String ClassifyRecovered(String from, String to) throws IOException, ParseException, JSONException {
-		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-		return DatabaseCountryAllStatus.OrderingRecovered();
-	}
-
-	@Override
-	public String ClassifyActive(String from, String to) throws IOException, ParseException, JSONException {
-		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-		return DatabaseCountryAllStatus.OrderingActive();
+		return Filtersstatus.gettingfilterStatus(status);
 	}
 
 	@Override
@@ -85,11 +69,6 @@ public class CountryServiceImpl implements CountryService {
 			throw new ExistingISO2();
 		}
 		World.setworld(country);
-	}
-
-	@Override
-	public void DeleteCountry(String ISO2) {
-		World.deleteworld(ISO2);
 	}
 
 	public Collection<Countries> gettingCountries() {

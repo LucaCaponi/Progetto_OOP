@@ -122,58 +122,14 @@ public class restController {
 	 *         a quello con meno tra i paesi scelti dall'utente
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/confirmed", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-	public ResponseEntity<Object> getstatsconfirmed(
+	@RequestMapping(value = "/covid/{status}", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+	public ResponseEntity<Object> getStatus(
+			@PathVariable("status") String status,
 			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
 			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
-		return new ResponseEntity<>(countryService.ClassifyConfirmed(from, to), HttpStatus.OK);
+		return new ResponseEntity<>(countryService.Classify(from, to, status), HttpStatus.OK);
 	}
-	
-	/**
-	 * 
-	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
-	 *                 finale in base a ciò che vuole ottenere
-	 * @return Ritorna le classifiche dei casi decessi dal paese con più morti 
-	 *         a quello con meno tra i paesi scelti dall'utente
-	 * @throws Exception
-	 */
-	@RequestMapping(value = "/deaths", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-	public ResponseEntity<Object> getstatsdeaths(
-			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
-			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
-		return new ResponseEntity<>(countryService.ClassifyDeaths(from, to), HttpStatus.OK);
-	}
-	
-	/**
-	 * 
-	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
-	 *                 finale in base a ciò che vuole ottenere
-	 * @return Ritorna le classifiche dei casi ricoverati dal paese con più ricoverati 
-	 *         a quello con meno tra i paesi scelti dall'utente
-	 * @throws Exception
-	 */
-	@RequestMapping(value = "/recovered", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-	public ResponseEntity<Object> getstatsrecovered(
-			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
-			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
-		return new ResponseEntity<>(countryService.ClassifyRecovered(from, to), HttpStatus.OK);
-	}
-	
-	/**
-	 * 
-	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
-	 *                 finale in base a ciò che vuole ottenere
-	 * @return Ritorna le classifiche dei casi positivi (attivi) dal paese con più attivi 
-	 *         a quello con meno tra i paesi scelti dall'utente
-	 * @throws Exception
-	 */
-	@RequestMapping(value = "/active", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-	public ResponseEntity<Object> getstatsactive(
-			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
-			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
-		return new ResponseEntity<>(countryService.ClassifyActive(from, to), HttpStatus.OK);
-	}
-	
+
 	/**
 	 * 
 	 * @param L'utente inserisce nella rotta in Postman una data iniziale ed una
@@ -187,19 +143,6 @@ public class restController {
 			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
 			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
 		return new ResponseEntity<>(countryService.totalStats(from, to), HttpStatus.OK);
-	}
-	
-
-	/**
-	 * 
-	 * @PathVariable L'utente inserisce nella rotta in Postman l'ISO2 del paese che
-	 *               vuole eliminare dalla sua lista
-	 * @return Ritorna un messaggio di avvenuta cancellazione
-	 */
-	@RequestMapping(value = "/countries/{ISO2}", method = RequestMethod.DELETE)
-	public ResponseEntity<Object> delete(@PathVariable("ISO2") String ISO2) {
-		countryService.DeleteCountry(ISO2);
-		return new ResponseEntity<>("Country is deleted successfully!", HttpStatus.OK);
 	}
 
 	/**
