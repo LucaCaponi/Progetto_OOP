@@ -60,48 +60,48 @@ public class StatsCovid {
 
 			long confirmedbefore = 0;
 			long confirmedafter = 0;
-			long deathsbefore = 0;
-			long deathsafter= 0;
-			long recoveredbefore = 0;
-			long recoveredafter = 0;
-			long activebefore = 0;
-			long activeafter = 0;
+		
+			long confirmedstart = 0;
+			long confirmedlast = 0;
+
 			
 			for (int i = 0; i < countryObject.size(); i++) {
 				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
-				daily.put("Confirmed at "+countryObjectall.get("Date"), confirmedafter-confirmedbefore);	
+				
+				daily.put("Confirmed daily on "+countryObjectall.get("Date"), confirmedafter-confirmedbefore);	
 			    resultstats.put(key, daily);
 			    
 				for (int j = 0; j < countryObject.size(); j++) {
 					
-					
 					JSONObject countryObjectall2 = (JSONObject) countryObject.get(j);
+					
 							if (j==i) {
 							confirmedbefore = (Long) countryObjectall.get("Confirmed");
-							deathsbefore = (Long) countryObjectall.get("Deaths");
-							recoveredbefore = (Long) countryObjectall.get("Recovered");
-							activebefore = (Long) countryObjectall.get("Active");
-						
-							}
+						}
+							
 						    if(j==i+1) {
 							confirmedafter = (Long) countryObjectall2.get("Confirmed");
-							deathsafter = (Long) countryObjectall2.get("Deaths");
-							recoveredafter = (Long) countryObjectall2.get("Recovered");
-							activeafter = (Long) countryObjectall2.get("Active");
 							
 						}
-						   
+				
 							}
+				
+				if (i == 0) {
+					confirmedstart = (Long) countryObjectall.get("Confirmed");
+				}
+
+				
+				if (i == countryObject.size()-1) {
+					confirmedlast = (Long) countryObjectall.get("Confirmed");
+				}
 			   
+				double varperc=(((confirmedafter-confirmedbefore)*countryObject.size()-(confirmedlast-confirmedstart))/(confirmedlast-confirmedstart))*100;
 				
 						}
 			
 			
 		}	
 			
-		
-			
-		
 		
 		return new JSONObject(resultstats).toString();
 	

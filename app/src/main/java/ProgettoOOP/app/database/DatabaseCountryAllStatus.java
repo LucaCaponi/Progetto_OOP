@@ -121,10 +121,10 @@ public class DatabaseCountryAllStatus {
 			stats.put("Recovered", recoveredlast - recoveredstart);
 			stats.put("Active", activelast - activestart);
 			result.put(key, stats);
-			confirmed.put(key+"'s confirmed cases: ", confirmedlast-confirmedstart); 
-			deaths.put(key+"'s deaths cases: ", deathslast-deathsstart);
-			recovered.put(key+"'s recovered cases: ", recoveredlast-recoveredstart);
-			active.put(key+"'s active cases: ", activelast-activestart);
+			confirmed.put(key+"'s confirmed cases", confirmedlast-confirmedstart); 
+			deaths.put(key+"'s deaths cases", deathslast-deathsstart);
+			recovered.put(key+"'s recovered cases", recoveredlast-recoveredstart);
+			active.put(key+"'s active cases", activelast-activestart);
 		
 			
 		}
