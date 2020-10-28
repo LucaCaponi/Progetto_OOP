@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ProgettoOOP.app.exception.ExceptionAbstract;
 import ProgettoOOP.app.exception.ExceptionPrincipal;
-import ProgettoOOP.app.filters.Filterscountry;
+import ProgettoOOP.app.filters.FiltersAllCountry;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.service.CountryService;
 
@@ -99,7 +99,7 @@ public class restController {
 	 */
 	@RequestMapping(value = "/countries/{continent}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getFilteredCountries(@PathVariable("continent") String cont) {
-		Filterscountry.gettingfilterCountries(cont);
+		FiltersAllCountry.gettingfilterCountries(cont);
 		return new ResponseEntity<>(countryService.gettingfilterCountries(cont), HttpStatus.OK);
 	}
 	

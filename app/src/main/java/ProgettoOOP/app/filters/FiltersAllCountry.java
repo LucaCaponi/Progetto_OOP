@@ -14,7 +14,7 @@ import java.util.Map;
 import ProgettoOOP.app.exception.NotValidContinent;
 import ProgettoOOP.app.model.Countries;
 
-public class Filterscountry {
+public class FiltersAllCountry {
 
 	public static Map<String, Countries> gettingfilterCountries(String cont) {
 

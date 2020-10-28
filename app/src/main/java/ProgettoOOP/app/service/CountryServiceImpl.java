@@ -14,11 +14,11 @@ import ProgettoOOP.app.model.Metadata;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.stats.StatsCovid;
 import ProgettoOOP.app.exception.ExistingISO2;
-import ProgettoOOP.app.exception.Nofile;
+import ProgettoOOP.app.exception.NoFile;
 import ProgettoOOP.app.exception.NotValidCountry;
 import ProgettoOOP.app.filters.Continents;
-import ProgettoOOP.app.filters.Filterscountry;
-import ProgettoOOP.app.filters.Filtersstatus;
+import ProgettoOOP.app.filters.FiltersAllCountry;
+import ProgettoOOP.app.filters.FiltersAllStatus;
 
 @Service
 public class CountryServiceImpl implements CountryService {
@@ -37,21 +37,21 @@ public class CountryServiceImpl implements CountryService {
 	@Override
 	public String totalCountries() throws IOException {
 		if (DatabaseCountries.DownloadDataCountries().isEmpty())
-			throw new Nofile();
+			throw new NoFile();
 		return DatabaseCountries.DownloadDataCountries();
 	}
 
 	@Override
 	public String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException {
 		if (DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to).isEmpty())
-			throw new Nofile();
+			throw new NoFile();
 		return DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
 	}
 
 	@Override
 	public String Classify(String from, String to, String status) throws IOException, ParseException, JSONException {
 		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
-		return Filtersstatus.gettingfilterStatus(status);
+		return FiltersAllStatus.gettingfilterStatus(status);
 	}
 
 	@Override
@@ -81,7 +81,7 @@ public class CountryServiceImpl implements CountryService {
 	}
 
 	public Collection<Countries> gettingfilterCountries(String cont) {
-		Map<String, Countries> filter = Filterscountry.gettingfilterCountries(cont);
+		Map<String, Countries> filter = FiltersAllCountry.gettingfilterCountries(cont);
 		return filter.values();
 
 	}

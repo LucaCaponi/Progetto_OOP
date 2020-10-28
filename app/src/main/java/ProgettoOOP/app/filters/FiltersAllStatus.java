@@ -5,7 +5,7 @@ import java.io.IOException;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.exception.NotValidStatus;
 
-public class Filtersstatus {
+public class FiltersAllStatus {
 
 		public static String gettingfilterStatus(String status) throws IOException {
 

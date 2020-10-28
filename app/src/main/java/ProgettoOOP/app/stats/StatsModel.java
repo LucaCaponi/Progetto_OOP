@@ -1,11 +1,11 @@
 package ProgettoOOP.app.stats;
 
-public class Stats {
+public class StatsModel {
 	private String Date;
 	private long DailyConfirmed;
 	private String Var;
 
-	public Stats(String date, long dailyConfirmed, String var) {
+	public StatsModel(String date, long dailyConfirmed, String var) {
 		Date = date;
 		DailyConfirmed = dailyConfirmed;
 		Var = var;

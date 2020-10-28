@@ -67,8 +67,8 @@
     <position height="764" width="739" x="-387" y="435"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="10" language="java" name="ProgettoOOP.app.exception.Nofile" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/Nofile.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="ProgettoOOP.app.exception.NoFile" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NoFile.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="-295" y="1091"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -135,8 +135,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="ProgettoOOP.app.filters.Filterscountry" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/filters/Filterscountry.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="18" language="java" name="ProgettoOOP.app.filters.FiltersAllCountry" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/FiltersAllCountry.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1629" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -199,59 +199,61 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="26">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="27" name="north">        
-        <position height="19" width="36" x="1076" y="335"/>      
+  <generalization id="26">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="29" name="world">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="28" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1080" y="367"/>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="29">    
+  <realization id="31">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <association id="32">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="30" name="world"/>      
-      <multiplicity id="31" minimum="0" maximum="2147483647">        
+      <attribute id="33" name="world">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="2147483647">        
         <position height="17" width="24" x="974" y="250"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="33" name="antar">        
-        <position height="19" width="36" x="1085" y="440"/>      
-      </attribute>      
-      <multiplicity id="34" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1059" y="465"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="35">    
+  <generalization id="35">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="38">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="36" name="datacountry">        
+      <attribute id="39" name="datacountry">        
         <position height="19" width="74" x="1017" y="312"/>      
       </attribute>      
-      <multiplicity id="37" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1104" y="321"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="38">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="39" name="europe">        
-        <position height="19" width="46" x="1093" y="415"/>      
-      </attribute>      
       <multiplicity id="40" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1063" y="437"/>      
+        <position height="17" width="24" x="1104" y="321"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="22" navigable="true"/>    
@@ -259,92 +261,14 @@
   </association>  
   <association id="41">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="42" name="countryService"/>      
-      <multiplicity id="43" minimum="0" maximum="1"/>    
+      <attribute id="42" name="countryService">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
-  <generalization id="45">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <association id="47">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="48" name="world"/>      
-      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="50">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
-  <association id="51">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="52" name="africa">        
-        <position height="19" width="38" x="1082" y="468"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="993" y="314"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="55" name="asia">        
-        <position height="19" width="31" x="1104" y="365"/>      
-      </attribute>      
-      <multiplicity id="56" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1061" y="389"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="57">    
-    <bendpoint x="1100" y="330"/>    
-    <bendpoint x="1028" y="352"/>    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="58" name="oceania">        
-        <position height="19" width="51" x="1124" y="319"/>      
-      </attribute>      
-      <multiplicity id="59" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1056" y="339"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="61">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <association id="62">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="63" name="south">        
-        <position height="19" width="38" x="1088" y="388"/>      
-      </attribute>      
-      <multiplicity id="64" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="1071" y="416"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

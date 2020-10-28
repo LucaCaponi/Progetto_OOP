@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="ProgettoOOP.app.filters.Filterscountry" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/filters/Filterscountry.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="ProgettoOOP.app.filters.FiltersAllCountry" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/FiltersAllCountry.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="545" y="82"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

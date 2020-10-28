@@ -6,15 +6,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ProgettoOOP.app.stats.Stats;
+import ProgettoOOP.app.stats.StatsModel;
 
 class TestStats {
 
-	private Stats stats = null;
+	private StatsModel stats = null;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		stats = new Stats("2020-03-01T00:00:00Z", 1000, "50%");
+		stats = new StatsModel("2020-03-01T00:00:00Z", 1000, "50%");
 	}
 
 	@AfterEach

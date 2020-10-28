@@ -8,7 +8,7 @@ package ProgettoOOP.app.exception;
  * @author Luca Caponi
  */
 
-public class Nofile extends ExceptionAbstract {
+public class NoFile extends ExceptionAbstract {
 
 	private static final long serialVersionUID = 1L;
 

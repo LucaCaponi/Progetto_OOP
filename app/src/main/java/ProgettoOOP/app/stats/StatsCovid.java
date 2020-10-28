@@ -68,7 +68,7 @@ public class StatsCovid {
 			for (String key : out.keySet()) {
 				JSONArray countryObject = (JSONArray) out.get(key);
 
-				List<Stats> daily = new LinkedList<Stats>();
+				List<StatsModel> daily = new LinkedList<StatsModel>();
 
 				for (int i = 2; i < countryObject.size(); i++) {
 					long confirmedbefore = 0;
@@ -95,7 +95,7 @@ public class StatsCovid {
 					}
 					DecimalFormat df = new DecimalFormat("#.##");
 					String varpercstr = df.format(varperc) + "%";
-					Stats covid = new Stats(countryObjectallafter.get("Date").toString(), vartoday, varpercstr);
+					StatsModel covid = new StatsModel(countryObjectallafter.get("Date").toString(), vartoday, varpercstr);
 					daily.add(covid);
 					resultstats.put(key, daily);
 
