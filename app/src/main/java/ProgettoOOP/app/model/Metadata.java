@@ -1,31 +1,47 @@
 package ProgettoOOP.app.model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- *         La classe Metadata serve per restituire i metadati
+ *         La classe Metadata serve per restituire i metadati di un oggetto di
+ *         tipo 'Countries'
  *
  */
 public class Metadata {
+	private String alias;
+	private String sourcefield;
+	private String type;
 
-	/**
-	 * Metodo che ottiene i metadati di un oggetto di tipo 'Countries'
-	 *
-	 * @return Map<String,String>
-	 * 
-	 */
-	public static Map<String, String> getMetadata() {
-		Map<String, String> metadata = new HashMap<String, String>(); // HashMap in cui le chiavi sono i metadati e i
-																		// valori la descrizione di quest'ultimi
-		metadata.put("Country", "nome della nazione");
-		metadata.put("Slug", "parte dell'URL che identifica una nazione");
-		metadata.put("ISO2", "codice costituito da due lettere che identifica una nazione");
-		return metadata;
+	public Metadata(String alias, String sourcefield, String type) {
+		this.alias = alias;
+		this.sourcefield = sourcefield;
+		this.type = type;
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getSourcefield() {
+		return sourcefield;
+	}
+
+	public void setSourcefield(String sourcefield) {
+		this.sourcefield = sourcefield;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

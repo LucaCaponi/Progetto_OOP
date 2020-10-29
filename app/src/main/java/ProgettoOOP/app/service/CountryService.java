@@ -1,13 +1,14 @@
 package ProgettoOOP.app.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
 
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 
 import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.Metadata;
 
 public interface CountryService {
 
@@ -25,7 +26,7 @@ public interface CountryService {
 
 	public abstract Collection<Countries> gettingCountries();
 
-	public abstract Map<String, String> gettingMetadata();
+	public abstract ArrayList<Metadata> gettingMetadata();
 
 	public abstract Collection<Countries> gettingfilterCountries(String cont);
 

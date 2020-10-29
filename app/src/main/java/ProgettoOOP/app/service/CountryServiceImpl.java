@@ -1,6 +1,7 @@
 package ProgettoOOP.app.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
@@ -82,8 +83,13 @@ public class CountryServiceImpl implements CountryService {
 		return world.values();
 	}
 
-	public Map<String, String> gettingMetadata() {
-		return Metadata.getMetadata();
+	public ArrayList<Metadata> gettingMetadata() {
+		ArrayList<Metadata> metadata = new ArrayList<Metadata>();
+		metadata.add(new Metadata("Country", "Nome della nazione", "String"));
+		metadata.add(new Metadata("Slug", "Parte dell'URL che identifica una nazione", "String"));
+		metadata.add(new Metadata("ISO2", "Codice costituito da due lettere che identifica una nazione", "String"));
+		return metadata;
+		
 	}
 
 	public Collection<Countries> gettingfilterCountries(String cont) {
