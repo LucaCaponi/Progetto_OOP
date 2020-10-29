@@ -10,19 +10,30 @@ import org.json.simple.parser.ParseException;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.Metadata;
 
+/**
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         L'interfaccia CountryService contiene una lista di metodi astratti
+ *         che verranno poi implementati nella classe CountryServiceImpl.
+ * 
+ */
+
 public interface CountryService {
 
 	public abstract void InsertCountry(Countries country) throws Exception;
 
 	public abstract String totalCountries() throws IOException;
 
-	public abstract String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException;
+	public abstract String totalStatusCountries(String from, String to)
+			throws IOException, ParseException, JSONException;
 
 	public abstract String totalStats(String from, String to) throws IOException, ParseException, JSONException;
-	
+
 	public abstract String totalStatsFiltered(String from, String to, String threshold) throws Exception;
 
-	public abstract String Classify(String from, String to, String status) throws IOException, ParseException, JSONException;
+	public abstract String Classify(String from, String to, String status)
+			throws IOException, ParseException, JSONException;
 
 	public abstract Collection<Countries> gettingCountries();
 

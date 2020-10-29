@@ -2,10 +2,11 @@ package ProgettoOOP.app.exception;
 
 /**
  * 
- * 
- * 
  * @author Federico Catalini
  * @author Luca Caponi
+ * 
+ *         Eccezione lanciata se la soglia che si vuole richiedere è errata o
+ *         l'operatore condizionale non è disponibile.
  */
 
 public class NotValidThreshold extends ExceptionAbstract {
@@ -20,9 +21,9 @@ public class NotValidThreshold extends ExceptionAbstract {
 
 	@Override
 	public String getMessage() {
-		return "Attenzione: la soglia scelta non è disponibile. " +
-			   "Le soglie possibili sono '$gt' (>) e '$lt' (<)";
+		return "Attenzione: la soglia scelta è errata o l'operatore condizionale non è disponibile."
+				+ "Gli operatori condizionali disponibili sono '$gt' (>) e '$lt' (<).";
 
 	}
-	
+
 }

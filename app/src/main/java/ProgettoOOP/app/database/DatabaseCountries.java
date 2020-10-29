@@ -4,8 +4,8 @@ package ProgettoOOP.app.database;
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- * La classe DatabaseCountries apre l'URL dell'API Postman di Internet. 
- * Il contenuto dell'API viene letto e riutilizzato in ParseCountries
+ * La classe DatabaseCountries apre l'URL dell'API Postman 'GET Countries' in Internet. 
+ * Il contenuto dell'API viene letto e poi "parsato" in ParseCountries.
  * 
  * 
  */

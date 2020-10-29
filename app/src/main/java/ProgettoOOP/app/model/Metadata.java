@@ -6,7 +6,7 @@ package ProgettoOOP.app.model;
  * @author Luca Caponi
  * 
  *         La classe Metadata serve per restituire i metadati di un oggetto di
- *         tipo 'Countries'
+ *         tipo 'Countries'.
  *
  */
 public class Metadata {

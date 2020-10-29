@@ -1,18 +1,21 @@
 package ProgettoOOP.app.filters;
 
+import java.util.Map;
+
+import ProgettoOOP.app.exception.NotValidContinent;
+import ProgettoOOP.app.model.Countries;
+
 /**
  * 
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- * La classe Filterscountry permette di richiamare la lista dei paesi caricati con la chiamata POST suddivisi in base al continente. 
- * Il continente viene richiesto dall'utente e tramite una GET e la rotta /countries/{continent} si visualizza la lista filtrata
+ *         La classe FiltersAllCountry permette di filtrare la lista dei paesi
+ *         caricati con la chiamata POST in base al loro continente di
+ *         appartenenza. Il continente viene richiesto dall'utente e tramite una
+ *         GET, con la rotta /countries/{continent}, è possibile visualizzare la
+ *         lista filtrata.
  */
-
-import java.util.Map;
-
-import ProgettoOOP.app.exception.NotValidContinent;
-import ProgettoOOP.app.model.Countries;
 
 public class FiltersAllCountry {
 

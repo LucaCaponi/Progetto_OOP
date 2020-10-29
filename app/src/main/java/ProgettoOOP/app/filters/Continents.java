@@ -12,8 +12,8 @@ import ProgettoOOP.app.model.World;
  * @author Luca Caponi
  *
  *
- *         La classe Continent serve per dividere i paesi in base al loro
- *         continente di appartenenza
+ *         La classe Continent serve per catalogare i paesi inseriti dall'utente 
+ *         secondo il continente di appartenenza.
  */
 
 public class Continents {
@@ -141,6 +141,16 @@ public class Continents {
 
 	};
 
+	/**
+	 * 
+	 * Il metodo 'returnContinent()' ha una doppia funzione:
+	 *        1- serve ad informare l'utente a quale continente appartiene il paese appena inserito in Postman 
+	 *           tramite la rotta "/countries" con la POST.
+	 *        2- inserisce il paese appena caricato dall'utente all'interno del LinkedHashMap del continente di appartenenza.
+	 * @return il nome del continente.
+	 * @throws Exception.
+	 */
+	
 	public static String returnContinent() throws Exception {
 		String continent = "Not a Country";
 		World.getlastname();

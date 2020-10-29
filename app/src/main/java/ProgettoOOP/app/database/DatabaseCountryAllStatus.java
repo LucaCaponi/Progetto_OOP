@@ -5,10 +5,10 @@ package ProgettoOOP.app.database;
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- * La classe DatabaseCountryAllStatus apre la connessione all'API "GET BY COUNTRY ALL STATUS" 
+ * La classe DatabaseCountryAllStatus apre la connessione all'API "GET By Country All Status" 
  * da cui prendiamo i dati per ogni nazione caricata su Postman e per un determinato lasso di tempo.
  * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi e
- * le classifiche dei paesi per i casi confermati in un periodo temporale scelto dall'utente.
+ * le classifiche dei paesi per i casi confermati, decessi, ricoverati e positivi in un periodo temporale scelto dall'utente.
  * 
  */
 

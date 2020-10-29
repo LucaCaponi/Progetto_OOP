@@ -2,10 +2,11 @@ package ProgettoOOP.app.exception;
 
 /**
  * 
- * Classe astratta da cui ereditano le eccezioni del progetto
- * 
  * @author Federico Catalini
  * @author Luca Caponi
+ * 
+ *         Classe astratta da cui ereditano le eccezioni del progetto.
+ * 
  */
 
 public abstract class ExceptionAbstract extends RuntimeException {

@@ -24,6 +24,18 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.stats.StatsModel;
 
+/**
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe StatsFilter permette di filtrare le statistiche 
+ *         in base al numero dei contagi (confirmed). 
+ *         Ciò è possibile fornendo in Postman un limite superiore (o inferiore) di casi confermati:
+ *         Se, ad esempio, si setta la soglia a 1000 casi confermati si potrà visualizzare la lista
+ *         dei giorni che hanno più o meno di 1000 contagi. 
+ *         
+ */
 public class StatsFilter {
 
 	private static Map<String, Countries> world = World.getworld();

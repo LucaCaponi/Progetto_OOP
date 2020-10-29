@@ -4,7 +4,7 @@ package ProgettoOOP.app.database;
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- * Classe per il parsing dell'API "GET COUNTRY".
+ * Classe per il parsing dell'API "GET Countries".
  */
 import java.io.FileNotFoundException;
 import java.io.FileReader;

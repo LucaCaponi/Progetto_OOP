@@ -1,20 +1,21 @@
 package ProgettoOOP.app.model;
 
-/**
- * @author Federico Catalini
- * @author Luca Caponi
- * 
- * Nella classe World viene gestita la LinkedHashMap world 
- * che permette il caricamento dei paesi inseriti tramite Postman 
- * all'interno di una memoria dinamica
- */
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import ProgettoOOP.app.database.ParseCountries;
+
+/**
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         Nella classe World viene gestita la LinkedHashMap 'world' che
+ *         permette il caricamento dei paesi inseriti tramite la POST in Postman
+ *         all'interno di una memoria dinamica.
+ *         Sono presenti, inoltre, quattro metodi descritti di seguito.
+ */
 
 public final class World {
 	private static Map<String, Countries> world = new LinkedHashMap<>();
@@ -31,6 +32,13 @@ public final class World {
 		world.remove(ISO2);
 	}
 
+	/**
+	 * I metodi 'getlastISO2()' , 'getlastname()' , 'getlastcountries()' servono per
+	 * ottenere, rispettivamente, gli ultimi ISO2 e Country inseriti e l'ultimo
+	 * oggetto caricato di tipo 'Countries'. Essi serviranno nel metodo
+	 * 'returnContinent()' della classe 'Continents()'.
+	 * 
+	 */
 	public static String getlastname() {
 		String lastcountry = null;
 		try {
@@ -80,11 +88,10 @@ public final class World {
 
 	/**
 	 * 
-	 * Il metodo boolean Verify permette di controllare se il paese inserito esiste.
-	 * 
+	 * Il metodo boolean 'Verify' permette di controllare se il paese inserito
+	 * esiste nell'API "GET Countries".
 	 * 
 	 */
-
 	public static boolean Verify(Countries c) throws Exception {
 		boolean bool = false;
 		for (Countries a : ParseCountries.ParseDataCountries()) {

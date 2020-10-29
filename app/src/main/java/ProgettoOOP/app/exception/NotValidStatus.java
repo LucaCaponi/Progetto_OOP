@@ -1,11 +1,11 @@
 package ProgettoOOP.app.exception;
 
 /**
- * 
- * 
- * 
  * @author Federico Catalini
  * @author Luca Caponi
+ * 
+ *         Eccezione lanciata se lo status che si vuole richiedere è errato.
+ * 
  */
 
 public class NotValidStatus extends ExceptionAbstract {
@@ -13,9 +13,9 @@ public class NotValidStatus extends ExceptionAbstract {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Ottiene il messaggio da stampare
+	 * Ottiene il messaggio da stampare.
 	 *
-	 * @return String
+	 * @return String.
 	 */
 
 	@Override
