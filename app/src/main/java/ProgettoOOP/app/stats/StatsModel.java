@@ -1,5 +1,14 @@
 package ProgettoOOP.app.stats;
 
+/**
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe StatsModel serve da modello per le statistiche sul numero
+ *         di contagi giornalieri e sulle loro variazioni percentuali.
+ * 
+ */
+
 public class StatsModel {
 	private String Date;
 	private long DailyConfirmed;

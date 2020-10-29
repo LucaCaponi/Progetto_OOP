@@ -23,6 +23,16 @@ import com.google.gson.Gson;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 
+/**
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe StatsCovid apre la connessione all'API "GET By Country All
+ *         Status" da cui prendiamo i dati per ogni nazione caricata su Postman
+ *         e per un determinato lasso di tempo. Successivamente, si elaborano i
+ *         dati per ottenere le statistiche giornaliere sul numero dei contagi e
+ *         le relative variazioni percentuali.
+ */
 public class StatsCovid {
 
 	private static Map<String, Countries> world = World.getworld();

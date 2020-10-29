@@ -26,8 +26,9 @@ import ProgettoOOP.app.filters.StatsFilter;
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- *         La classe CountryServiceImpl implementa i metodi astratti dell'interfaccia CountryService;
- *         questi metodi verranno poi richiamati ed eseguiti dal restController.
+ *         La classe CountryServiceImpl implementa i metodi astratti
+ *         dell'interfaccia CountryService; questi metodi verranno poi
+ *         richiamati ed eseguiti dal restController.
  */
 
 @Service
@@ -47,7 +48,7 @@ public class CountryServiceImpl implements CountryService {
 		nation.setISO2("");
 		World.setworld(nation);
 	}
-	
+
 	/**
 	 * 
 	 * @return Ritornano i dati dell'API "GET Countries".
@@ -62,8 +63,8 @@ public class CountryServiceImpl implements CountryService {
 
 	/**
 	 * 
-	 * @return Ritornano i casi totali confermati, decessi, ricoverati, attualmente positivi 
-	 *         di un determinato periodo di tempo per ogni paese inserito.
+	 * @return Ritornano i casi totali confermati, decessi, ricoverati, attualmente
+	 *         positivi di un determinato periodo di tempo per ogni paese inserito.
 	 * @throws IOException
 	 * @throws ParseException
 	 * @throws JSONException
@@ -77,8 +78,8 @@ public class CountryServiceImpl implements CountryService {
 
 	/**
 	 * 
-	 * @return Ritornano le classifiche filtrate per status 
-	 *         di un determinato periodo di tempo.
+	 * @return Ritornano le classifiche filtrate per status di un determinato
+	 *         periodo di tempo.
 	 * @throws IOException
 	 * @throws ParseException
 	 * @throws JSONException
@@ -91,9 +92,10 @@ public class CountryServiceImpl implements CountryService {
 
 	/**
 	 * 
-	 * @return Ritornano le statistiche per ogni paese sul numero di contagi giornalieri e sulle loro variazioni percentuali
-	 *         di un determinato periodo di tempo.
-	 *      
+	 * @return Ritornano le statistiche per ogni paese sul numero di contagi
+	 *         giornalieri e sulle loro variazioni percentuali di un determinato
+	 *         periodo di tempo.
+	 * 
 	 * @throws IOException
 	 * @throws ParseException
 	 * @throws JSONException
@@ -102,12 +104,29 @@ public class CountryServiceImpl implements CountryService {
 	public String totalStats(String from, String to) throws IOException, ParseException, JSONException {
 		return StatsCovid.statistics(from, to);
 	}
-	
+
+	/**
+	 * 
+	 * @return Ritornano le statistiche per ogni paese sul numero di contagi
+	 *         giornalieri e sulle loro variazioni percentuali di un determinato
+	 *         periodo di tempo, filtrate in base ad una istruzione condizionale.
+	 * 
+	 * @throws Exception
+	 */
 	@Override
 	public String totalStatsFiltered(String from, String to, String threshold) throws Exception {
 		return StatsFilter.statisticsfiltered(from, to, threshold);
 	}
 
+	/**
+	 * 
+	 * Il metodo 'InsertCountry' prima controlla l'esattezza del 'Countries'
+	 * inserito dall'utente o se il 'Countries' è già stato caricato, poi inserisce
+	 * il paese o chiama le dovute eccezioni.
+	 * 
+	 * @throws Exception
+	 * 
+	 */
 	@Override
 	public void InsertCountry(Countries country) throws Exception {
 		Map<String, Countries> world = World.getworld();
@@ -120,26 +139,51 @@ public class CountryServiceImpl implements CountryService {
 		World.setworld(country);
 	}
 
+	/**
+	 * 
+	 * @return Ritorna la collezione dei 'Countries' inseriti dall'utente.
+	 * 
+	 * 
+	 */
 	public Collection<Countries> gettingCountries() {
 		Map<String, Countries> world = World.getworld();
 		return world.values();
 	}
 
+	/**
+	 * 
+	 * @return Ritorna l'ArrayList dei metadati.
+	 * 
+	 * 
+	 */
 	public ArrayList<Metadata> gettingMetadata() {
 		ArrayList<Metadata> metadata = new ArrayList<Metadata>();
 		metadata.add(new Metadata("Country", "Nome della nazione", "String"));
 		metadata.add(new Metadata("Slug", "Parte dell'URL che identifica una nazione", "String"));
 		metadata.add(new Metadata("ISO2", "Codice costituito da due lettere che identifica una nazione", "String"));
 		return metadata;
-		
+
 	}
 
+	/**
+	 * 
+	 * @return Ritorna la collezione dei 'Countries' inseriti dall'utente filtrati
+	 *         per continente.
+	 * 
+	 * 
+	 */
 	public Collection<Countries> gettingfilterCountries(String cont) {
 		Map<String, Countries> filter = FiltersAllCountry.gettingfilterCountries(cont);
 		return filter.values();
 
 	}
 
+	/**
+	 * 
+	 * @return Ritorna il nome del continente del paese inserito.
+	 * 
+	 * 
+	 */
 	public String yourcontinent() throws Exception {
 		return Continents.returnContinent();
 	}
