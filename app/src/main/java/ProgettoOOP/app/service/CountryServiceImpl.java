@@ -13,13 +13,13 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.Metadata;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.stats.StatsCovid;
-import ProgettoOOP.app.stats.StatsFilter;
 import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.NoFile;
 import ProgettoOOP.app.exception.NotValidCountry;
 import ProgettoOOP.app.filters.Continents;
 import ProgettoOOP.app.filters.FiltersAllCountry;
 import ProgettoOOP.app.filters.FiltersAllStatus;
+import ProgettoOOP.app.filters.StatsFilter;
 
 @Service
 public class CountryServiceImpl implements CountryService {
@@ -61,7 +61,7 @@ public class CountryServiceImpl implements CountryService {
 	}
 	
 	@Override
-	public String totalStatsFiltered(String from, String to, int threshold) throws IOException, ParseException, JSONException {
+	public String totalStatsFiltered(String from, String to, String threshold) throws Exception {
 		return StatsFilter.statisticsfiltered(from, to, threshold);
 	}
 

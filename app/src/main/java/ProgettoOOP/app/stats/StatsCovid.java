@@ -80,7 +80,6 @@ public class StatsCovid {
 					confirmedafter = (Long) countryObjectallafter.get("Confirmed");
 					confirmedbefore = (Long) countryObjectallbefore.get("Confirmed");
 					long vartoday = confirmedafter - confirmedbefore;
-
 					long varyesterday = (Long) countryObjectallbefore.get("Confirmed")
 							- (Long) countryObjectallvar.get("Confirmed");
 
@@ -95,7 +94,8 @@ public class StatsCovid {
 					}
 					DecimalFormat df = new DecimalFormat("#.##");
 					String varpercstr = df.format(varperc) + "%";
-					StatsModel covid = new StatsModel(countryObjectallafter.get("Date").toString(), vartoday, varpercstr);
+					StatsModel covid = new StatsModel(countryObjectallafter.get("Date").toString(), vartoday,
+							varpercstr);
 					daily.add(covid);
 					resultstats.put(key, daily);
 
@@ -112,15 +112,5 @@ public class StatsCovid {
 		return "error";
 
 	}
-	
-	/*public static String statisticsfiltered(String from, String to, int threshold) throws IOException  {
-		Map<String, Object> resultstats = new LinkedHashMap<>();
-		List<StatsModel> daily = new LinkedList<StatsModel>();
-		StatsModel covidfilter = new StatsModel(null, 0, null);
-		statistics(from, to);
-		return to;
-		
-		
-	}*/
 
 }

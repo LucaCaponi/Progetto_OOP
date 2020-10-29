@@ -160,7 +160,7 @@ public class restController {
 	 */
 	@RequestMapping(value = "/stats/filter", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> getFilteredStats(
-			@RequestParam(name = "threshold", defaultValue = "1000") int threshold,
+			@RequestParam(name = "threshold", defaultValue = "$gt1000") String threshold,
 			@RequestParam(name = "from", defaultValue = "2020-03-01T00:00:00Z") String from,
 			@RequestParam(name = "to", defaultValue = "2020-04-01T00:00:00Z") String to) throws Exception {
 		return new ResponseEntity<>(countryService.totalStatsFiltered(from, to, threshold), HttpStatus.OK);
