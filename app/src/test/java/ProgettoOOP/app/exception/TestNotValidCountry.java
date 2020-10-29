@@ -8,6 +8,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ProgettoOOP.app.model.Countries;
+import ProgettoOOP.app.model.World;
+
+/**
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe TestNotValidCountry serve per testare l'eccezione
+ *         'NotValidCountry'
+ *
+ */
 
 class TestNotValidCountry {
 
@@ -15,7 +26,8 @@ class TestNotValidCountry {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		testcountries1 = new Countries("Ital", "italy", "IT");
+		testcountries1 = new Countries("Itly", "italy", "ITa"); // oggetto di tipo 'Countries' volutamente settato in
+																// modo errato per testare l'eccezione
 
 	}
 
@@ -24,19 +36,20 @@ class TestNotValidCountry {
 	}
 
 	@Test
-	void tesNotValidCountry() {
+	void testNotValidCountry() {
 
 		NotValidCountry exception = assertThrows(NotValidCountry.class, () -> {
-			Verify(testcountries1);
+			VerifyCountry(testcountries1);
 		});
-
 		assertTrue(exception.getMessage().contains("Nessun paese trovato!"));
 
 	}
 
-	boolean Verify(Countries test1) throws NotValidCountry {
-
-		throw new NotValidCountry();
+	String VerifyCountry(Countries test1) throws NotValidCountry, Exception {
+		if (World.Verify(test1) == true)
+			return "Nessuna eccezione: test fallito!";
+		else
+			throw new NotValidCountry();
 	}
 
 }

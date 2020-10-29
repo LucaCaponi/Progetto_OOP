@@ -13,6 +13,7 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.Metadata;
 import ProgettoOOP.app.model.World;
 import ProgettoOOP.app.stats.StatsCovid;
+import ProgettoOOP.app.stats.StatsFilter;
 import ProgettoOOP.app.exception.ExistingISO2;
 import ProgettoOOP.app.exception.NoFile;
 import ProgettoOOP.app.exception.NotValidCountry;
@@ -58,6 +59,11 @@ public class CountryServiceImpl implements CountryService {
 	public String totalStats(String from, String to) throws IOException, ParseException, JSONException {
 		return StatsCovid.statistics(from, to);
 	}
+	
+	@Override
+	public String totalStatsFiltered(String from, String to, int threshold) throws IOException, ParseException, JSONException {
+		return StatsFilter.statisticsfiltered(from, to, threshold);
+	}
 
 	@Override
 	public void InsertCountry(Countries country) throws Exception {
@@ -89,4 +95,5 @@ public class CountryServiceImpl implements CountryService {
 	public String yourcontinent() throws Exception {
 		return Continents.returnContinent();
 	}
+
 }

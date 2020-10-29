@@ -8,6 +8,15 @@ import org.junit.jupiter.api.Test;
 
 import ProgettoOOP.app.stats.StatsModel;
 
+/**
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe TestStats serve per testare i metodi di 'StatsModel'
+ *
+ */
+
 class TestStats {
 
 	private StatsModel stats = null;

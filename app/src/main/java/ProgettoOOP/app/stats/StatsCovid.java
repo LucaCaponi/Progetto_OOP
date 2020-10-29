@@ -112,5 +112,15 @@ public class StatsCovid {
 		return "error";
 
 	}
+	
+	/*public static String statisticsfiltered(String from, String to, int threshold) throws IOException  {
+		Map<String, Object> resultstats = new LinkedHashMap<>();
+		List<StatsModel> daily = new LinkedList<StatsModel>();
+		StatsModel covidfilter = new StatsModel(null, 0, null);
+		statistics(from, to);
+		return to;
+		
+		
+	}*/
 
 }

@@ -8,6 +8,15 @@ import org.junit.jupiter.api.Test;
 
 import ProgettoOOP.app.model.Countries;
 
+/**
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ *         La classe TestCountries serve per testare i metodi di 'Countries'
+ *
+ */
+
 class TestCountries {
 
 	private Countries countries = null;

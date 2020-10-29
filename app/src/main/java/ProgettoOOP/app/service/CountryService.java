@@ -18,6 +18,8 @@ public interface CountryService {
 	public abstract String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException;
 
 	public abstract String totalStats(String from, String to) throws IOException, ParseException, JSONException;
+	
+	public abstract String totalStatsFiltered(String from, String to, int threshold) throws IOException, ParseException, JSONException;
 
 	public abstract String Classify(String from, String to, String status) throws IOException, ParseException, JSONException;
 
