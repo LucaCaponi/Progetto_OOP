@@ -1,6 +1,6 @@
 # Progetto_OOP
 Questo è il repository che contiene il progetto svolto da Caponi Luca e Catalini Federico 
-per l'esame di Programmazione a Oggetti per il secondo anno di Ingegneria Informatica e dell'Automazione nell'A.A. 2019-2020.
+per l'esame di Programmazione ad Oggetti (A.A. 2019-2020) del corso di Laurea in Ingegneria Informatica e dell'Automazione presso l'Università Politecnica delle Marche.
 
 ## Introduzione
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
