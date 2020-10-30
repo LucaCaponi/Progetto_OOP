@@ -82,16 +82,17 @@ Package per gestire le eccezioni che possono essere lanciate dal programma
 Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano.
 
 ## Chiamate
-| Rotta| Metodo | Descrizione |
+| Rotta | Metodo | Descrizione |
 | :------------- |:----:| :------------- |
-| /countries | GET  | Restituisce i paesi inseriti |
-| /countries | POST  | Inserisce i paesi |
-| /countries/{ISO2} | DELETE  | Cancella il paese precedentemente inserito con il suo corrispondente ISO2 passato dall'utente|
-| /countries/{continent}| GET | Dato il continente, riporta solo i paesi inseriti appartenenti a quel continente|
-| /totalcountryallstatus | GET  | Restituisce i parametri dei casi Covid per i paesi inseriti |
-| /totalcountries | GET  | Inserisce tutti i paesi del mondo |
-| /confirmed | GET  | Stila una classifica dei paesi inseriti per numero di confermati|
-
+| /totalcountries | GET  | Restituisce tutti i paesi disponibili, ovvero il contenuto dell'API "GET Countries" |
+| /countries | POST  | Permette all'utente di inserire i paesi |
+| /countries | GET  | Restituisce i paesi inseriti dall'utente |
+| /countries/{continent}| GET | Una volta impostato un continente nella rotta, restituisce soltanto i paesi inseriti appartenenti a quel continente|
+| /metadata | GET  | Restituisce i metadati di un oggetto di tipo "Countries"  |
+| /totalallstatus | GET  | Restituisce (per ogni paese precedentemente inserito) il totale dei casi confermati, dei decessi, dei ricoverati e degli attuali positivi nel periodo compreso tra la data iniziale inserita e quella finale |
+| /covid/{status} | GET  | Stila le classifiche dei paesi caricati dall'utente in base al numero decrescente di confermati/decessi/ricoverati/positivi (a seconda della rotta richiesta)|
+| /stats | GET  | Restituisce le statistiche sul numero dei contagi giornalieri e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente  |
+| /stats/filter | GET  | Restituisce le statistiche filtrate in base alla soglia imposta dall'utente  |
 
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
