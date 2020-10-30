@@ -3,8 +3,8 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="ProgettoOOP.app.controller.restController" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/controller/restController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="263" width="430" x="159" y="132"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="281" width="400" x="192" y="114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    

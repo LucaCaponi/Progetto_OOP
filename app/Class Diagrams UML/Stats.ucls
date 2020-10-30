@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="ProgettoOOP.app.database.DatabaseCountries" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/database/DatabaseCountries.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="180" y="252"/>    
+  <class id="1" language="java" name="ProgettoOOP.app.stats.StatsModel" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/stats/StatsModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="222" y="297"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="ProgettoOOP.app.database.DatabaseCountryAllStatus" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/database/DatabaseCountryAllStatus.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="805" y="262"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="ProgettoOOP.app.database.ParseCountries" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/database/ParseCountries.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="450" y="253"/>    
+  <class id="2" language="java" name="ProgettoOOP.app.stats.StatsCovid" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/stats/StatsCovid.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="490" y="299"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

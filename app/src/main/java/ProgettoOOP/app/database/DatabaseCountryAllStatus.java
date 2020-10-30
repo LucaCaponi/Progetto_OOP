@@ -50,7 +50,7 @@ public class DatabaseCountryAllStatus {
 	 * @param to
 	 * @return new JSONObject(result).toString()
 	 * @throws IOException
-	 * @throws InterruptedException 
+	 * @throws InterruptedException
 	 */
 	public static String DownloadDataCountryAllStatus(String from, String to) throws IOException, InterruptedException {
 		Map<String, Object> out = new LinkedHashMap<>();
@@ -80,7 +80,7 @@ public class DatabaseCountryAllStatus {
 					e.printStackTrace();
 				}
 			}
-Thread.sleep(200);
+			Thread.sleep(200);
 		}
 		Map<String, Object> result = new LinkedHashMap<>();
 		for (String key : out.keySet()) {

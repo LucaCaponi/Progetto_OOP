@@ -3,162 +3,107 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="ProgettoOOP.app" project="app" file="/app/src/main/java/ProgettoOOP/app" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="230" width="305" x="187" y="-249"/>    
+    <position height="230" width="305" x="101" y="-367"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="2" language="java" name="ProgettoOOP.app.AppApplication" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/AppApplication.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="145" width="210" x="234" y="-183"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <package id="3" language="java" name="ProgettoOOP.app.controller" project="app" 
+  <package id="2" language="java" name="ProgettoOOP.app.controller" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/controller" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="377" width="576" x="60" y="31"/>    
+    <position height="377" width="576" x="50" y="-63"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="4" language="java" name="ProgettoOOP.app.controller.restController" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/controller/restController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="248" width="406" x="142" y="98"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <package id="5" language="java" name="ProgettoOOP.app.database" project="app" 
+  <package id="3" language="java" name="ProgettoOOP.app.database" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/database" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="421" width="575" x="1173" y="-342"/>    
+    <position height="580" width="723" x="1278" y="-508"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="6" language="java" name="ProgettoOOP.app.database.DatabaseCountries" project="app" 
+  <class id="4" language="java" name="ProgettoOOP.app.database.DatabaseCountries" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/database/DatabaseCountries.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1614" y="-199"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="ProgettoOOP.app.database.ParseCountries" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/database/ParseCountries.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1570" y="0"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="ProgettoOOP.app.database.DatabaseCountryAllStatus" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/database/DatabaseCountryAllStatus.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1346" y="-166"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <package id="9" language="java" name="ProgettoOOP.app.exception" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="764" width="739" x="-387" y="435"/>    
-    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="10" language="java" name="ProgettoOOP.app.exception.NoFile" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/NoFile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-295" y="1091"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="ProgettoOOP.app.exception.NotValidContinent" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidContinent.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-109" y="1091"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="ProgettoOOP.app.exception.ExceptionPrincipal" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/ExceptionPrincipal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-218" y="658"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="ProgettoOOP.app.exception.NotValidCountry" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidCountry.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="76" y="1091"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="ProgettoOOP.app.exception.ExistingISO2" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/ExistingISO2.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="261" y="1091"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="ProgettoOOP.app.exception.ExceptionAbstract" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/exception/ExceptionAbstract.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="51" y="568"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <package id="16" language="java" name="ProgettoOOP.app.filters" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/filters" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="595" width="616" x="1170" y="91"/>    
-    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="17" language="java" name="ProgettoOOP.app.filters.Continents" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/filters/Continents.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1328" y="411"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="18" language="java" name="ProgettoOOP.app.filters.FiltersAllCountry" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/filters/FiltersAllCountry.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1629" y="223"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <package id="19" language="java" name="ProgettoOOP.app.model" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/model" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="1473" width="456" x="660" y="-62"/>    
-    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="20" language="java" name="ProgettoOOP.app.model.CountryAllStatus" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/model/CountryAllStatus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="785" width="385" x="697" y="592"/>    
+    <position height="113" width="234" x="1742" y="-414"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="ProgettoOOP.app.model.World" project="app" 
+  <class id="5" language="java" name="ProgettoOOP.app.database.ParseCountries" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/database/ParseCountries.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="113" width="239" x="1739" y="-94"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="6" language="java" name="ProgettoOOP.app.exception" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="811" width="998" x="-389" y="353"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="7" language="java" name="ProgettoOOP.app.exception.NotValidContinent" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidContinent.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="285" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ProgettoOOP.app.exception.ExceptionPrincipal" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/ExceptionPrincipal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-192" y="596"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="ProgettoOOP.app.exception.NotValidCountry" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidCountry.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-86" y="1010"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="ProgettoOOP.app.exception.ExistingISO2" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/ExistingISO2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="81" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="ProgettoOOP.app.exception.ExceptionAbstract" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/ExceptionAbstract.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="289" y="543"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="12" language="java" name="ProgettoOOP.app.filters" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="781" width="941" x="1170" y="91"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="13" language="java" name="ProgettoOOP.app.filters.FiltersAllCountry" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/FiltersAllCountry.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="114" width="319" x="1778" y="251"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="14" language="java" name="ProgettoOOP.app.model" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="933" width="456" x="660" y="-62"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="15" language="java" name="ProgettoOOP.app.model.World" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/model/World.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="891" y="115"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -167,7 +112,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="ProgettoOOP.app.model.Countries" project="app" 
+  <class id="16" language="java" name="ProgettoOOP.app.model.Countries" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/model/Countries.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="894" y="397"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -176,101 +121,314 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="23" language="java" name="ProgettoOOP.app.service" project="app" 
+  <package id="17" language="java" name="ProgettoOOP.app.service" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/service" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="684" width="465" x="-450" y="-288"/>    
+    <position height="684" width="465" x="-450" y="-365"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <interface id="24" language="java" name="ProgettoOOP.app.service.CountryService" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/service/CountryService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="246" width="297" x="-375" y="106"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+  <class id="18" language="java" name="ProgettoOOP.app.exception.NoJSONObject" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NoJSONObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-213" y="858"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
-  </interface>  
-  <class id="25" language="java" name="ProgettoOOP.app.service.CountryServiceImpl" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/service/CountryServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="282" width="297" x="-374" y="-214"/>    
+  </class>  
+  <class id="19" language="java" name="ProgettoOOP.app.exception.NotValidThreshold" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidThreshold.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="531" y="853"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="ProgettoOOP.app.exception.NotValidStatus" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/exception/NotValidStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="453" y="1011"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="ProgettoOOP.app.filters.FiltersAllStatus" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/FiltersAllStatus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="229" x="1825" y="488"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <association id="28">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="29" name="world">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="30" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="31">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="24"/>  
-  </realization>  
-  <association id="32">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="33" name="world">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="34" minimum="0" maximum="2147483647">        
-        <position height="17" width="24" x="974" y="250"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="35">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="36">    
+  <class id="22" language="java" name="ProgettoOOP.app.filters.StatsFilter" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/StatsFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1539" y="772"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="ProgettoOOP.app.model.Metadata" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/model/Metadata.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="895" y="686"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="ProgettoOOP.app.filters.Continents" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/filters/Continents.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1577" y="408"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="25" language="java" name="ProgettoOOP.app.stats" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/stats" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="359" width="652" x="475" y="-494"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="26" language="java" name="ProgettoOOP.app.stats.StatsModel" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/stats/StatsModel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="960" y="-294"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="ProgettoOOP.app.AppApplication" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/AppApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="169" x="174" y="-291"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="ProgettoOOP.app.controller.restController" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/controller/restController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="344" y="150"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="29" language="java" name="ProgettoOOP.app.service.CountryService" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/service/CountryService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-223" y="-175"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="ProgettoOOP.app.service.CountryServiceImpl" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/service/CountryServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-223" y="142"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="ProgettoOOP.app.database.DatabaseCountryAllStatus" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/database/DatabaseCountryAllStatus.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1511" y="-213"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="ProgettoOOP.app.stats.StatsCovid" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/stats/StatsCovid.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="633" y="-320"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="33">    
     <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="15"/>  
+    <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
+  <association id="34">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="35" name="countryService"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="38" name="world"/>      
+      <multiplicity id="39" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
-  <association id="38">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="39" name="datacountry">        
+  <association id="41">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="42" name="datacountry">        
         <position height="19" width="74" x="1017" y="312"/>      
       </attribute>      
-      <multiplicity id="40" minimum="0" maximum="2147483647">        
+      <multiplicity id="43" minimum="0" maximum="2147483647">        
         <position height="17" width="24" x="1104" y="321"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="42" name="countryService">        
+  <association id="44">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="45" name="antar">        
+        <position height="19" width="36" x="1207" y="466"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1183" y="464"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="48" name="oceania">        
+        <position height="19" width="51" x="1207" y="438"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1206" y="358"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="51" name="world"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <realization id="54">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="56">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="57" name="north">        
+        <position height="19" width="36" x="1230" y="359"/>      
+      </attribute>      
+      <multiplicity id="58" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1196" y="411"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <bendpoint x="791" y="308"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="60" name="world"/>      
+      <multiplicity id="61" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="760" y="310"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="63" name="europe">        
+        <position height="19" width="46" x="1220" y="300"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1201" y="384"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="66">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="67" name="africa">        
+        <position height="19" width="38" x="1219" y="411"/>      
+      </attribute>      
+      <multiplicity id="68" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1184" y="439"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="70" name="asia">        
+        <position height="19" width="31" x="1220" y="330"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1193" y="301"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="73" name="south">        
+        <position height="19" width="38" x="1225" y="383"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="2147483647">        
+        <position height="17" width="24" x="1195" y="329"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="76" name="world">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="43" minimum="0" maximum="1">        
+      <multiplicity id="77" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
+    <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <generalization id="78">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

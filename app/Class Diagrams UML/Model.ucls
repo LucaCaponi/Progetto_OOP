@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="ProgettoOOP.app.model.CountryAllStatus" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/model/CountryAllStatus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="493" y="631"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="ProgettoOOP.app.model.World" project="app" 
-    file="/app/src/main/java/ProgettoOOP/app/model/World.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="211" y="83"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="ProgettoOOP.app.model.Countries" project="app" 
+  <class id="1" language="java" name="ProgettoOOP.app.model.Countries" project="app" 
     file="/app/src/main/java/ProgettoOOP/app/model/Countries.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="508" y="80"/>    
+    <position height="-1" width="-1" x="213" y="143"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="4">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="5">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="6" name="world"/>      
-      <multiplicity id="7" minimum="0" maximum="2147483647"/>    
+  <class id="2" language="java" name="ProgettoOOP.app.model.Metadata" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/model/Metadata.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="506" y="306"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ProgettoOOP.app.model.World" project="app" 
+    file="/app/src/main/java/ProgettoOOP/app/model/World.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="215" y="441"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="4">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="5" name="world"/>      
+      <multiplicity id="6" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
