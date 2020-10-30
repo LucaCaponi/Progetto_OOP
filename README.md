@@ -97,40 +97,49 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
 
 
-### /countries (GET)
+### /totalcountries (GET)
 
-![getCountries](https://user-images.githubusercontent.com/64077382/97057109-d8172e00-158a-11eb-96c7-dc6b8a3ae9b3.png)
+![getTotalCountries](https://user-images.githubusercontent.com/64077382/97734115-05a72e80-1ad9-11eb-9c19-02184c6541b6.png)
 
 
 ### /countries (POST)
 
-![InsertCountry](https://user-images.githubusercontent.com/64077382/97057116-d9e0f180-158a-11eb-979a-d7c0a7522215.png)
+![postCountries](https://user-images.githubusercontent.com/64077382/97734128-093ab580-1ad9-11eb-9cae-57ca59a2c62e.png)
 
 
-### /countries/{ISO2} (DELETE)
+### /countries (GET)
 
-![delete](https://user-images.githubusercontent.com/64077382/97057107-d6e60100-158a-11eb-8728-cef1ab2a38af.png)
+![getCountries](https://user-images.githubusercontent.com/64077382/97734121-08098880-1ad9-11eb-8b92-fcf434edeb7f.png)
 
 
 ### /countries/{continent} (GET)
 
-![getFilteredCountries](https://user-images.githubusercontent.com/64077382/97057110-d8afc480-158a-11eb-8fe7-a39f7d01196a.png)
+![getFilteredCountries](https://user-images.githubusercontent.com/64077382/97734134-0c35a600-1ad9-11eb-9c41-78c88ac04e89.png)
 
 
-### /totalcountryallstatus (GET)
+### /metadata (GET)
 
-![gettotalCountryAllStatus](https://user-images.githubusercontent.com/64077382/97057114-d9485b00-158a-11eb-8d90-907ac0ff34fd.png)
-
-
-### /totalcountries (GET)
-
-![gettotalCountries](https://user-images.githubusercontent.com/64077382/97057113-d9485b00-158a-11eb-9eee-09d41061b381.png)
+![getMetadata](https://user-images.githubusercontent.com/64077382/97734186-1a83c200-1ad9-11eb-8d30-86ab5f5b6d0a.png)
 
 
-### /confirmed (GET)
+### /totalallstatus (GET)
 
-![getstatsconfirmed](https://user-images.githubusercontent.com/64077382/97057112-d8afc480-158a-11eb-9c41-5131febc219f.png)
+![getTotalCountryAllStatus](https://user-images.githubusercontent.com/64077382/97734150-10fa5a00-1ad9-11eb-9770-5595cd0d9e7a.png)
 
+
+### /covid/{status} (GET)
+
+![getRankingStatus](https://user-images.githubusercontent.com/64077382/97734163-135cb400-1ad9-11eb-900f-8c41da240e9c.png)
+
+
+### /stats (GET)
+
+![getStats](https://user-images.githubusercontent.com/64077382/97734171-15267780-1ad9-11eb-9640-153416099652.png)
+
+
+### /stats/filter (GET)
+
+![getFilteredStats](https://user-images.githubusercontent.com/64077382/97734177-1788d180-1ad9-11eb-8ca3-6648fbdf1306.png)
 
 
 
