@@ -8,26 +8,37 @@ import java.util.Map;
 import ProgettoOOP.app.database.ParseCountries;
 
 /**
+ * Nella classe World viene gestita la LinkedHashMap 'world' che permette il
+ * caricamento dei paesi inseriti tramite la POST in Postman all'interno di una
+ * memoria dinamica. Sono presenti, inoltre, quattro metodi descritti di
+ * seguito.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- *         Nella classe World viene gestita la LinkedHashMap 'world' che
- *         permette il caricamento dei paesi inseriti tramite la POST in Postman
- *         all'interno di una memoria dinamica.
- *         Sono presenti, inoltre, quattro metodi descritti di seguito.
  */
 
 public final class World {
 	private static Map<String, Countries> world = new LinkedHashMap<>();
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getworld() {
 		return world;
 	}
-
+/**
+ * 
+ * @param nation
+ */
 	public static void setworld(Countries nation) {
 		world.put(nation.getISO2(), nation);
 	}
-
+/**
+ * 
+ * @param ISO2
+ */
 	public static void deleteworld(String ISO2) {
 		world.remove(ISO2);
 	}
@@ -38,6 +49,11 @@ public final class World {
 	 * oggetto caricato di tipo 'Countries'. Essi serviranno nel metodo
 	 * 'returnContinent()' della classe 'Continents()'.
 	 * 
+	 */
+	
+	/**
+	 * 
+	 * @return lastcountry
 	 */
 	public static String getlastname() {
 		String lastcountry = null;
@@ -53,6 +69,10 @@ public final class World {
 		return lastcountry;
 	}
 
+	/**
+	 * 
+	 * @return lastiso2
+	 */
 	public static String getlastISO2() {
 		String lastiso2 = null;
 		try {
@@ -67,6 +87,10 @@ public final class World {
 		return lastiso2;
 	}
 
+	/**
+	 * 
+	 * @return state
+	 */
 	public static Countries getlastcountries() {
 		Countries state = new Countries(null, null, null);
 		try {
@@ -91,6 +115,13 @@ public final class World {
 	 * Il metodo boolean 'Verify' permette di controllare se il paese inserito
 	 * esiste nell'API "GET Countries".
 	 * 
+	 */
+	
+	/**
+	 * 
+	 * @param c
+	 * @return bool
+	 * @throws Exception
 	 */
 	public static boolean Verify(Countries c) throws Exception {
 		boolean bool = false;

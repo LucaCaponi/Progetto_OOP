@@ -2,11 +2,11 @@ package ProgettoOOP.app.exception;
 
 /**
  * 
+ * Eccezione lanciata se la soglia che si vuole richiedere è errata o
+ * l'operatore condizionale non è disponibile.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Eccezione lanciata se la soglia che si vuole richiedere è errata o
- *         l'operatore condizionale non è disponibile.
  */
 
 public class NotValidThreshold extends ExceptionAbstract {

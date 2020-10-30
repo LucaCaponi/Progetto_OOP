@@ -1,17 +1,5 @@
 package ProgettoOOP.app.database;
 
-/**
- * 
- * @author Federico Catalini
- * @author Luca Caponi
- * 
- * La classe DatabaseCountryAllStatus apre la connessione all'API "GET By Country All Status" 
- * da cui prendiamo i dati per ogni nazione caricata su Postman e per un determinato lasso di tempo.
- * Si riesce quindi ad ottenere il numero di casi COVID-19 confermati, decessi, ricoverati e positivi e
- * le classifiche dei paesi per i casi confermati, decessi, ricoverati e positivi in un periodo temporale scelto dall'utente.
- * 
- */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,6 +23,19 @@ import com.google.gson.Gson;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 
+/**
+ * 
+ * 
+ * La classe DatabaseCountryAllStatus apre la connessione all'API "GET By
+ * Country All Status" da cui prendiamo i dati per ogni nazione caricata su
+ * Postman e per un determinato lasso di tempo. Si riesce quindi ad ottenere il
+ * numero di casi COVID-19 confermati, decessi, ricoverati e positivi e le
+ * classifiche dei paesi per i casi confermati, decessi, ricoverati e positivi
+ * in un periodo temporale scelto dall'utente.
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ */
 public class DatabaseCountryAllStatus {
 
 	private static Map<String, Countries> world = World.getworld();
@@ -43,7 +44,15 @@ public class DatabaseCountryAllStatus {
 	private static Map<String, Long> recovered = new LinkedHashMap<String, Long>();
 	private static Map<String, Long> active = new LinkedHashMap<String, Long>();
 
-	public static String DownloadDataCountryAllStatus(String from, String to) throws IOException {
+	/**
+	 * 
+	 * @param from
+	 * @param to
+	 * @return new JSONObject(result).toString()
+	 * @throws IOException
+	 * @throws InterruptedException 
+	 */
+	public static String DownloadDataCountryAllStatus(String from, String to) throws IOException, InterruptedException {
 		Map<String, Object> out = new LinkedHashMap<>();
 		JSONParser jsonParser = new JSONParser();
 
@@ -71,7 +80,7 @@ public class DatabaseCountryAllStatus {
 					e.printStackTrace();
 				}
 			}
-
+Thread.sleep(200);
 		}
 		Map<String, Object> result = new LinkedHashMap<>();
 		for (String key : out.keySet()) {
@@ -117,36 +126,61 @@ public class DatabaseCountryAllStatus {
 			deaths.put(key + "'s deaths cases", deathslast - deathsstart);
 			recovered.put(key + "'s recovered cases", recoveredlast - recoveredstart);
 			active.put(key + "'s active cases", activelast - activestart);
-
+			Thread.sleep(200);
 		}
 
 		return new JSONObject(result).toString();
 	}
 
+	/**
+	 * 
+	 * @return json
+	 * @throws IOException
+	 */
 	public static String OrderingConfirmed() throws IOException {
 		Gson gson = new Gson();
 		String json = gson.toJson(sortHashMapByValues(confirmed), LinkedHashMap.class);
 		return json;
 	}
 
+	/**
+	 * 
+	 * @return json
+	 * @throws IOException
+	 */
 	public static String OrderingDeaths() throws IOException {
 		Gson gson = new Gson();
 		String json = gson.toJson(sortHashMapByValues(deaths), LinkedHashMap.class);
 		return json;
 	}
 
+	/**
+	 * 
+	 * @return json
+	 * @throws IOException
+	 */
 	public static String OrderingRecovered() throws IOException {
 		Gson gson = new Gson();
 		String json = gson.toJson(sortHashMapByValues(recovered), LinkedHashMap.class);
 		return json;
 	}
 
+	/**
+	 * 
+	 * @return json
+	 * @throws IOException
+	 */
 	public static String OrderingActive() throws IOException {
 		Gson gson = new Gson();
 		String json = gson.toJson(sortHashMapByValues(active), LinkedHashMap.class);
 		return json;
 	}
 
+	/**
+	 * 
+	 * @param codenames
+	 * @return result
+	 */
 	public static LinkedHashMap<String, Long> sortHashMapByValues(Map<String, Long> codenames) {
 
 		Set<Entry<String, Long>> entries = codenames.entrySet();

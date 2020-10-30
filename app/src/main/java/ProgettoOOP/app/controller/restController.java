@@ -20,10 +20,10 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.service.CountryService;
 
 /**
+ * Il restController serve per gestire le chiamate GET e POST in Postman
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Il restController serve per gestire le chiamate GET e POST in Postman.
  * 
  */
 
@@ -32,14 +32,14 @@ public class restController {
 
 	/**
 	 * 
-	 * @Autowired lancia automaticamente il costruttore all'avvio di Spring.
+	 * @Autowired lancia automaticamente il costruttore all'avvio di Spring
 	 */
 	@Autowired
 	CountryService countryService;
 
 	/**
 	 * 
-	 * @return Ritorna tutto il contenuto presente nell'API "Get Countries".
+	 * @return Ritorna tutto il contenuto presente nell'API "Get Countries"
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/totalcountries", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
@@ -48,16 +48,18 @@ public class restController {
 	}
 
 	/**
-	 * 
-	 * @body L'utente inserisce una nazione alla volta in formato JSON specificando
-	 *       il "country", lo "slug" e l"iSO2".
-	 * @return Se la nazione è inserita correttamente, ritorna un messaggio di caricamento avvenuto
-	 *         (specificando il continente a cui appartiene); 
-	 *         altrimenti viene lanciata l'eccezione "NotValidCountry"; 
-	 *         sarà invece richiamata l'eccezione "Existing ISO2" 
-	 *         se il paese che si desidera inserire è stato già caricato dall'utente.
-	 * @throws Exception.
+	 * L'utente inserisce una nazione alla volta in formato JSON specificando
+	 *                 il "country", lo "slug" e l"iSO2"
+	 * @param country
+	 * @return Se la nazione è inserita correttamente, ritorna un messaggio di
+	 *         caricamento avvenuto (specificando il continente a cui appartiene);
+	 *         altrimenti viene lanciata l'eccezione "NotValidCountry"; sarà invece
+	 *         richiamata l'eccezione "Existing ISO2" se il paese che si desidera
+	 *         inserire è stato già caricato dall'utente
+	 * @throws Exception
 	 */
+	
+
 	@RequestMapping(value = "/countries", method = RequestMethod.POST)
 	public ResponseEntity<Object> postCountries(@RequestBody Countries country) throws Exception {
 		countryService.InsertCountry(country);
@@ -68,18 +70,22 @@ public class restController {
 
 	/**
 	 * 
-	 * @return Ritornano tutte le nazioni precedentemente inserite con la POST dall'utente nel 'body'.
+	 * @return Ritornano tutte le nazioni precedentemente inserite con la POST
+	 *         dall'utente nel 'body'
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/countries", method = RequestMethod.GET)
 	public ResponseEntity<Object> getCountries() throws Exception {
 		return new ResponseEntity<>(countryService.gettingCountries(), HttpStatus.OK);
 	}
 
+
+	
 	/**
-	 * 
-	 * @PathVariable L'utente inserisce in Postman la rotta con il continente per cui
-	 *               vuole filtrare la lista dei paesi precedentemente inseriti.
-	 * @return Ritorna la lista dei paesi filtrata per il continente desiderato.
+	 * l'utente inserisce in Postman la rotta con il continente per cui vuole
+	 *  filtrare la lista dei paesi precedentemente inseriti.
+	 * @param cont 
+	 * @return Ritorna la lista dei paesi filtrata per il continente desiderato
 	 */
 	@RequestMapping(value = "/countries/{continent}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getFilteredCountries(@PathVariable("continent") String cont) {
@@ -89,7 +95,7 @@ public class restController {
 
 	/**
 	 * 
-	 * @return Ritornano tutti i metadati di un oggetto di tipo 'Countries'.
+	 * @return Ritornano tutti i metadati di un oggetto di tipo 'Countries'
 	 * 
 	 */
 	@RequestMapping(value = "/countries/metadata", method = RequestMethod.GET)
@@ -99,19 +105,20 @@ public class restController {
 
 	/**
 	 * 
-	 * @param L'utente inserisce come parametri in Postman una data iniziale
-	 *                 ed una finale in base al periodo che vuole ottenere.
-	 *                 Per la query in Postman scrivere le date nel seguente formato:
-	 *                 {anno}-{mese}-{giorno}T00:00:00Z
-	 * ESEMPIO        
-	 *        KEY                       VALUE
-	 *        from                      2020-04-19T00:00:00Z
-	 *        to                        2020-05-09T00:00:00Z  
-	 *                 
+	 *       L'utente inserisce come parametri in Postman una data iniziale ed una
+	 *                 finale in base al periodo che vuole ottenere. Per la query in
+	 *                 Postman scrivere le date nel seguente formato:
+	 *                 {anno}-{mese}-{giorno}T00:00:00Z 
+	 *                 ESEMPIO 
+	 *                 KEY       VALUE 
+	 *                 from      2020-04-19T00:00:00Z 
+	 *                 to        2020-05-09T00:00:00Z
+	 * @param from
+	 * @param to
 	 * @return Ritorna (per ogni paese precedentemente inserito) il totale dei casi
 	 *         confermati, dei decessi, dei ricoverati e degli attuali positivi nel
-	 *         periodo compreso tra la data iniziale inserita e quella finale.
-	 * @throws Exception.
+	 *         periodo compreso tra la data iniziale inserita e quella finale
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/totalallstatus", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> getTotalCountryAllStatus(
@@ -122,24 +129,24 @@ public class restController {
 
 	/**
 	 * 
-	 * @param L'utente inserisce come parametri in Postman una data iniziale
-	 *                 ed una finale in base al periodo che vuole ottenere.
-	 *                 Per la query in Postman scrivere le date nel seguente formato:
-	 *                 {anno}-{mese}-{giorno}T00:00:00Z
-	 * ESEMPIO        
-	 *        KEY                       VALUE
-	 *        from                      2020-04-19T00:00:00Z
-	 *        to                        2020-05-09T00:00:00Z  
-	 * @PathVariable L'utente inserisce in Postman la rotta con lo status 
-	 *                      'confirmed'(casi confermati), 
-	 *                      'deaths' (decessi),
-	 *                      'recovered' (ricoverati)
-	 *                      'active' (casi attualmente positivi) 
-	 *               in base alla classifica che desidera visualizzare.
-	 * @return Ritornano le classifiche dei paesi caricati dall'utente 
-	 *         in base al numero decrescente di confermati/decessi/ricoverati/positivi 
-	 *         (a seconda della rotta richiesta).
-	 * @throws Exception.
+	 * L'utente inserisce come parametri in Postman una data iniziale ed una
+	 *                 finale in base al periodo che vuole ottenere. Per la query in
+	 *                 Postman scrivere le date nel seguente formato:
+	 *                 {anno}-{mese}-{giorno}T00:00:00Z 
+	 *                 ESEMPIO 
+	 *                 KEY       VALUE 
+	 *                 from      2020-04-19T00:00:00Z 
+	 *                 to        2020-05-09T00:00:00Z
+	 *  L'utente inserisce in Postman la rotta con lo status
+	 *               'confirmed'(casi confermati), 'deaths' (decessi), 'recovered'
+	 *               (ricoverati) 'active' (casi attualmente positivi) in base alla
+	 *               classifica che desidera visualizzare
+	 * @param from
+	 * @param to 
+	 * @return Ritornano le classifiche dei paesi caricati dall'utente in base al
+	 *         numero decrescente di confermati/decessi/ricoverati/positivi (a
+	 *         seconda della rotta richiesta)
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/covid/{status}", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> getRankingStatus(@PathVariable("status") String status,
@@ -150,17 +157,17 @@ public class restController {
 
 	/**
 	 * 
-	 * @param L'utente inserisce come parametri in Postman una data iniziale
-	 *                 ed una finale in base al periodo che vuole ottenere.
-	 *                 Per la query in Postman scrivere le date nel seguente formato:
-	 *                 {anno}-{mese}-{giorno}T00:00:00Z
-	 * ESEMPIO        
-	 *        KEY                       VALUE
-	 *        from                      2020-04-19T00:00:00Z
-	 *        to                        2020-05-09T00:00:00Z  
-	 * @return Ritornano le statistiche sul numero dei contagi giornalieri 
-	 *         e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente.
-	 * @throws Exception.
+	 *  L'utente inserisce come parametri in Postman una data iniziale ed una
+	 *                 finale in base al periodo che vuole ottenere. Per la query in
+	 *                 Postman scrivere le date nel seguente formato:
+	 *                 {anno}-{mese}-{giorno}T00:00:00Z ESEMPIO KEY VALUE from
+	 *                 2020-04-19T00:00:00Z to 2020-05-09T00:00:00Z
+	 * @param from
+	 * @param to
+	 * @return Ritornano le statistiche sul numero dei contagi giornalieri e sulle
+	 *         loro variazioni percentuali per i paesi inseriti precedentemente
+	 *         dall'utente
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/stats", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> getStats(
@@ -171,29 +178,31 @@ public class restController {
 
 	/**
 	 * 
-	 * @param L'utente inserisce come parametri in Postman una data iniziale
-	 *                 ed una finale in base al periodo che vuole ottenere.
-	 *                 Per la query in Postman scrivere le date nel seguente formato:
-	 *                 {anno}-{mese}-{giorno}T00:00:00Z 
-	 *        Inoltre, l'utente richiede una soglia dei contagi giornalieri al di sopra/sotto
-	 *                 della quale vuole visualizzare i giorni coi rispettivi casi confermati
-	 *                 maggiori/minori di quella soglia.
-	 *                 Per la query in Postman scrivere la soglia nel seguente formato: 
-	 *        1) $gt{soglia numerica}  
-	 *                 ($gt se si vogliono visualizzare i giorni con il numero di confermati maggiore della soglia.)               
-	 *        2) $lt{soglia numerica}
-	 *                 ($lt se si vogliono visualizzare i giorni con il numero di confermati minore della soglia.)
-	 * ESEMPIO        
-	 *        KEY                       VALUE
-	 *        from                      2020-04-19T00:00:00Z
-	 *        to                        2020-05-09T00:00:00Z 
-	 *        threshold                 $gt2000 
-	 *                       
-	 * @return Ritornano le statistiche (per i paesi inseriti precedentemente dall'utente)
-	 *         sul numero dei contagi giornalieri e sulle loro variazioni percentuali
-	 *         filtrati in base alla soglia imposta.
+	 *  L'utente inserisce come parametri in Postman una data iniziale ed una
+	 *                 finale in base al periodo che vuole ottenere. Per la query in
+	 *                 Postman scrivere le date nel seguente formato:
+	 *                 {anno}-{mese}-{giorno}T00:00:00Z Inoltre, l'utente richiede
+	 *                 una soglia dei contagi giornalieri al di sopra/sotto della
+	 *                 quale vuole visualizzare i giorni coi rispettivi casi
+	 *                 confermati maggiori/minori di quella soglia. Per la query in
+	 *                 Postman scrivere la soglia nel seguente formato: 1)
+	 *                 $gt{soglia numerica} ($gt se si vogliono visualizzare i
+	 *                 giorni con il numero di confermati maggiore della soglia.) 2)
+	 *                 $lt{soglia numerica} ($lt se si vogliono visualizzare i
+	 *                 giorni con il numero di confermati minore della soglia.)
+	 *                 ESEMPIO 
+	 *                 KEY          VALUE 
+	 *                 from         2020-04-19T00:00:00Z 
+	 *                 to           2020-05-09T00:00:00Z 
+	 *                 threshold    $gt2000
+	 * @param from
+	 * @param to
+	 * @param threshold
+	 * @return Ritornano le statistiche (per i paesi inseriti precedentemente
+	 *         dall'utente) sul numero dei contagi giornalieri e sulle loro
+	 *         variazioni percentuali filtrati in base alla soglia imposta
 	 * 
-	 * @throws Exception.
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/stats/filter", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public ResponseEntity<Object> getFilteredStats(
@@ -206,8 +215,10 @@ public class restController {
 	/**
 	 * Metodo per gestire le eccezioni lanciate dai metodi.
 	 *
-	 * @return Ritorna un oggetto di tipo ExceptionError.
+	 * @param e
+	 * @return Ritorna un oggetto di tipo ExceptionError
 	 */
+	
 	@ExceptionHandler(ExceptionAbstract.class)
 	public ResponseEntity<Object> handleExceptionAbstract(ExceptionAbstract e) {
 		ExceptionPrincipal error = new ExceptionPrincipal(Calendar.getInstance(), HttpStatus.BAD_REQUEST,

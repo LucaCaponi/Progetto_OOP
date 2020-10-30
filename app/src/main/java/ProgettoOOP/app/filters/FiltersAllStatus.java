@@ -7,23 +7,27 @@ import ProgettoOOP.app.exception.NotValidStatus;
 
 /**
  * 
+ * La classe FiltersAllStatus permette di impostare le classifiche in base al
+ * numero di casi: 
+ * -confermati; 
+ * -decessi; 
+ * -ricoverati; 
+ * -attivi. 
+ * Il parametro secondo cui si vuole stilare la classifica viene impostato dall'utente
+ * tramite una GET, usufruendo della rotta '/covid/{status}'; in questo modo è
+ * possibile visualizzare la classifica richiesta.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         La classe FiltersAllStatus permette di impostare le classifiche in
- *         base al numero di casi: 
- *         -confermati; 
- *         -decessi; 
- *         -ricoverati; 
- *         -attivi.
- *         Il parametro secondo cui si vuole stilare la classifica viene
- *         impostato dall'utente tramite una GET, usufruendo della rotta
- *         '/covid/{status}'; in questo modo è possibile visualizzare la
- *         classifica richiesta.
  */
 
 public class FiltersAllStatus {
-
+/**
+ * 
+ * @param status
+ * @return
+ * @throws IOException
+ */
 	public static String gettingfilterStatus(String status) throws IOException {
 
 		if (status.toLowerCase().contentEquals("confirmed"))

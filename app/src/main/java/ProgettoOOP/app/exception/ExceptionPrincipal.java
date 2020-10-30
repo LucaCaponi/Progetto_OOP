@@ -5,10 +5,11 @@ import java.util.Calendar;
 import org.springframework.http.HttpStatus;
 
 /**
+ * 
+ * Classe che funziona da modello per gli errori dovuti ad eccezioni.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Classe che funziona da modello per gli errori dovuti ad eccezioni.
  * 
  */
 public class ExceptionPrincipal {

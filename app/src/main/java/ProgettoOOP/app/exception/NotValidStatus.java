@@ -1,10 +1,11 @@
 package ProgettoOOP.app.exception;
 
 /**
+ * 
+ * Eccezione lanciata se lo status che si vuole richiedere è errato.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Eccezione lanciata se lo status che si vuole richiedere è errato.
  * 
  */
 

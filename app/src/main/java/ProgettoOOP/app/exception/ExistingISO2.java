@@ -1,11 +1,12 @@
 package ProgettoOOP.app.exception;
 
 /**
+ * 
+ * Eccezione lanciata se il paese che si vuole inserire è già presente nella
+ * lista definita dall'utente.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Eccezione lanciata se il paese che si vuole inserire è già presente
- *         nella lista definita dall'utente.
  * 
  */
 

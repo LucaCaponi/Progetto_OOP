@@ -1,11 +1,6 @@
 package ProgettoOOP.app.database;
 
-/**
- * @author Federico Catalini
- * @author Luca Caponi
- * 
- * Classe per il parsing dell'API "GET Countries".
- */
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,10 +14,23 @@ import org.json.simple.parser.ParseException;
 
 import ProgettoOOP.app.model.Countries;
 
+/**
+ * 
+ * Classe per il parsing dell'API "GET Countries".
+ * 
+ * @author Federico Catalini
+ * @author Luca Caponi
+ * 
+ */
 public final class ParseCountries {
 
 	public static List<Countries> datacountry = new LinkedList<>();
 
+	/**
+	 * 
+	 * @return datacountry
+	 * @throws IOException
+	 */
 	public static List<Countries> ParseDataCountries() throws IOException {
 		JSONParser jsonParser = new JSONParser();
 

@@ -1,12 +1,12 @@
 package ProgettoOOP.app.exception;
 
 /**
+ * 
+ * Eccezione lanciata se il paese che si vuole inserire non è presente nell'API
+ * "Get Countries" o non esiste.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Eccezione lanciata se il paese che si vuole inserire non è presente
- *         nell'API "Get Countries" o non esiste.
- * 
  */
 
 public class NotValidCountry extends ExceptionAbstract {

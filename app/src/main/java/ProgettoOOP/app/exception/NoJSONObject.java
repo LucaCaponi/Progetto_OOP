@@ -1,13 +1,12 @@
 package ProgettoOOP.app.exception;
 
 /**
+ * Eccezione lanciata se il JSONObject da richiamare è vuoto.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
  * 
- *         Eccezione lanciata se il JSONObject da richiamare è vuoto.
- * 
  */
-
 public class NoJSONObject extends ExceptionAbstract {
 
 	private static final long serialVersionUID = 1L;

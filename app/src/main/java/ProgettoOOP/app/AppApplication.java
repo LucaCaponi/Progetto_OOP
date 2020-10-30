@@ -12,17 +12,18 @@ import ProgettoOOP.app.database.DatabaseCountryAllStatus;
 import ProgettoOOP.app.database.ParseCountries;
 
 /**
+ * 
+ * Classe main dell'applicazione
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         Classe main dell'applicazione
- * 
+ *
  */
 
 @SpringBootApplication
 public class AppApplication {
 
-	public static void main(String[] args) throws IOException, ParseException, JSONException {
+	public static void main(String[] args) throws IOException, ParseException, JSONException, InterruptedException {
 		DatabaseCountries.DownloadDataCountries();
 		DatabaseCountryAllStatus.DownloadDataCountryAllStatus(null, null);
 		ParseCountries.ParseDataCountries();

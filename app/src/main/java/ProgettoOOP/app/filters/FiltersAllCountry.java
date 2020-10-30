@@ -7,18 +7,21 @@ import ProgettoOOP.app.model.Countries;
 
 /**
  * 
+ * La classe FiltersAllCountry permette di filtrare la lista dei paesi caricati
+ * con la chiamata POST in base al loro continente di appartenenza. Il
+ * continente viene richiesto dall'utente e tramite una GET, con la rotta
+ * /countries/{continent}, è possibile visualizzare la lista filtrata.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         La classe FiltersAllCountry permette di filtrare la lista dei paesi
- *         caricati con la chiamata POST in base al loro continente di
- *         appartenenza. Il continente viene richiesto dall'utente e tramite una
- *         GET, con la rotta /countries/{continent}, è possibile visualizzare la
- *         lista filtrata.
  */
 
 public class FiltersAllCountry {
-
+	/**
+	 * 
+	 * @param cont
+	 * @return La mappa del continente
+	 */
 	public static Map<String, Countries> gettingfilterCountries(String cont) {
 
 		if (cont.toLowerCase().contentEquals("europe"))

@@ -26,20 +26,28 @@ import ProgettoOOP.app.stats.StatsModel;
 
 /**
  * 
+ * La classe StatsFilter permette di filtrare le statistiche in base al numero
+ * dei contagi (confirmed). Ciò è possibile fornendo in Postman un limite
+ * superiore (o inferiore) di casi confermati: Se, ad esempio, si setta la
+ * soglia a 1000 casi confermati si potrà visualizzare la lista dei giorni che
+ * hanno più o meno di 1000 contagi.
+ * 
  * @author Federico Catalini
  * @author Luca Caponi
- * 
- *         La classe StatsFilter permette di filtrare le statistiche 
- *         in base al numero dei contagi (confirmed). 
- *         Ciò è possibile fornendo in Postman un limite superiore (o inferiore) di casi confermati:
- *         Se, ad esempio, si setta la soglia a 1000 casi confermati si potrà visualizzare la lista
- *         dei giorni che hanno più o meno di 1000 contagi. 
- *         
  */
+
 public class StatsFilter {
 
 	private static Map<String, Countries> world = World.getworld();
 
+	/**
+	 * 
+	 * @param from
+	 * @param to
+	 * @param threshold
+	 * @return La mappa delle statistiche filtrate per la soglia
+	 * @throws Exception
+	 */
 	public static String statisticsfiltered(String from, String to, String threshold) throws Exception {
 		Map<String, Object> resultfilter = new LinkedHashMap<>();
 		Map<String, Object> out = new LinkedHashMap<>();
@@ -111,7 +119,7 @@ public class StatsFilter {
 					String varpercstr = df.format(varperc) + "%";
 					StatsModel covid = new StatsModel(countryObjectallafter.get("Date").toString(), vartoday,
 							varpercstr);
-					resultfilter=conditional(threshold, key, vartoday, covid, daily, resultstats);
+					resultfilter = conditional(threshold, key, vartoday, covid, daily, resultstats);
 
 				}
 
@@ -127,9 +135,19 @@ public class StatsFilter {
 
 	}
 
-	public static Map<String, Object> conditional(String threshold, String keyfilter, long today, StatsModel covidfilter,
-			List<StatsModel> day, Map<String, Object> resultfilter) {
-		int cond=0;
+	/**
+	 * 
+	 * @param threshold
+	 * @param keyfilter
+	 * @param today
+	 * @param covidfilter
+	 * @param day
+	 * @param resultfilter
+	 * @return Controlla la soglia e ritorna la mappa filtrata per soglia.
+	 */
+	public static Map<String, Object> conditional(String threshold, String keyfilter, long today,
+			StatsModel covidfilter, List<StatsModel> day, Map<String, Object> resultfilter) {
+		int cond = 0;
 		if (threshold.contains("$gt")) {
 			cond = Integer.parseInt(threshold.substring(3));
 			if (today > cond) {
@@ -146,7 +164,7 @@ public class StatsFilter {
 			}
 		} else
 			throw new NotValidThreshold();
-		
+
 		return resultfilter;
 
 	}

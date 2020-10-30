@@ -7,13 +7,12 @@ import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.World;
 
 /**
+ *
+ * La classe Continent serve per catalogare i paesi inseriti dall'utente secondo
+ * il continente di appartenenza.
  * 
  * @author Federico Catalini
  * @author Luca Caponi
- *
- *
- *         La classe Continent serve per catalogare i paesi inseriti dall'utente 
- *         secondo il continente di appartenenza.
  */
 
 public class Continents {
@@ -26,58 +25,114 @@ public class Continents {
 	private static Map<String, Countries> oceania = new LinkedHashMap<>();
 	private static Map<String, Countries> antar = new LinkedHashMap<>();
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getEurope() {
 		return europe;
 	}
 
+	/**
+	 * 
+	 * @param europe
+	 */
 	public static void setEurope(Map<String, Countries> europe) {
 		Continents.europe = europe;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getAsia() {
 		return asia;
 	}
 
+	/**
+	 * 
+	 * @param asia
+	 */
 	public static void setAsia(Map<String, Countries> asia) {
 		Continents.asia = asia;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getAfrica() {
 		return africa;
 	}
 
+	/**
+	 * 
+	 * @param africa
+	 */
 	public static void setAfrica(Map<String, Countries> africa) {
 		Continents.africa = africa;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getNorth() {
 		return north;
 	}
 
+	/**
+	 * 
+	 * @param north
+	 */
 	public static void setNorth(Map<String, Countries> north) {
 		Continents.north = north;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getSouth() {
 		return south;
 	}
 
+	/**
+	 * 
+	 * @param south
+	 */
 	public static void setSouth(Map<String, Countries> south) {
 		Continents.south = south;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getOceania() {
 		return oceania;
 	}
 
+	/**
+	 * 
+	 * @param oceania
+	 */
 	public static void setOceania(Map<String, Countries> oceania) {
 		Continents.oceania = oceania;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Countries> getAntar() {
 		return antar;
 	}
 
+	/**
+	 * 
+	 * @param antar
+	 */
 	public static void setAntar(Map<String, Countries> antar) {
 		Continents.antar = antar;
 	}
@@ -143,14 +198,15 @@ public class Continents {
 
 	/**
 	 * 
-	 * Il metodo 'returnContinent()' ha una doppia funzione:
-	 *        1- serve ad informare l'utente a quale continente appartiene il paese appena inserito in Postman 
-	 *           tramite la rotta "/countries" con la POST.
-	 *        2- inserisce il paese appena caricato dall'utente all'interno del LinkedHashMap del continente di appartenenza.
-	 * @return il nome del continente.
-	 * @throws Exception.
+	 * Il metodo 'returnContinent()' ha una doppia funzione: 1- serve ad informare
+	 * l'utente a quale continente appartiene il paese appena inserito in Postman
+	 * tramite la rotta "/countries" con la POST. 2- inserisce il paese appena
+	 * caricato dall'utente all'interno del LinkedHashMap del continente di
+	 * appartenenza.
+	 * 
+	 * @return continent
+	 * @throws Exception
 	 */
-	
 	public static String returnContinent() throws Exception {
 		String continent = "Not a Country";
 		World.getlastname();
