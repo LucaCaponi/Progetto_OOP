@@ -3,75 +3,85 @@ Questo è il repository che contiene il progetto svolto da Caponi Luca e Catalin
 per l'esame di Programmazione ad Oggetti (A.A. 2019-2020) del corso di Laurea in Ingegneria Informatica e dell'Automazione presso l'Università Politecnica delle Marche.
 
 ## Introduzione
-Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
-Per mostrare tutti questi passi al meglio, mostriamo il diagramma UML dei casi d'suo così da introdurre nella maniera più semplice possibile al funzionamento del progetto:
+Il progetto consiste in una SpringBoot application, creata nell'ambiente java usando l'IDE Eclipse, che permette di acquisire e modellare dati da più API esterne, restituendoli in formato JSON. 
+
+Il macrotema ha come obiettivo quello di stilare (definendo un insieme di stati e un determinato lasso di tempo) delle classifiche dei paesi in base ai parametri "confirmed", "deaths", "recovered" e "active". Inoltre, sono state elaborate le statistiche riguardo i contagi giornalieri e le loro variazioni percentuali.
+
+La nostra applicazione, comunicando con le API fornite, permette all'utente di caricare una lista di nazioni e di ottenere per gli stati inseriti le classifiche sopracitate (dalla nazione con più casi, decessi, ricoverati o attualmente positivi a quella meno colpita dalla pandemia). Per far questo è stato necessario effettuare il parsing di un'API predefinita (GET Countries) contenente i dati identificativi di tutti i paesi del mondo ("Country, "Slug" ed "ISO2"). 
+
+Per mostrare tutti i metodi resi disponibili, mostriamo il diagramma UML dei casi d'uso così da introdurre in maniera immediata il funzionamento del progetto:
 
 ![diagramma_uso_sfondo](https://user-images.githubusercontent.com/64077382/97744559-bfa59700-1ae7-11eb-856f-0c36b24ca697.JPG)
 
 
 
-La prima parte del lavoro è stata quella di pensare a come strutturare il progetto e per fare ciò ci è stato molto utile il linguaggio UML (Unified Modeling Language). In questa prima parte abbiamo iniziato a pensare al funzionamento della nostra applicazione:
-1.	acquisizione dei dati dall'API GET COUNTRIES
-2.	parsing di quest'ultima in una lista creata ad hoc per i nostri scopi
-3.	parsing di una seconda API (Get By Country All Status) per riprendere i nostri dati
-4.	caricamento all’interno di una classe Eclipse dei continenti con relativi paesi (Le API disponibili non permettevano di distinguere le nazioni per continente)   
-5.	gestione delle chiamate (GET o POST) effettuate dall'utente
-Per far questo abbiamo iniziato a pensare ai vari pacchetti che ci sarebbero serviti per suddividere il nostro lavoro al meglio rendendolo il più semplice e chiaro possibile anche per lo sviluppo del codice poi.
+## Sviluppo
+A grandi linee, lo sviluppo del progetto è stato suddiviso nei seguenti steps:
+1.	acquisizione dei dati dall'API "GET Countries" e parsing di quest'ultima, creando oggetti "Countries".
+2. creazione di una classe controller per gestire le chiamate GET e POST in PostMan.
+3. implementazione tramite un service dei metodi da richiamare sul controller.   
+4.	inizializzazione di variabili e metodi con l'obiettivo di stilare le classifiche richieste.
+5. inizializzazione di variabili e metodi con l'obiettivo di fornire le statistiche sui contagi giornalieri e                  
+   le loro variazioni percentuali.
+6. creazione di un filtro per la suddivisione dei paesi inseriti in base ai loro rispettivi continenti.
+7. creazione di un filtro per visualizzare i giorni con un minor/maggior numero di casi confermati rispetto    
+   ad un valore soglia ("threshold").
+8. verifica del corretto funzionamento di metodi ed eccezioni avvalendosi di quattro classi test.
 
-
-Ovviamente in seguito per ogni pacchetto abbiamo sviluppato tutte le varie classi che andavano ad implementare il progetto, così facendo abbiamo creato l'UML Class Diagram:
-
-![TotalClassDiagram](https://user-images.githubusercontent.com/64077382/97726871-fcfe2a80-1acf-11eb-916e-52eed5aea081.png)
-
-
-e il diagramma UML dei packages:
+### Diagramma delle classi
+Per far questo abbiamo suddiviso il nostro lavoro in diversi packages, al fine di renderlo più semplice e chiaro:
 
 ![Package](https://user-images.githubusercontent.com/64077382/97726850-f7a0e000-1acf-11eb-91fb-f6687deab566.png)
 
 
-### ProgettoOOP.app
+Ovviamente in seguito, per ogni package, abbiamo sviluppato tutte le varie classi che vanno ad implementare il progetto; così facendo abbiamo creato l'UML Class Diagram:
+
+![TotalClassDiagram](https://user-images.githubusercontent.com/64077382/97726871-fcfe2a80-1acf-11eb-916e-52eed5aea081.png)
+
+
+#### ProgettoOOP.app
 Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
 
 ![App](https://user-images.githubusercontent.com/64077382/97726784-e657d380-1acf-11eb-8437-4f2d969b7b21.png)
 
 
-### ProgettoOOP.app.controller
+#### ProgettoOOP.app.controller
 Package che contiene il controller dell'applicazione, ovvero la classe che gestisce tutte le chiamate GET o POST dell'utente.
 
 ![Controller](https://user-images.githubusercontent.com/64077382/97726797-e952c400-1acf-11eb-9d46-adb60bb822af.png)
 
 
-### ProgettoOOP.app.service
+#### ProgettoOOP.app.service
 Package che implementa i servizi resi disponibili attraverso l'applicazione, e che poi verranno richiamati nel controller (e quindi in risposta all'utente).
 
 ![Service](https://user-images.githubusercontent.com/64077382/97726854-f96aa380-1acf-11eb-8ad4-fb6b260d4f56.png)
 
 
-### ProgettoOOP.app.database
+#### ProgettoOOP.app.database
 Package che gestisce il download dei dati direttamente dalle chiamate alle API.
 
 ![Database](https://user-images.githubusercontent.com/64077382/97726824-f079d200-1acf-11eb-8761-fefd04731091.png)
 
 
-### ProgettoOOP.app.model
+#### ProgettoOOP.app.model
 Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus.
 
 ![Model](https://user-images.githubusercontent.com/64077382/97726847-f5d71c80-1acf-11eb-82f6-ffbf65d8bc53.png)
 
 
-### ProgettoOOP.app.stats
+#### ProgettoOOP.app.stats
 Package che contiene le classi che elaborano le statistiche sul numero di contagi giornalieri e sulle loro variazioni percentuali.
 
 ![Stats](https://user-images.githubusercontent.com/64077382/97726859-fa9bd080-1acf-11eb-9cef-3c912fda6c2e.png)
 
 
-### ProgettoOOP.app.filters
+#### ProgettoOOP.app.filters
 Package che permette di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continente}
 
 ![Filters](https://user-images.githubusercontent.com/64077382/97726841-f40d5900-1acf-11eb-80aa-8c1517e4a280.png)
 
 
-### Progetto.app.exception
+#### Progetto.app.exception
 Package per gestire le eccezioni che possono essere lanciate dal programma
 
 ![Exception](https://user-images.githubusercontent.com/64077382/97726832-f2439580-1acf-11eb-9f47-fc208a273394.png)
