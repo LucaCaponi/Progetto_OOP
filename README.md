@@ -94,6 +94,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /stats | GET  | Restituisce le statistiche sul numero dei contagi giornalieri e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente  |
 | /stats/filter | GET  | Restituisce le statistiche filtrate in base alla soglia imposta dall'utente  |
 
+[Esempio di chiamata GET "/totalcountries"](![GETTotalcountries](https://user-images.githubusercontent.com/64077382/97744864-3e023900-1ae8-11eb-9f1d-8fb58762c0eb.jpg))
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
 
