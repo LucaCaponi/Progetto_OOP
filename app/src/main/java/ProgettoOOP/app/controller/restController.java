@@ -98,7 +98,7 @@ public class restController {
 	 * @return Ritornano tutti i metadati di un oggetto di tipo 'Countries'
 	 * 
 	 */
-	@RequestMapping(value = "/countries/metadata", method = RequestMethod.GET)
+	@RequestMapping(value = "/metadata", method = RequestMethod.GET)
 	public ResponseEntity<Object> getMetadata() {
 		return new ResponseEntity<>(countryService.gettingMetadata(), HttpStatus.OK);
 	}
