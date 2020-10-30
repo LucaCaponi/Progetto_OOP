@@ -6,7 +6,7 @@ per l'esame di Programmazione ad Oggetti (A.A. 2019-2020) del corso di Laurea in
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java, usando l'IDE eclipse, che permette di acquisire e modellare dati da una API esterna. Il macrotema era quello di effettuare, definendo un insieme di stati (o un continente) e un determinato lasso di tempo, uno studio riguardo le statistiche Covid-19, facendo ottenere all’utente la lista degli stati ordinati secondo una classifica per numeri di contagi (dalla nazione con più casi a quella meno colpita dalla pandemia). Per fare questo dovevamo importare da una API predefinita (Get Countries) i dati identificativi di tutti i paesi del mondo. 
 Per mostrare tutti questi passi al meglio, mostriamo il diagramma UML dei casi d'suo così da introdurre nella maniera più semplice possibile al funzionamento del progetto:
 
-![diagramma_uso](https://user-images.githubusercontent.com/64077382/97726165-3d10dd80-1acf-11eb-8c8a-acdfc2d5a8fe.jpg)
+![diagramma_uso_sfondo](https://user-images.githubusercontent.com/64077382/97744559-bfa59700-1ae7-11eb-856f-0c36b24ca697.JPG)
 
 
 
