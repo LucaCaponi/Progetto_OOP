@@ -89,13 +89,13 @@ Esse, a loro volta, sono gestite dalla classe “ExceptionPrincipal”, una clas
 
 
 
-# Funzionamento
+## Funzionamento
 Dopo aver avviato l'applicazione, l'utente potrà interrogarla in Postman attraverso delle chiamate all'indirizzo http://localhost:8080 .
 Come rappresentato nel diagramma UML dei casi d'uso, le rotte disponibili sono otto di tipo GET e una di tipo POST.
 
 Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano. 
 
-## Chiamate
+### Chiamate
 | Rotta | Metodo | Descrizione |
 | :------------- |:----:| :------------ |
 | /totalcountries | GET  | Restituisce tutti i paesi disponibili, ovvero il contenuto dell'API "GET Countries" |
@@ -108,7 +108,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /stats | GET  | Restituisce le statistiche sul numero dei contagi giornalieri e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente  |
 | /stats/filter | GET  | Restituisce le statistiche filtrate in base alla soglia imposta dall'utente  |
 
-### Esempio di funzionamento
+#### Esempio di funzionamento
 
 * **L'utente vuole visualizzare tutti i paesi che può ricercare:**
 
@@ -169,14 +169,14 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
-## Statistiche
+### Statistiche
 Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API GET By Country All Status, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
 Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsModel"** contenente tre attributi chiave:
 * **"Date"**: data visualizzata.
 * **"DailyConfirmed"**: casi confermati nel giorno "Date"
 * **"Var"**: variazione percentuale.
 
-#### FOCUS: "Var"
+##### FOCUS: "Var"
 La variazione percentuale è un indice che mostra l'incremento (o il decremento) del numero di contagi rispetto al giorno prima.
 La formula utilizzata per calcolare la variazione percentuale di contagi tra un giorno X e il precedente Y è la seguente:
 * **Var = [(X-Y)/Y]x100**
@@ -204,7 +204,7 @@ L'oggetto StatsModel che verrebbe restituito in formato JSON sarebbe il seguente
 **"Var"**: "15.84%"
 
 
- ## Filtri
+ ### Filtri
  Sono stati creati due filtri:
  * **Filtro per i continenti**
  Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
@@ -224,7 +224,7 @@ Il parametro **threshold** è un codice alfanumerico così costruito:
 **$lt500**  = restituisce la lista dei giorni in cui si hanno **meno di 500 contagi**.
 
 
-## Eccezioni
+### Eccezioni
 Tutte le eccezioni personalizzate ereditano dalla classe astratta **“ExceptionAbstract”**:
 
 * L’eccezione **"NoJSONObject”** viene lanciata quando non è presente nessun JSONObject da restituire in Postman.
@@ -243,59 +243,59 @@ Il modo in cui le precedenti eccezioni vengono visualizzate in Postman viene rip
 * [Eccezione “NotValidThreshold”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidThreshold.jpg)
 
 
-## Diagrammi delle sequenze
+### Diagrammi delle sequenze
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
 
 
-### /totalcountries (GET)
+#### /totalcountries (GET)
 
 ![getTotalCountries](https://user-images.githubusercontent.com/64077382/97734115-05a72e80-1ad9-11eb-9c19-02184c6541b6.png)
 
 
-### /countries (POST)
+#### /countries (POST)
 
 ![postCountries](https://user-images.githubusercontent.com/64077382/97734128-093ab580-1ad9-11eb-9cae-57ca59a2c62e.png)
 
 
-### /countries (GET)
+#### /countries (GET)
 
 ![getCountries](https://user-images.githubusercontent.com/64077382/97734121-08098880-1ad9-11eb-8b92-fcf434edeb7f.png)
 
 
-### /countries/{continent} (GET)
+#### /countries/{continent} (GET)
 
 ![getFilteredCountries](https://user-images.githubusercontent.com/64077382/97734134-0c35a600-1ad9-11eb-9c41-78c88ac04e89.png)
 
 
-### /metadata (GET)
+#### /metadata (GET)
 
 ![getMetadata](https://user-images.githubusercontent.com/64077382/97734186-1a83c200-1ad9-11eb-8d30-86ab5f5b6d0a.png)
 
 
-### /totalallstatus (GET)
+#### /totalallstatus (GET)
 
 ![getTotalCountryAllStatus](https://user-images.githubusercontent.com/64077382/97734150-10fa5a00-1ad9-11eb-9770-5595cd0d9e7a.png)
 
 
-### /covid/{status} (GET)
+#### /covid/{status} (GET)
 
 ![getRankingStatus](https://user-images.githubusercontent.com/64077382/97734163-135cb400-1ad9-11eb-900f-8c41da240e9c.png)
 
 
-### /stats (GET)
+#### /stats (GET)
 
 ![getStats](https://user-images.githubusercontent.com/64077382/97734171-15267780-1ad9-11eb-9640-153416099652.png)
 
 
-### /stats/filter (GET)
+#### /stats/filter (GET)
 
 ![getFilteredStats](https://user-images.githubusercontent.com/64077382/97734177-1788d180-1ad9-11eb-8ca3-6648fbdf1306.png)
 
 
 
 
-# Componenti
+## Componenti
 
 * **Caponi Luca**: Ha scritto il ReadMe
 * **Catalini Federico**: Ha generato i diagrammi UML
