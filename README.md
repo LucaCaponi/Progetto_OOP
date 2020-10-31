@@ -236,7 +236,11 @@ Tutte le eccezioni personalizzate ereditano dalla classe astratta **“Exception
 
 Il modo in cui le precedenti eccezioni vengono visualizzate in Postman viene riportato qui di seguito:
 
-
+* [Eccezione “NotValidCountry”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidCountry.jpg)
+* [Eccezione “ExistingISO2”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcExistingISO2.jpg)
+* [Eccezione “NotValidContinent”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidContinent.jpg)
+* [Eccezione “NotValidStatus”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidStatus.jpg)
+* [Eccezione “NotValidThreshold”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidThreshold.jpg)
 
 
 
