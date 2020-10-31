@@ -92,13 +92,21 @@ public class StatsFilter {
 
 				List<StatsModel> daily = new LinkedList<StatsModel>();
 
-				for (int i = 2; i < countryObject.size(); i++) {
+				List<JSONObject> filteredlist = new LinkedList<>();
+				for (int i = 0; i < countryObject.size(); i++) {
+					JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+					String province = (String) countryObjectall.get("Province");
+					if (province.isEmpty()) {filteredlist.add(countryObjectall);
+					}			   
+				}
+
+				for (int i = 2; i < filteredlist.size(); i++) {
 					long confirmedbefore = 0;
 					long confirmedafter = 0;
 
-					JSONObject countryObjectallafter = (JSONObject) countryObject.get(i);
-					JSONObject countryObjectallbefore = (JSONObject) countryObject.get(i - 1);
-					JSONObject countryObjectallvar = (JSONObject) countryObject.get(i - 2);
+					JSONObject countryObjectallafter = filteredlist.get(i);
+					JSONObject countryObjectallbefore =filteredlist.get(i - 1);
+					JSONObject countryObjectallvar = filteredlist.get(i - 2);
 					confirmedafter = (Long) countryObjectallafter.get("Confirmed");
 					confirmedbefore = (Long) countryObjectallbefore.get("Confirmed");
 					long vartoday = confirmedafter - confirmedbefore;

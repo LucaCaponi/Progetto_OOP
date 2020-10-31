@@ -38,17 +38,6 @@ public class CountryServiceImpl implements CountryService {
 	String cont = null;
 	String status = null;
 
-	/**
-	 * Costruttore per settare l'oggetto 'Countries'
-	 * 
-	 */
-	public CountryServiceImpl() {
-		Countries nation = new Countries(null, null, null);
-		nation.setCountry("");
-		nation.setSlug("");
-		nation.setISO2("");
-		World.setworld(nation);
-	}
 
 	/**
 	 * 
@@ -74,9 +63,10 @@ public class CountryServiceImpl implements CountryService {
 	 */
 	@Override
 	public String totalStatusCountries(String from, String to) throws IOException, ParseException, JSONException, InterruptedException {
-		if (DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to).isEmpty())
+		String countrystatus = DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+		if (countrystatus.isEmpty())
 			throw new NoJSONObject();
-		return DatabaseCountryAllStatus.DownloadDataCountryAllStatus(from, to);
+		return countrystatus;
 	}
 
 	/**

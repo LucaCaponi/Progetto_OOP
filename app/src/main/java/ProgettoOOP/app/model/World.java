@@ -35,13 +35,6 @@ public final class World {
 	public static void setworld(Countries nation) {
 		world.put(nation.getISO2(), nation);
 	}
-/**
- * 
- * @param ISO2
- */
-	public static void deleteworld(String ISO2) {
-		world.remove(ISO2);
-	}
 
 	/**
 	 * I metodi 'getlastISO2()' , 'getlastname()' , 'getlastcountries()' servono per
@@ -114,10 +107,6 @@ public final class World {
 	 * 
 	 * Il metodo boolean 'Verify' permette di controllare se il paese inserito
 	 * esiste nell'API "GET Countries".
-	 * 
-	 */
-	
-	/**
 	 * 
 	 * @param c
 	 * @return bool

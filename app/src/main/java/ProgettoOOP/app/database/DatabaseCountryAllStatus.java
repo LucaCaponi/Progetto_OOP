@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -56,6 +57,7 @@ public class DatabaseCountryAllStatus {
 		Map<String, Object> out = new LinkedHashMap<>();
 		JSONParser jsonParser = new JSONParser();
 
+
 		for (String key : world.keySet()) {
 
 			String slug = world.get(key).getSlug();
@@ -95,9 +97,16 @@ public class DatabaseCountryAllStatus {
 			long recoveredlast = 0;
 			long activelast = 0;
 
+			List<JSONObject> filteredlist = new LinkedList<>();
 			for (int i = 0; i < countryObject.size(); i++) {
-		    JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+				String province = (String) countryObjectall.get("Province");
+				if (province.isEmpty()) {filteredlist.add(countryObjectall);
+				}			   
+			}
 
+			for (int i = 0; i < filteredlist.size(); i++) {
+				JSONObject countryObjectall = filteredlist.get(i);
 				if (i == 0) {
 					confirmedstart = (Long) countryObjectall.get("Confirmed");
 					deathsstart = (Long) countryObjectall.get("Deaths");
@@ -105,7 +114,7 @@ public class DatabaseCountryAllStatus {
 					activestart = (Long) countryObjectall.get("Active");
 				}
 
-				if (i == countryObject.size() - 1) {
+				if (i == filteredlist.size() - 1) {
 					confirmedlast = (Long) countryObjectall.get("Confirmed");
 					deathslast = (Long) countryObjectall.get("Deaths");
 					recoveredlast = (Long) countryObjectall.get("Recovered");
@@ -125,7 +134,6 @@ public class DatabaseCountryAllStatus {
 			deaths.put(key + "'s deaths cases", deathslast - deathsstart);
 			recovered.put(key + "'s recovered cases", recoveredlast - recoveredstart);
 			active.put(key + "'s active cases", activelast - activestart);
-			Thread.sleep(200);
 		}
 
 		return new JSONObject(result).toString();
