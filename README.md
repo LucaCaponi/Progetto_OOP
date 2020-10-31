@@ -40,7 +40,7 @@ Ovviamente, in seguito, per ogni package, abbiamo sviluppato tutte le varie clas
 
 
 #### ProgettoOOP.app
-Package che contiene la classe "main" la quale richiama i metodi necessari per il corretto funzionamento del programma.
+Package che contiene la classe "main" la quale richiama i metodi necessari per il corretto funzionamento del programma e lancia SpringBoot.
 
 ![App](https://user-images.githubusercontent.com/64077382/97726784-e657d380-1acf-11eb-8437-4f2d969b7b21.png)
 
@@ -76,13 +76,14 @@ Package che contiene le classi che elaborano le statistiche sul numero di contag
 
 
 #### ProgettoOOP.app.filters
-Package che contiene le classi che permettono di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continent} e quelle che consentono di esaminare le statistiche filtrate in base a un valore soglia ("threshold").
+Package che contiene le classi che permettono di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continent}, la classe "FiltersAllStatus" che consente di ottenere le classifiche in base allo status immesso nella rotta, e la classe "StatsFilter" che permette di esaminare le statistiche filtrate in base a un valore soglia ("threshold").
 
 ![Filters](https://user-images.githubusercontent.com/64077382/97726841-f40d5900-1acf-11eb-80aa-8c1517e4a280.png)
 
 
 #### Progetto.app.exception
 Package che contiene le classi necessarie a gestire le eccezioni che possono essere lanciate all'interno del programma.
+Esse, a loro volta, sono gestite dalla classe “ExceptionPrincipal”, una classe modello contenente quattro attributi chiave, che permette di restituire le eccezioni (in Postman) in formato JSON.
 
 ![Exception](https://user-images.githubusercontent.com/64077382/97726832-f2439580-1acf-11eb-9f47-fc208a273394.png)
 
@@ -222,6 +223,18 @@ Il parametro **threshold** è un codice alfanumerico così costruito:
 
 **$lt500**  = restituisce la lista dei giorni in cui si hanno **meno di 500 contagi**.
 
+
+### Eccezioni
+Tutte le eccezioni personalizzate ereditano dalla classe astratta **“ExceptionAbstract”**:
+
+* L’eccezione **"NoJSONObject”** viene lanciata quando non è presente nessun JSONObject da restituire in Postman.
+* L’eccezione **"NotValidCountry”** viene lanciata quando viene inserito erroneamente un paese che non esiste.
+* L’eccezione **“ExistingISO2”** viene lanciata quando viene ricaricato un paese già inserito in precedenza.
+* L’eccezione **“NotValidContinent”** viene lanciata quando viene richiamato nella rotta “/countries/{continent}” un continente errato o inesistente.
+* L’eccezione **“NotValidStatus”** viene lanciata quando lo status inserito nella rotta “/covid/{status}” è errato o inesistente.
+* L’eccezione **“NotValidThreshold”** viene lanciata quando la soglia (“threshold”) inserita come parametro per la chiamata “/stats/filter” è errata.
+
+Il modo in cui le precedenti eccezioni vengono visualizzate in Postman viene riportato qui di seguito:
 
 
 
