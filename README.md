@@ -169,7 +169,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
-### Statistiche
+## Statistiche
 Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API GET By Country All Status, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
 Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsModel"** contenente tre attributi chiave:
 * **"Date"**: data visualizzata.
@@ -204,7 +204,7 @@ L'oggetto StatsModel che verrebbe restituito in formato JSON sarebbe il seguente
 **"Var"**: "15.84%"
 
 
- ### Filtri
+ ## Filtri
  Sono stati creati due filtri:
  * **Filtro per i continenti**
  Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
@@ -224,7 +224,7 @@ Il parametro **threshold** è un codice alfanumerico così costruito:
 **$lt500**  = restituisce la lista dei giorni in cui si hanno **meno di 500 contagi**.
 
 
-### Eccezioni
+## Eccezioni
 Tutte le eccezioni personalizzate ereditano dalla classe astratta **“ExceptionAbstract”**:
 
 * L’eccezione **"NoJSONObject”** viene lanciata quando non è presente nessun JSONObject da restituire in Postman.
