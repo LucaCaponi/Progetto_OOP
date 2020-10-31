@@ -115,7 +115,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 * **Per inserire il paese in modo corretto visiona la tipologia e la descrizione dei metadati che deve inserire:**
 
-[esempio di chiamata GET "/metadata](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
+[esempio di chiamata GET "/metadata"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
 
 
 * **Carica i paesi su cui vuole stilare le classifiche e/o ottenere le statistiche:**
@@ -135,9 +135,9 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 * **Il fruitore del programma, oltre alle classifiche, potrà richiedere un sommario della situazione Covid, sia per il periodo di default (1 Marzo 2020-1 Aprile 2020) che per un periodo a sua scelta:**
 
-- [esempio di chiamata GET "/totalallstatus"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus.jpg)
+[esempio di chiamata GET "/totalallstatus"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus.jpg)
 
-- [esempio di chiamata GET "/totallallstatus (con parametri from, to)"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus_from-to.jpg)
+[esempio di chiamata GET "/totallallstatus (con parametri from, to)"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus_from-to.jpg)
 
 
 * **Un possibile cliente dell'applicazione, come già anticipato, potrà visualizzare le classifiche in base al numero di casi:**
