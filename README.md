@@ -107,7 +107,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /stats | GET  | Restituisce le statistiche sul numero dei contagi giornalieri e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente  |
 | /stats/filter | GET  | Restituisce le statistiche filtrate in base alla soglia imposta dall'utente  |
 
-## Esempio di funzionamento
+### Esempio di funzionamento
 
 * **L'utente vuole visualizzare tutti i paesi che può ricercare:**
 
@@ -173,17 +173,20 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
  Sono stati creati due filtri:
  * **Filtro per i continenti**
  Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
-Inserendo un paese con la chiamata POST viene riportato il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente. Se nella rotta verrà inserito un continente errato, il programma lancerà l'eccezione gestita NotValidContinent().
+Inserendo un paese con la chiamata POST viene riportato il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente. Se nella rotta verrà inserito un continente errato, il programma lancerà l'eccezione gestita **NotValidContinent()**.
 
 * **Filtro soglia (threshold)**
 Nel visualizzare la lista dei contagi giornalieri con le realtive variazioni percentuali, si è pensato di dare all'utente la possibilità di filtrare l'elenco in base ad un valore soglia (threshold) di casi confermati. L'elenco restituito conterrà solo gli oggetti di tipo StatsModel in cui i casi confermati (a cui è attribuita la chiave DailyConfirmed) sono **minori** o **maggiori** del valore richiesto dall'utente.
 
 Il parametro **threshold** è un codice alfanumerico così costruito:
-* il prefisso letterale (**$gt** o **$lt**)per far partire l'istruzione condizionale.
+* il prefisso letterale (**$gt** o **$lt**) per far partire l'istruzione condizionale. Se il prefisso è errato si lancia l'eccezione gestita **NotValidThreshold()**. 
 * il valore numerico corrispondente alla soglia. 
+
 **ESEMPI:**
-* $gt2000 = restituisce la lista dei giorni in cui si hanno più di 2000 contagi.
-* $lt500  = restituisce la lista dei giorni in cui si hanno meno di 500 contagi.
+
+**$gt2000** = restituisce la lista dei giorni in cui si hanno **più di 2000 contagi**.
+
+**$lt500**  = restituisce la lista dei giorni in cui si hanno **meno di 500 contagi**.
 
 
 
@@ -239,8 +242,8 @@ In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un
 
 # Componenti
 
-### Caponi Luca: Ha scritto il ReadMe
-### Catalini Federico: Ha generato i diagrammi UML
+* **Caponi Luca**: Ha scritto il ReadMe
+* **Catalini Federico**: Ha generato i diagrammi UML
 
 Gli autori hanno ragionato l'idea del progetto e sviluppato il codice 
 collaborando in totale sincronia, sia da remoto che in presenza.  
