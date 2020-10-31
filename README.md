@@ -1,5 +1,5 @@
 # Progetto_OOP
-Questo è il repository che contiene il progetto svolto da Caponi Luca e Catalini Federico 
+Questo è il repository che contiene il progetto svolto da **Caponi Luca** e **Catalini Federico** 
 per l'esame di Programmazione ad Oggetti (A.A. 2019-2020) del corso di Laurea in Ingegneria Informatica e dell'Automazione presso l'Università Politecnica delle Marche.
 
 ## Introduzione
@@ -168,7 +168,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
-# Statistiche
+### Statistiche
 Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API GET By Country All Status, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
 Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsModel"** contenente tre attributi chiave:
 * **"Date"**: data visualizzata.
@@ -176,22 +176,34 @@ Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsMode
 * **"Var"**: variazione percentuale.
 
 #### FOCUS: "Var"
+La variazione percentuale è un indice che mostra l'incremento (o il decremento) del numero di contagi rispetto al giorno prima.
 La formula utilizzata per calcolare la variazione percentuale di contagi tra un giorno X e il precedente Y è la seguente:
+* **Var = [(X-Y)/Y]x100**
 
-**Var= [(X-Y)/Y]x100**
+Se nel giorno precedente non sono presenti nuovi contagi, la formula sarà:
+* **Var = [(X-Y)/1]x100**
 
 Per spiegare la formula si fa riferimento ad un esempio pratico.
 
 **ESEMPIO:**
-Nel giorno 30 Ottobre 2020 (2020-10-30T00:00:00Z) in Italia sono stati registrati 31079 casi confermati.
-Il giorno prima (2020-10-29T00:00:00Z) erano 26829.
+
+Nel giorno 30 Ottobre 2020 **(2020-10-30T00:00:00Z)** in Italia sono stati registrati **31079** casi confermati.
+
+Il giorno prima **(2020-10-29T00:00:00Z)** erano **26829**.
 
 La variazione percentuale sarà dunque:
+* **Var**=[(31079-26829)/260829]x100= **15.84%**
 
-**Var**=[(31079-26829)/260829]x100= **15.84%**
+L'oggetto StatsModel che verrebbe restituito in formato JSON sarebbe il seguente:
+
+**"Date"**: "2020-10-30T00:00:00Z",
+
+**"DailyConfirmed"**: 31079,
+
+**"Var"**: "15.84%"
 
 
- # Filtri
+ ### Filtri
  Sono stati creati due filtri:
  * **Filtro per i continenti**
  Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
