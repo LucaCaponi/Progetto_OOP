@@ -7,7 +7,7 @@ Il progetto consiste in una SpringBoot application, creata nell'ambiente java us
 
 Il macrotema ha come obiettivo quello di stilare (definendo un insieme di stati e un determinato lasso di tempo) delle classifiche dei paesi in base ai parametri "confirmed", "deaths", "recovered" e "active". Inoltre, sono state elaborate le statistiche riguardo i contagi giornalieri e le loro variazioni percentuali.
 
-La nostra applicazione, comunicando con le API fornite, permette all'utente di caricare una lista di nazioni e di ottenere per gli stati inseriti le classifiche sopracitate (dalla nazione con più casi, decessi, ricoverati o attualmente positivi a quella meno colpita dalla pandemia). Per far questo è stato necessario effettuare il parsing di un'API predefinita (GET Countries) contenente i dati identificativi di tutti i paesi del mondo ("Country, "Slug" ed "ISO2"). 
+La nostra applicazione, comunicando con le API fornite, permette all'utente di caricare una lista di nazioni e di ottenere per gli stati inseriti le classifiche sopracitate (dalla nazione con più casi, decessi, ricoverati o attualmente positivi a quella meno colpita dalla pandemia). Per far questo è stato necessario effettuare il parsing di un'API predefinita (**GET Countries**) contenente i dati identificativi di tutti i paesi del mondo ("Country, "Slug" ed "ISO2"). Inoltre, i dati da elaborare sono stati ottenuti richiamando l'API **GET By Country All Status**, la quale, però, non fornisce i dati giorno per giorno, ma restituisce una sommatoria dei casi registrati dal 22 Gennaio 2020 in poi. E' stato dunque nostro compito calcolare i dati giornalieri, necessari per stilare le classifiche e ottenere le statistiche.
 
 Per mostrare tutti i metodi resi disponibili, mostriamo il diagramma UML dei casi d'uso così da introdurre in maniera immediata il funzionamento del progetto:
 
@@ -168,6 +168,28 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
+# Statistiche
+Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API GET By Country All Status, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
+Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsModel"** contenente tre attributi chiave:
+* **"Date"**: data visualizzata.
+* **"DailyConfirmed"**: casi confermati nel giorno "Date"
+* **"Var"**: variazione percentuale.
+
+#### FOCUS: "Var"
+La formula utilizzata per calcolare la variazione percentuale di contagi tra un giorno X e il precedente Y è la seguente:
+
+**Var= [(X-Y)/Y]x100**
+
+Per spiegare la formula si fa riferimento ad un esempio pratico.
+
+**ESEMPIO:**
+Nel giorno 30 Ottobre 2020 (2020-10-30T00:00:00Z) in Italia sono stati registrati 31079 casi confermati.
+Il giorno prima (2020-10-29T00:00:00Z) erano 26829.
+
+La variazione percentuale sarà dunque:
+
+**Var**=[(31079-26829)/260829]x100= **15.84%**
+
 
  # Filtri
  Sono stati creati due filtri:
@@ -187,6 +209,9 @@ Il parametro **threshold** è un codice alfanumerico così costruito:
 **$gt2000** = restituisce la lista dei giorni in cui si hanno **più di 2000 contagi**.
 
 **$lt500**  = restituisce la lista dei giorni in cui si hanno **meno di 500 contagi**.
+
+
+
 
 
 
