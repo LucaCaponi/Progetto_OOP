@@ -108,40 +108,56 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 ## Esempio di funzionamento
 
-L'utente vuole visualizzare tutti i paesi che può ricercare:
-* [Esempio di chiamata GET "/totalcountries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalcountries.jpg)
+* **L'utente vuole visualizzare tutti i paesi che può ricercare:**
+[esempio di chiamata GET "/totalcountries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalcountries.jpg)
 
-Per inserire il paese in modo corretto visiona la tipologia e la descrizione dei metadati che deve inserire:
-* [Esempio di chiamata GET "/metadata](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
 
-Carica i paesi su cui vuole stilare le classifiche e/o ottenere le statistiche:
-* [Esempio di chiamata POST "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/POSTCountries.jpg)
+* **Per inserire il paese in modo corretto visiona la tipologia e la descrizione dei metadati che deve inserire:**
+[esempio di chiamata GET "/metadata](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
 
-Per poi visualizzare la lista dei paesi inseriti:
-* [Esempio di chiamata GET "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries.jpg)
 
-La lista può essere filtrata per continente, l'utente avrà la possibilità (ad esempio) di visualizzare a schermo i paesi europei caricati:
-* [Esempio di chiamata GET "/countries/continent"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries-continent.jpg)
+* **Carica i paesi su cui vuole stilare le classifiche e/o ottenere le statistiche:**
+[esempio di chiamata POST "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/POSTCountries.jpg)
 
-Il fruitore del programma, oltre alle classifiche, potrà richiedere un sommario della situazione Covid, sia per il periodo di default (1 Marzo 2020-1 Aprile 2020) che per un periodo a sua scelta:
-* [Esempio di chiamata GET "/totalallstatus"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus.jpg)
-* [Esempio di chiamata GET "/totallallstatus (con parametri from, to)"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus_from-to.jpg)
 
-Un possibile cliente dell'applicazione, come già anticipato, potrà visualizzare le classifiche in base al numero di casi CONFERMATI, DECESSI, RICOVERATI E ATTIVI.
-* [Esempio di chiamata GET "/covid/confirmed"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETConfirmed.jpg)
-* [Esempio di chiamata GET "/covid/deaths"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETDeaths.jpg)
-* [Esempio di chiamata GET "/covid/recovered"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETRecovered.jpg)
-* [Esempio di chiamata GET "/covid/active"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETActive.jpg)
+* **Per poi visualizzare la lista dei paesi inseriti:**
+[esempio di chiamata GET "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries.jpg)
 
-L'utente può osservare le statistiche giornaliere sul numero dei casi confermati con le variazioni percentuali rispetto al giorno precedente. 
-* [Esempio di chiamata GET "/stats"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStats.jpg)
 
-La lista delle statistiche può essere filtrata inserendo un valore soglia: si può richiedere quindi la lista dei giorni con un numero di contagi 
+* **La lista può essere filtrata per continente, l'utente avrà la possibilità (ad esempio) di visualizzare a schermo i paesi europei caricati:**
+[esempio di chiamata GET "/countries/continent"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries-continent.jpg)
 
-minore se il prefisso del valore numerico è $lt
 
-maggiore se il prefisso è $gt
-* [Esempio di chiamata GET "/stats/filter](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
+* **Il fruitore del programma, oltre alle classifiche, potrà richiedere un sommario della situazione Covid, sia per il periodo di default (1 Marzo 2020-1 Aprile 2020) che per un periodo a sua scelta:**
+[esempio di chiamata GET "/totalallstatus"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus.jpg)
+[esempio di chiamata GET "/totallallstatus (con parametri from, to)"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus_from-to.jpg)
+
+
+* **Un possibile cliente dell'applicazione, come già anticipato, potrà visualizzare le classifiche in base al numero di casi:**
+
+**- CONFERMATI:**
+[esempio di chiamata GET "/covid/confirmed"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETConfirmed.jpg)
+
+**- DECESSI:**
+[esempio di chiamata GET "/covid/deaths"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETDeaths.jpg)
+
+**- RICOVERATI:**
+[esempio di chiamata GET "/covid/recovered"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETRecovered.jpg)
+
+**- ATTIVI:**
+[esempio di chiamata GET "/covid/active"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETActive.jpg)
+
+
+* **L'utente può osservare le statistiche giornaliere sul numero dei casi confermati con le variazioni percentuali rispetto al giorno precedente:**
+[esempio di chiamata GET "/stats"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStats.jpg)
+
+* **La lista delle statistiche può essere filtrata inserendo un valore soglia: si può richiedere quindi la lista dei giorni con un numero di contagi**
+
+**-minore** se il prefisso del valore numerico è **$lt**
+
+**-maggiore** se il prefisso è **$gt**
+
+[esempio di chiamata GET "/stats/filter](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
