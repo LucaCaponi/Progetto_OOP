@@ -93,7 +93,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 
 ## Chiamate
 | Rotta | Metodo | Descrizione |
-| :------------- |:----:| :------------- |
+| :------------- |:----:| :------------ |
 | /totalcountries | GET  | Restituisce tutti i paesi disponibili, ovvero il contenuto dell'API "GET Countries" |
 | /countries | POST  | Permette all'utente di inserire i paesi |
 | /countries | GET  | Restituisce i paesi inseriti dall'utente |
