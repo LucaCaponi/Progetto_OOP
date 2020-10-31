@@ -22,7 +22,7 @@ public class ExistingISO2 extends ExceptionAbstract {
 
 	@Override
 	public String getMessage() {
-		return "Existing ISO2!";
+		return "Il paese è già stato inserito!";
 	}
 
 }

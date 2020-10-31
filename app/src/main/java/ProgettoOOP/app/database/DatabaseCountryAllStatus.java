@@ -96,7 +96,7 @@ public class DatabaseCountryAllStatus {
 			long activelast = 0;
 
 			for (int i = 0; i < countryObject.size(); i++) {
-				JSONObject countryObjectall = (JSONObject) countryObject.get(i);
+		    JSONObject countryObjectall = (JSONObject) countryObject.get(i);
 
 				if (i == 0) {
 					confirmedstart = (Long) countryObjectall.get("Confirmed");
@@ -112,7 +112,6 @@ public class DatabaseCountryAllStatus {
 					activelast = (Long) countryObjectall.get("Active");
 
 				}
-
 			}
 
 			Map<String, Long> stats = new LinkedHashMap<String, Long>();
