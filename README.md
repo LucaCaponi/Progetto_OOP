@@ -34,19 +34,19 @@ Per far questo abbiamo suddiviso il nostro lavoro in diversi packages, al fine d
 ![Package](https://user-images.githubusercontent.com/64077382/97726850-f7a0e000-1acf-11eb-91fb-f6687deab566.png)
 
 
-Ovviamente in seguito, per ogni package, abbiamo sviluppato tutte le varie classi che vanno ad implementare il progetto; così facendo abbiamo creato l'UML Class Diagram:
+Ovviamente, in seguito, per ogni package, abbiamo sviluppato tutte le varie classi che vanno ad implementare il progetto; così facendo abbiamo creato l'UML Class Diagram:
 
 ![TotalClassDiagram](https://user-images.githubusercontent.com/64077382/97726871-fcfe2a80-1acf-11eb-916e-52eed5aea081.png)
 
 
 #### ProgettoOOP.app
-Package che contiene il main il quale richiama i metodi necessari per il corretto funzionamento del programma.
+Package che contiene la classe "main" la quale richiama i metodi necessari per il corretto funzionamento del programma.
 
 ![App](https://user-images.githubusercontent.com/64077382/97726784-e657d380-1acf-11eb-8437-4f2d969b7b21.png)
 
 
 #### ProgettoOOP.app.controller
-Package che contiene il controller dell'applicazione, ovvero la classe che gestisce tutte le chiamate GET o POST dell'utente.
+Package che contiene il controller dell'applicazione, ovvero la classe che gestisce tutte le chiamate GET o POST richieste dall'utente e le eventuali eccezioni.
 
 ![Controller](https://user-images.githubusercontent.com/64077382/97726797-e952c400-1acf-11eb-9d46-adb60bb822af.png)
 
@@ -58,13 +58,13 @@ Package che implementa i servizi resi disponibili attraverso l'applicazione, e c
 
 
 #### ProgettoOOP.app.database
-Package che gestisce il download dei dati direttamente dalle chiamate alle API.
+Package che gestisce il download e il parsing dei dati comunicando con le API.
 
 ![Database](https://user-images.githubusercontent.com/64077382/97726824-f079d200-1acf-11eb-8761-fefd04731091.png)
 
 
 #### ProgettoOOP.app.model
-Package che contiene tutte le classi che servono a implementare un oggetto Country e CountryAllStatus.
+Package che contiene le classi che servono a implementare un oggetto di tipo "Countries" e la classe "Metadata", necessaria per restituire i metadati.
 
 ![Model](https://user-images.githubusercontent.com/64077382/97726847-f5d71c80-1acf-11eb-82f6-ffbf65d8bc53.png)
 
@@ -76,20 +76,22 @@ Package che contiene le classi che elaborano le statistiche sul numero di contag
 
 
 #### ProgettoOOP.app.filters
-Package che permette di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continente}
+Package che contiene le classi che permettono di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continent} e quelle che consentono di esaminare le statistiche filtrate in base a un valore soglia ("threshold").
 
 ![Filters](https://user-images.githubusercontent.com/64077382/97726841-f40d5900-1acf-11eb-80aa-8c1517e4a280.png)
 
 
 #### Progetto.app.exception
-Package per gestire le eccezioni che possono essere lanciate dal programma
+Package che contiene le classi necessarie a gestire le eccezioni che possono essere lanciate all'interno del programma.
 
 ![Exception](https://user-images.githubusercontent.com/64077382/97726832-f2439580-1acf-11eb-9f47-fc208a273394.png)
 
 
 
 # Funzionamento
-Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano.
+Dopo aver avviato l'applicazione, l'utente potrà interrogarla in Postman attraverso delle chiamate all'indirizzo http://localhost:8080 .
+Come rappresentato nel diagramma UML dei casi d'uso, le rotte disponibili sono otto di tipo GET e una di tipo POST.
+Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano. 
 
 ## Chiamate
 | Rotta | Metodo | Descrizione |
@@ -104,7 +106,22 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 | /stats | GET  | Restituisce le statistiche sul numero dei contagi giornalieri e sulle loro variazioni percentuali per i paesi inseriti precedentemente dall'utente  |
 | /stats/filter | GET  | Restituisce le statistiche filtrate in base alla soglia imposta dall'utente  |
 
+## Esempio di funzionamento
+
+
 * [Esempio di chiamata GET "/totalcountries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalcountries.jpg)
+* [GET countries](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries.jpg)
+* [POST countries](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/POSTCountries.jpg)
+* [GET countries/continent](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries-continent.jpg)
+* [GET totalallstatus](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus.jpg)
+* [GET totallallstatus (con parametri from, to)](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalallstatus_from-to.jpg)
+* [GET covid/confirmed](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETConfirmed.jpg)
+* [GET covid/deaths](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETDeaths.jpg)
+* [GET covid/recovered](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETRecovered.jpg)
+* [GET covid/active](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETActive.jpg)
+* [GET stats](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStats.jpg)
+* [GET stats/filter](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
+* [GET metadata](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
 
