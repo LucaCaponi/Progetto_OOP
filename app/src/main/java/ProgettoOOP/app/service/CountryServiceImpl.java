@@ -3,13 +3,14 @@ package ProgettoOOP.app.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
-import ProgettoOOP.app.database.DatabaseCountries;
 import ProgettoOOP.app.database.DatabaseCountryAllStatus;
+import ProgettoOOP.app.database.ParseCountries;
 import ProgettoOOP.app.model.Countries;
 import ProgettoOOP.app.model.Metadata;
 import ProgettoOOP.app.model.World;
@@ -45,10 +46,8 @@ public class CountryServiceImpl implements CountryService {
 	 * @throws IOException.
 	 */
 	@Override
-	public String totalCountries() throws IOException {
-		if (DatabaseCountries.DownloadDataCountries().isEmpty())
-			throw new NoJSONObject();
-		return DatabaseCountries.DownloadDataCountries();
+	public List<Countries> totalCountries() throws IOException {
+		return ParseCountries.ParseDataCountries();
 	}
 
 	/**

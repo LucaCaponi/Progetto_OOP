@@ -21,7 +21,7 @@ public class NotValidThreshold extends ExceptionAbstract {
 
 	@Override
 	public String getMessage() {
-		return "Attenzione: la soglia scelta è errata o l'operatore condizionale non è disponibile."
+		return "Attenzione: la soglia scelta è errata o l'operatore condizionale non è disponibile. "
 				+ "Gli operatori condizionali disponibili sono '$gt' (>) e '$lt' (<).";
 
 	}

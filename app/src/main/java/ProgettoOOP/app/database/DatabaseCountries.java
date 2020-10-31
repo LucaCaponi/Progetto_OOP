@@ -1,15 +1,17 @@
 package ProgettoOOP.app.database;
 
-import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
 /**
  * 
- * La classe DatabaseCountries apre l'URL dell'API Postman 'GET Countries' in Internet. 
- * Il contenuto dell'API viene letto e poi "parsato" in ParseCountries.
+ * La classe DatabaseCountries apre l'URL dell'API Postman 'GET Countries' in
+ * Internet. Il contenuto dell'API viene letto e scritto in un file JSON
+ * "Countries.json" e poi "parsato" nella classe ParseCountries.
  * 
  * @author Federico Catalini
  * @author Luca Caponi
@@ -22,21 +24,25 @@ public class DatabaseCountries {
 	 * @return outputLine
 	 * @throws IOException
 	 */
-	public static String DownloadDataCountries() throws IOException {
+	public static void DownloadDataCountries() throws IOException {
 
-		URL oracle = new URL("https://api.covid19api.com/countries");
-		URLConnection URLConn = oracle.openConnection();
+		int readerCountries = 0;
+		File Countries = new File("Countries.json");
 
-		BufferedReader in = new BufferedReader(new InputStreamReader(URLConn.getInputStream()));
+		FileOutputStream FScountries = new FileOutputStream(Countries);
+		URL countriesURL = new URL("https://api.covid19api.com/countries");
 
-		String inputLine;
-		String outputLine = "";
+		URLConnection URLConn = countriesURL.openConnection();
 
-		while ((inputLine = in.readLine()) != null)
-			outputLine = outputLine + inputLine;
-		in.close();
-		return outputLine;
+		InputStream inputCountries = URLConn.getInputStream();
+
+			while ((readerCountries = inputCountries.read()) != -1) {
+				FScountries.write(readerCountries);
+			}
+
+			inputCountries.close();
+			FScountries.close();
 
 	}
-
 }
+

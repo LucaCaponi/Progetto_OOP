@@ -3,6 +3,7 @@ package ProgettoOOP.app.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
@@ -33,7 +34,7 @@ public interface CountryService {
 	 * @return
 	 * @throws IOException
 	 */
-	public abstract String totalCountries() throws IOException;
+	public abstract List<Countries> totalCountries() throws IOException;
 
 	/**
 	 * 
