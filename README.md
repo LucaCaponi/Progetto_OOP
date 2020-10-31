@@ -28,7 +28,7 @@ A grandi linee, lo sviluppo del progetto è stato suddiviso nei seguenti steps:
    ad un valore soglia ("threshold").
 8. verifica del corretto funzionamento di metodi ed eccezioni avvalendosi di quattro classi test.
 
-### Diagramma delle classi
+### Diagrammi delle classi
 Per far questo abbiamo suddiviso il nostro lavoro in diversi packages, al fine di renderlo più semplice e chiaro:
 
 ![Package](https://user-images.githubusercontent.com/64077382/97726850-f7a0e000-1acf-11eb-91fb-f6687deab566.png)
@@ -243,6 +243,7 @@ Il modo in cui le precedenti eccezioni vengono visualizzate in Postman viene rip
 * [Eccezione “NotValidThreshold”](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/ExcNotValidThreshold.jpg)
 
 
+## Diagrammi delle sequenze
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
 
