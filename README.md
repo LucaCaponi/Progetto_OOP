@@ -91,6 +91,7 @@ Package che contiene le classi necessarie a gestire le eccezioni che possono ess
 # Funzionamento
 Dopo aver avviato l'applicazione, l'utente potrà interrogarla in Postman attraverso delle chiamate all'indirizzo http://localhost:8080 .
 Come rappresentato nel diagramma UML dei casi d'uso, le rotte disponibili sono otto di tipo GET e una di tipo POST.
+
 Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come quest'ultime funzionano. 
 
 ## Chiamate
@@ -113,24 +114,24 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 [esempio di chiamata GET "/totalcountries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETTotalcountries.jpg)
 
 
-* **Per inserire il paese in modo corretto visiona la tipologia e la descrizione dei metadati che deve inserire:**
+* **Per inserire il paese in modo corretto visiona la tipologia e la descrizione dei metadati:**
 
 [esempio di chiamata GET "/metadata"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETMetadata.jpg)
 
 
-* **Carica i paesi su cui vuole stilare le classifiche e/o ottenere le statistiche:**
+* **Carica i paesi su cui vuole stilare le classifiche e/o ottenere le statistiche:** 
 
 [esempio di chiamata POST "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/POSTCountries.jpg)
 
 
-* **Per poi visualizzare la lista dei paesi inseriti:**
+* **Visualizza la lista dei paesi inseriti:**
 
 [esempio di chiamata GET "/countries"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries.jpg)
 
 
-* **La lista può essere filtrata per continente, l'utente avrà la possibilità (ad esempio) di visualizzare a schermo i paesi europei caricati:**
+* **La lista può essere filtrata per continente; l'utente avrà la possibilità (ad esempio) di visualizzare a schermo i paesi europei caricati:**
 
-[esempio di chiamata GET "/countries/continent"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries-continent.jpg)
+[esempio di chiamata GET "/countries/{{continent}}"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETCountries-continent.jpg)
 
 
 * **Il fruitore del programma, oltre alle classifiche, potrà richiedere un sommario della situazione Covid, sia per il periodo di default (1 Marzo 2020-1 Aprile 2020) che per un periodo a sua scelta:**
@@ -166,6 +167,24 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 **-maggiore** se il prefisso è **$gt**
 
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
+
+
+ # Filtri
+ Sono stati creati due filtri:
+ * **Filtro per i continenti**
+ Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
+Inserendo un paese con la chiamata POST viene riportato il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente. Se nella rotta verrà inserito un continente errato, il programma lancerà l'eccezione gestita NotValidContinent().
+
+* **Filtro soglia (threshold)**
+Nel visualizzare la lista dei contagi giornalieri con le realtive variazioni percentuali, si è pensato di dare all'utente la possibilità di filtrare l'elenco in base ad un valore soglia (threshold) di casi confermati. L'elenco restituito conterrà solo gli oggetti di tipo StatsModel in cui i casi confermati (a cui è attribuita la chiave DailyConfirmed) sono **minori** o **maggiori** del valore richiesto dall'utente.
+
+Il parametro **threshold** è un codice alfanumerico così costruito:
+* il prefisso letterale (**$gt** o **$lt**)per far partire l'istruzione condizionale.
+* il valore numerico corrispondente alla soglia. 
+**ESEMPI:**
+* $gt2000 = restituisce la lista dei giorni in cui si hanno più di 2000 contagi.
+* $lt500  = restituisce la lista dei giorni in cui si hanno meno di 500 contagi.
+
 
 
 In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un diagramma previsto dall'UML utilizzato per descrivere uno scenario, ovvero una determinata sequenza di azioni in cui tutte le scelte sono state già effettuate.
@@ -216,10 +235,6 @@ In seguito, mostriamo i diagrammi delle sequenze per ogni chiamata. Questo è un
 ![getFilteredStats](https://user-images.githubusercontent.com/64077382/97734177-1788d180-1ad9-11eb-8ca3-6648fbdf1306.png)
 
 
-
- # Filtri
- Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
-Inserendo un paese con la chiamata POST viene riportato dunque il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente.
 
 
 # Componenti
