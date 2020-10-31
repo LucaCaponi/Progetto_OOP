@@ -88,7 +88,6 @@ public class StatsCovid {
 				List<StatsModel> daily = new LinkedList<StatsModel>();
 				
 				List<JSONObject> filteredlist = new LinkedList<>();
-				System.out.println(countryObject.size());
 				for (int i = 0; i < countryObject.size(); i++) {
 					JSONObject countryObjectall = (JSONObject) countryObject.get(i);
 					String province = (String) countryObjectall.get("Province");

@@ -152,9 +152,9 @@ public class CountryServiceImpl implements CountryService {
 	 */
 	public ArrayList<Metadata> gettingMetadata() {
 		ArrayList<Metadata> metadata = new ArrayList<Metadata>();
-		metadata.add(new Metadata("Country", "Nome della nazione", "String"));
-		metadata.add(new Metadata("Slug", "Parte dell'URL che identifica una nazione", "String"));
-		metadata.add(new Metadata("ISO2", "Codice costituito da due lettere che identifica una nazione", "String"));
+		metadata.add(new Metadata("country", "Nome della nazione", "String"));
+		metadata.add(new Metadata("slug", "Parte dell'URL che identifica una nazione", "String"));
+		metadata.add(new Metadata("iso2", "Codice costituito da due lettere che identifica una nazione", "String"));
 		return metadata;
 
 	}

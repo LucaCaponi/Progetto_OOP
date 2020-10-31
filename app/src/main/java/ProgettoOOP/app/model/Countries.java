@@ -16,14 +16,14 @@ public class Countries {
 
 	/**
 	 * 
-	 * @param country
-	 * @param slug
-	 * @param iSO2
+	 * @param Country
+	 * @param Slug
+	 * @param ISO2
 	 */
-	public Countries(String country, String slug, String iSO2) {
-		this.Country = country;
-		this.Slug = slug;
-		this.ISO2 = iSO2;
+	public Countries(String Country, String Slug, String ISO2) {
+		this.Country = Country;
+		this.Slug = Slug;
+		this.ISO2 = ISO2;
 	}
 
 	/**
@@ -38,8 +38,8 @@ public class Countries {
 	 * 
 	 * @param country
 	 */
-	public void setCountry(String country) {
-		this.Country = country;
+	public void setCountry(String Country) {
+		this.Country = Country;
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class Countries {
 	 * 
 	 * @param slug
 	 */
-	public void setSlug(String slug) {
-		this.Slug = slug;
+	public void setSlug(String Slug) {
+		this.Slug = Slug;
 	}
 
 	/**
@@ -70,8 +70,8 @@ public class Countries {
 	 * 
 	 * @param iSO2
 	 */
-	public void setISO2(String iSO2) {
-		this.ISO2 = iSO2;
+	public void setISO2(String ISO2) {
+		this.ISO2 = ISO2;
 	}
 
 }

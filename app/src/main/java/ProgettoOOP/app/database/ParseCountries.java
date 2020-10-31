@@ -16,7 +16,7 @@ import ProgettoOOP.app.model.Countries;
 
 /**
  * 
- * Classe per il parsing dell'API "GET Countries".
+ * Classe per il parsing del file JSON "Countries.json".
  * 
  * @author Federico Catalini
  * @author Luca Caponi
