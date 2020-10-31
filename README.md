@@ -5,28 +5,29 @@ per l'esame di Programmazione ad Oggetti (A.A. 2019-2020) del corso di Laurea in
 ## Introduzione
 Il progetto consiste in una SpringBoot application, creata nell'ambiente java usando l'IDE Eclipse, che permette di acquisire e modellare dati da più API esterne, restituendoli in formato JSON. 
 
-Il macrotema ha come obiettivo quello di stilare (definendo un insieme di stati e un determinato lasso di tempo) delle classifiche dei paesi in base ai parametri "confirmed", "deaths", "recovered" e "active". Inoltre, sono state elaborate le statistiche riguardo i contagi giornalieri e le loro variazioni percentuali.
+Il macrotema ha come obiettivo quello di stilare (definendo un insieme di stati e un determinato lasso di tempo) le classifiche dei paesi in base ai parametri "confirmed", "deaths", "recovered" e "active", ed elaborare le statistiche riguardo i contagi giornalieri e le loro variazioni percentuali.
 
-La nostra applicazione, comunicando con le API fornite, permette all'utente di caricare una lista di nazioni e di ottenere per gli stati inseriti le classifiche sopracitate (dalla nazione con più casi, decessi, ricoverati o attualmente positivi a quella meno colpita dalla pandemia). Per far questo è stato necessario effettuare il parsing di un'API predefinita (**GET Countries**) contenente i dati identificativi di tutti i paesi del mondo ("Country, "Slug" ed "ISO2"). Inoltre, i dati da elaborare sono stati ottenuti richiamando l'API **GET By Country All Status**, la quale, però, non fornisce i dati giorno per giorno, ma restituisce una sommatoria dei casi registrati dal 22 Gennaio 2020 in poi. E' stato dunque nostro compito calcolare i dati giornalieri, necessari per stilare le classifiche e ottenere le statistiche.
+La nostra applicazione, comunicando con le API fornite, permette all'utente di caricare una lista di nazioni e di ottenere per gli stati inseriti le classifiche sopracitate (dalla nazione con più casi, decessi, ricoverati o attualmente positivi a quella meno colpita dalla pandemia). Per far questo è stato necessario effettuare il parsing di un'API predefinita (**GET Countries**) contenente gli attributi identificativi di tutti i paesi del mondo ("country, "slug" ed "iso2"). Inoltre, i dati da elaborare sono stati ottenuti richiamando l'API **GET By Country All Status**, la quale, però, non fornisce i dati giorno per giorno, ma restituisce una sommatoria dei casi registrati dal 22 Gennaio 2020 in poi. E' stato dunque nostro compito estrapolare i dati giornalieri, necessari per stilare le classifiche e ottenere le statistiche.
 
-Per mostrare tutti i metodi resi disponibili, mostriamo il diagramma UML dei casi d'uso così da introdurre in maniera immediata il funzionamento del progetto:
+Per mostrare tutti i metodi resi disponibili, presentiamo ora il diagramma UML dei casi d'uso, così da introdurre in maniera immediata il funzionamento del progetto:
 
 ![diagramma_uso_sfondo](https://user-images.githubusercontent.com/64077382/97744559-bfa59700-1ae7-11eb-856f-0c36b24ca697.JPG)
 
 
 
 ## Sviluppo
-A grandi linee, lo sviluppo del progetto è stato suddiviso nei seguenti steps:
-1.	acquisizione dei dati dall'API "GET Countries" e parsing di quest'ultima, creando oggetti "Countries".
+A grandi linee, l'idea di sviluppo del progetto è stata suddivisa nei seguenti steps:
+1.	acquisizione dei dati dall'API **GET Countries** e parsing di quest'ultima, creando oggetti di tipo "Countries".
 2. creazione di una classe controller per gestire le chiamate GET e POST in PostMan.
-3. implementazione tramite un service dei metodi da richiamare sul controller.   
-4.	inizializzazione di variabili e metodi con l'obiettivo di stilare le classifiche richieste.
-5. inizializzazione di variabili e metodi con l'obiettivo di fornire le statistiche sui contagi giornalieri e                  
+3. implementazione tramite un service dei metodi da richiamare sul controller.
+4. chiamata all'API **GET By Country All Status** per ottenere i dati da elaborare.
+5.	inizializzazione di variabili e metodi con l'obiettivo di stilare le classifiche richieste.
+6. inizializzazione di variabili e metodi con l'obiettivo di fornire le statistiche sui contagi giornalieri e                  
    le loro variazioni percentuali.
-6. creazione di un filtro per la suddivisione dei paesi inseriti in base ai loro rispettivi continenti.
-7. creazione di un filtro per visualizzare i giorni con un minor/maggior numero di casi confermati rispetto    
+7. creazione di un filtro per la suddivisione dei paesi inseriti in base ai loro rispettivi continenti.
+8. creazione di un filtro per visualizzare i giorni con un minor/maggior numero di casi confermati rispetto    
    ad un valore soglia ("threshold").
-8. verifica del corretto funzionamento di metodi ed eccezioni avvalendosi di quattro classi test.
+9. verifica del corretto funzionamento di metodi ed eccezioni avvalendosi di quattro classi test.
 
 ### Diagrammi delle classi
 Per far questo abbiamo suddiviso il nostro lavoro in diversi packages, al fine di renderlo più semplice e chiaro:
@@ -40,7 +41,7 @@ Ovviamente, in seguito, per ogni package, abbiamo sviluppato tutte le varie clas
 
 
 #### ProgettoOOP.app
-Package che contiene la classe "main" la quale richiama i metodi necessari per il corretto funzionamento del programma e lancia SpringBoot.
+Package che contiene la classe "main", la quale lancia SpringBoot e richiama i metodi necessari per il corretto funzionamento del programma.
 
 ![App](https://user-images.githubusercontent.com/64077382/97726784-e657d380-1acf-11eb-8437-4f2d969b7b21.png)
 
@@ -76,7 +77,7 @@ Package che contiene le classi che elaborano le statistiche sul numero di contag
 
 
 #### ProgettoOOP.app.filters
-Package che contiene le classi che permettono di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continent}, la classe "FiltersAllStatus" che consente di ottenere le classifiche in base allo status immesso nella rotta, e la classe "StatsFilter" che permette di esaminare le statistiche filtrate in base a un valore soglia ("threshold").
+Package che contiene due classi ("Continents" e "FiltersAllCountry") che permettono di filtrare i paesi caricati in base al continente richiesto dall'utente sulla rotta /countries/{continent}, la classe "FiltersAllStatus" che consente di ottenere le classifiche in base allo status immesso nella rotta, e la classe "StatsFilter" che permette di esaminare le statistiche filtrate in base a un valore soglia ("threshold").
 
 ![Filters](https://user-images.githubusercontent.com/64077382/97726841-f40d5900-1acf-11eb-80aa-8c1517e4a280.png)
 
@@ -170,7 +171,7 @@ Mostriamo ora come utilizzare l'applicazione attraverso le sue chiamate e come q
 [esempio di chiamata GET "/stats/filter"](https://github.com/LucaCaponi99/Progetto_OOP/blob/master/app/Esempi%20di%20chiamate%20e%20risposte%20POSTMAN/GETStatsFilter.jpg)
 
 ### Statistiche
-Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API GET By Country All Status, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
+Dopo aver caricato la lista di nazioni e stabilito un periodo da analizzare, si apre la connessione all'API **GET By Country All Status**, vi si estrapolano i dati e vengono generate le statistiche giornaliere sul numero di casi confermati e le loro variazioni percentuali.
 Ciò è stato possibile grazie alla creazione di un oggetto di tipo **"StatsModel"** contenente tre attributi chiave:
 * **"Date"**: data visualizzata.
 * **"DailyConfirmed"**: casi confermati nel giorno "Date"
@@ -206,12 +207,12 @@ L'oggetto StatsModel che verrebbe restituito in formato JSON sarebbe il seguente
 
  ### Filtri
  Sono stati creati due filtri:
- * **Filtro per i continenti**
- Le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
+ * **Filtro per i continenti**:
+ le API Postman importate non presentavano alcun attributo Continente. Abbiamo dunque gestito manualmente i 248 paesi del mondo catalogandoli nel loro continente di appartenenza.
 Inserendo un paese con la chiamata POST viene riportato il suo continente, inoltre attraverso un filtro applicabile usufruendo della rotta /countries/{continent} viene mostrata all'utente la lista dei paesi inseriti filtrata per il continente. Se nella rotta verrà inserito un continente errato, il programma lancerà l'eccezione gestita **NotValidContinent()**.
 
-* **Filtro soglia (threshold)**
-Nel visualizzare la lista dei contagi giornalieri con le realtive variazioni percentuali, si è pensato di dare all'utente la possibilità di filtrare l'elenco in base ad un valore soglia (threshold) di casi confermati. L'elenco restituito conterrà solo gli oggetti di tipo StatsModel in cui i casi confermati (a cui è attribuita la chiave DailyConfirmed) sono **minori** o **maggiori** del valore richiesto dall'utente.
+* **Filtro soglia (threshold)**:
+ nel visualizzare la lista dei contagi giornalieri con le realtive variazioni percentuali, si è pensato di dare all'utente la possibilità di filtrare l'elenco in base ad un valore soglia (threshold) di casi confermati. L'elenco restituito conterrà solo gli oggetti di tipo StatsModel in cui i casi confermati (a cui è attribuita la chiave DailyConfirmed) sono **minori** o **maggiori** del valore richiesto dall'utente.
 
 Il parametro **threshold** è un codice alfanumerico così costruito:
 * il prefisso letterale (**$gt** o **$lt**) per far partire l'istruzione condizionale. Se il prefisso è errato si lancia l'eccezione gestita **NotValidThreshold()**. 
